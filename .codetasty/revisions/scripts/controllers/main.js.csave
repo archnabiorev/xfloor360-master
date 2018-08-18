@@ -1,0 +1,2 @@
+codetasty.revision.2.0
+{"ts":1519056904,"restoring":false,"user_id":4416,"patch":[{"diffs":[[1,"'use strict';\n\n/**\n * @ngdoc function\n * @name floorxApp.controller:MainCtrl\n * @description\n * # MainCtrl\n * Controller of the floorxApp\n */\nangular.module('floorxApp')\n  .controller('MainCtrl', function () {\n    \t\t\n    \t  MortageCalc('pslider');\n          MortageCalc('pslider1');\n          MortageCalc('pslider2');\n\n          //var FX = new floorx();\n\n  });\n"]],"start1":0,"start2":0,"length1":0,"length2":361}],"length":361}

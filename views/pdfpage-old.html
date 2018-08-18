@@ -1,0 +1,323 @@
+<style>
+	body{
+		overflow: auto!important;
+	}
+</style>
+<div class="container-fluid" style="padding-bottom:20px;">
+	<div class="row">
+		<div class="col-sm-9">
+		<h3> <span class="pull-right">{{data.elevationName}}</span> </h3>
+			<img src="{{data.base.image}}" alt="image" class="img-responsive final-image" />
+			
+			<!-- CONTACT -->
+			<div class="row"> <div class="col-sm-12">
+					
+					<div class="row" ng-repeat="(floor , module) in data.modules">
+						<div class="col-sm-12">
+							<h3> <span class="pull-right">{{floor}}</span> </h3>
+							<img src="{{module.extraInfo.image}}" alt="{{floor}}" class="img-responsive" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							
+
+							<div class="contact-box">
+
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<h4>
+											Contact Detail
+										</h4>									
+									</div>
+
+									<div class="col-xs-12 col-sm-6" style="margin-left: -11px;width: 51%;">
+										<h4>
+											&emsp;
+										</h4>									
+									</div>
+									
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<p>
+											Biorev LLC.
+										</p>									
+									</div>
+
+									<div class="col-xs-12 col-sm-6">
+										Email  info@biorev.us
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<p>
+											Irving, TX, USA
+										</p>									
+									</div>
+
+									<div class="col-xs-12 col-sm-6">
+										    Tel  +1 770-572-1828
+									</div>
+								</div>
+
+
+
+
+
+								<!-- <h4>
+									Contact Detail
+								</h4>
+
+								<p>
+									Biorev LLC.
+								</p>
+
+								<p>
+									 Irving, TX, USA
+								</p>
+
+								<p>
+									Email : info@biorev.us
+								</p>
+
+								<p>
+									Tel : +1 770-572-1828
+								</p>	 -->
+
+							</div>
+							
+
+						</div>
+					</div>
+				</div> </div>
+			<!--./CONTACT-->
+			
+			
+		</div>
+
+		<div class="col-sm-3">
+			<h3>Congratulations</h3>
+			<p><small>You've designed your new House</small></p>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="list-inline final-actions">
+						<li ng-click="shareDialog()" >
+							<div class="selection-wrapper">
+								<i class="fa fa-share-alt"></i>
+								<p>Share</p>
+							</div>
+
+						</li>
+
+						
+						<li  ng-click="downloadPdf(sessionID)" id="download-pdf" >
+							<div class="selection-wrapper">
+								<i class="fa fa-download"></i>
+								<p>Downoad</p>
+							</div>
+						</li>
+
+						<li onclick="window.location = '/#!/'; window.location.reload();">
+							<div class="selection-wrapper">
+								<i class="fa fa-file"></i>
+								<p>New Design</p>
+							</div>
+						</li>
+							<li>
+							<div ng-if="authed" class="selection-wrapper"  ng-click="addToFavorite(sessionID , data.base.image)" >
+								<i class="fa fa-heart"></i>
+								<p>Favorite</p>
+							</div>
+
+							<div class="selection-wrapper" ng-if="!authed" onClick="$('#Loginmodal').modal('show')" >
+								<i class="fa fa-heart"></i>
+								<p>Favorite</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				
+
+				<div class="col-sm-12">
+
+							<p class="selection-header">Your Selection</p>
+							<ul class="list-unstyled selected-wrapper">
+								<li>
+									<h5 class="selection-cat">
+										Floor Plan Selections
+									</h5>
+								</li>
+								<li ng-repeat="(index , module) in data.modules">
+										<h5  class="selection-subcat">
+											{{index}}
+										</h5>
+										<ul>
+										<li class="list-unstyled" ng-repeat="(categoryName , categoryValue ) in module" ng-if="categoryName != 'extraInfo'">
+											&emsp; {{categoryName}}
+											
+											<ul class="list-unstyled">
+												<li ng-repeat="(layerName , layerInfo) in categoryValue">
+													&emsp; &emsp; {{layerName}}				
+												</li>
+											</ul>
+
+
+										</li>
+										</ul>
+
+								</li>
+								
+								<li>
+									<h5 class="selection-cat" ng-if="homexdata">
+										Exterior Selections
+									</h5>
+								</li>
+								
+								<li ng-if="homexdata.items.themes">
+									<h5  class="selection-subcat">
+										Color Schemes
+									</h5>
+									
+									<table>
+										<tr  ng-repeat="(module , theme) in homexdata.items.themes">
+											<td style="width:100%;vertical-align:top;">
+												{{module}}
+											</td>
+											<td>
+												{{theme}}
+											</td>
+										</tr>
+									</table>
+									
+								</li>
+								
+								
+								<li ng-if="homexdata.items.additional">
+									<h5  class="selection-subcat">
+										Structural Options
+									</h5>
+									<p ng-repeat="addons in homexdata.items.additional">
+										{{addons}}
+									</p>
+								</li>
+								
+								
+								
+								
+
+								<li>
+									<hr />
+								</li>
+
+							
+
+								
+							</ul>
+							
+						</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="row">&emsp;</div>
+	<div class="row">
+				
+			</div>
+
+</div>
+
+
+
+
+<!-- Modal Template -->
+
+  <div id="share-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div> -->
+      <div id="share-modal-body" class="modal-body">
+				
+				<div class="row">
+					<div class="col-xs-12 center-text">
+						<h3>
+							Share this design with your friends
+						</h3>
+					</div>
+				</div>
+				<hr/>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <a socialshare
+			socialshare-provider="facebook" 
+			socialshare-media="{{data.base.image}}" 
+			socialshare-type="article" 
+			socialshare-text="{{elevationName}} | xFloor360" 
+			socialshare-hashtags="xfloor360, xSeries" 
+			socialshare-url="http://forbes.xfloor360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}" class="social-icon social-fb"> </a>
+            <p>
+            	Share on Facebook
+            </p>
+          </div>
+
+          <div class="col-xs-12 col-sm-4">
+            <a socialshare
+			socialshare-provider="google"
+			socialshare-media="{{data.base.image}}"
+			socialshare-text="{{elevationName}} | xfloor360"
+			socialshare-hashtags="xfloor360, xSeries"
+			socialshare-url="http://forbes.xfloor360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}" class="social-icon social-g"> </a>
+          <p>
+          	Share on Google
+          </p>
+          </div>
+
+          <div class="col-xs-12 col-sm-4">
+            <a socialshare
+			socialshare-provider="twitter"
+			socialshare-media="{{data.base.image}}"
+			socialshare-text="{{elevationName}} | xfloor360"
+			socialshare-hashtags="xfloor360, xSeries"
+			socialshare-url="http://forbes.xfloor360.com/#!/final/{{sessionID}}" class="social-icon social-tw"></a>
+				<p>Share on Twitter</p>
+          </div>
+
+        </div>
+        
+        <hr />
+        
+        <div class="row">
+        	<div class="col-xs-12">
+        		<p class="text-center">Share via link</p>
+        	</div>
+        </div>
+        
+        <div class="row">
+        	<div class="col-xs-12">
+        		<!-- Target -->
+						<input class="form-control" id="share-clip" value="http://forbes.xfloor360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}" readonly/>
+						<!-- Trigger -->
+						<button class="share-clip-btn" data-toggle="tooltip" data-placement="left" title="Copy to Clipboard" data-clipboard-target="#share-clip">
+						    <i class="glyphicon glyphicon-file"></i>
+						</button>
+					</div>
+        </div>
+        
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

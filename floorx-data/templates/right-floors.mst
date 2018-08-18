@@ -1,0 +1,46 @@
+<div id="interactive-wrapper">
+
+
+{{#floorList}}
+
+
+<div id="stage-{{.}}-wrapper" class="top-img--custom">
+
+<div class="bottom-img ">
+                   <div class="zoom-slider">
+                   <div id="slider-huge--{{.}}" class="slider--instance" data-target="{{.}}"></div>
+			            <!--<span class="example-val" id="huge-value"></span>   -->
+                     <!-- <span><img src="images/zoom-slider-img.png" alt="" /></span>-->
+                       <a onclick="zoom__reset('{{.}}');" class="refrest-btn"><img src="/new-ui/images/refresh-btn.png" alt="" /></a>
+                    </div>
+                </div>
+
+
+<canvas id="stage-{{.}}" class="img-responsive img-center"></canvas>
+
+									<div class="window-icons" style="display: none;">
+											
+											<div class="zoom-round plan-zoom-reset zoom-location" data-target="{{.}}">
+												
+												<i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+
+											</div>
+											<div class="zoom-btns">
+												<i class=" plan-zoomin fa fa-search-plus" aria-hidden="true" data-target="{{.}}" data-val="1.1"></i>
+												<i class="fa plan-zoomout fa-search-minus" aria-hidden="true" data-target="{{.}}" data-val="1.1"></i>
+											</div>
+											<div class="zoom-round zoom-counter zoom-text-{{.}}" data-target="{{.}}">10%</div>
+											<!-- <div class="zoom-round zoom-mirror" data-target="{{.}}"><i class="fa fa-i-cursor" aria-hidden="true"></i></div> -->
+
+										</div>
+				</div>
+{{/floorList}}
+
+
+
+
+									
+								
+
+
+</div>

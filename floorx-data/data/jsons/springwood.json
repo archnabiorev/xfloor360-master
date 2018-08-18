@@ -1,0 +1,12 @@
+{
+	name : "Springwood",
+	bedrooms : 3,
+	bathrooms : 2,
+	cars : 3,
+	main_floor : 2083,
+	upper_floor : false,
+	total : 2083,
+	garage : 3, 
+	planID : "",
+
+}

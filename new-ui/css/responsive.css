@@ -1,0 +1,195 @@
+@media (min-width: 1200px) and (max-width: 1559px) {
+.footer .avery-leftbox .avery-leftbox-main { padding:0 10px 0 0; }
+.footer .avery-leftbox .avery-leftbox-main .forbes-capretto-homes { margin: 0 10px 0 0; }
+.footer .avery-leftbox .avery-leftbox-main .forbes-capretto-homes img { height: 48px; }
+.footer .avery-leftbox .avery-contain h2 { font-size:18px;  }
+.footer .avery-leftbox .avery-contain p { font-size:15px;  }
+.footer .avery-leftbox .avery-contain .icon-box { margin:0 8px; }
+.footer .avery-leftbox .avery-contain .icon-box img { width:40px; }
+.footer .avery-leftbox .avery-contain .icon-box p { font-size:13px; }
+.footer .avery-leftbox .avery-contain .icon-box h2 { font-size:22px; }
+/*.footer .floor-plan .floor-plan-btn a { width:125px; padding:20px 6px; font-size:14px;    }
+.footer .floor-plan .floor-plan-btn i { font-size:20px; top:17px; }
+*/
+}
+@media (max-width: 1305px) {
+.footer-section { padding:15px 0; }
+.icon-box-displayNone { display: none; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.congratulations-contain .social-icon { margin:8px 10px 10px 0; }
+
+.footer .avery-leftbox .avery-leftbox-main .forbes-capretto-homes img { height:50px; }
+.footer .avery-leftbox .avery-contain h2 { font-size:18px; }
+.footer .avery-leftbox .avery-contain p { font-size:15px; }
+.footer .avery-leftbox .avery-contain .icon-box img { height:40px; }
+.footer .avery-leftbox .avery-contain .icon-box h2 { font-size:22px; }
+.footer .avery-leftbox .avery-contain .mortgage a { padding:11px 15px; }
+.footer .floor-plan { text-align: center; margin:15px 0; }
+.footer .floor-plan .floor-plan-btn { display: inline-block; }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.mortgage-calculator .modal-dialog { max-width:650px; }
+.congratulations-contain .social-icon { margin:8px 8px 10px 0; }
+.profile-contain h2 { font-size: 20px; }
+
+
+}
+
+@media (min-width: 992px) {
+.left-mortgage-box { display: none;}
+
+}
+
+@media (max-width: 991px) {
+.gallery-box { margin-bottom:15px; }
+.congratulations-right-box { padding:0; }
+.logo { margin:0; }
+.login { margin:0; }
+.avery-box { margin:0;}
+.contact-detail { margin: 30px 0 0 0; }
+.profile-main-box .profile-left-box { margin:0 15px 30px -15px; }
+.favorite-gallery-box .favorite-gallery h2 { font-size:18px; }
+.profile-right-box .form-box .my-favorite-tabs .tab-content { padding:15px; }
+.footer-wrapper { display: none;}
+.left-mortgage-box { position: fixed; left:0; top:40%; z-index:9 }
+.left-mortgage-box .left-fixed-box {
+  width:36px;
+  height: 36px;
+  text-align: center;
+  margin-bottom:5px;
+  padding-top:6px;
+  border-radius: 0px 4px 4px 0px;
+  -moz-border-radius: 0px 4px 4px 0px;
+  -webkit-border-radius: 0px 4px 4px 0px;
+  border:none;
+  background-color:#fff;
+  box-shadow: 0 2px 3px #000;
+}
+
+
+}
+
+@media (max-width: 767px) {
+.mortgage-calculator .modal-dialog { max-width:500px; }
+.mortgage-calculator .mortgage-calculator-right-box .right-box-border { border-left:0; }
+.login-section .modal-dialog { max-width: 480px; margin:30px auto;  }
+.login-btn { width:100px; height:38px; padding:10px; font-size:14px; margin-top:6px; }
+.three-box-section { margin:0; padding:0; }
+.footer-left-text { float: none; font-size:12px; text-align:center; }
+.footer-right-text { float: none; font-size:12px; text-align:center; }
+.footer-left-text a, .footer-right-text a { font-size:12px; }
+.footer-section { padding:15px 0 !important; }
+.text-box a { font-size:16px; }
+
+.login-section .tab-content { padding:15px; }
+.login-section .tab-box .input-group-addon { padding:10px 0 10px 10px; }
+.login-section .tab-box .login-button { height:50px; font-size: 16px; }
+.divider-text { margin:15px 0; }
+.divider-text span { font-size:16px;}
+.login-section .social-btn { width:48.3%; margin-bottom:20px; }
+.login-section .social-btn a { font-size:13px;  }
+.login-section button.close img { width:34px; }
+.login-section button.close { margin-top:-15px; margin-right:-15px; }
+.mortgage-calculator .modal-body { padding:15px; }
+.mortgage-calculator .modal-header { padding:15px; }
+.mortgage-calculator button.close img { width:34px; }
+.mortgage-calculator button.close { margin-top:-30px; margin-right:-15px; padding: 0; }
+
+.congratulations-section { margin:20px 0; }
+.avery-box { margin:0; }
+.contact-detail { margin:30px 0 0 0; }
+.table-text-box h2 { font-size:15px; }
+.congratulations-right-box { margin:25px 0; }
+.congratulations-contain h2 { font-size:20px; }
+.congratulations-contain .social-icon { margin:8px 10px 10px 0; }
+.congratulations-contain .social-icon .social-icon-box { height:54px; padding-top:12px; }
+.congratulations-contain .social-icon .social-icon-box img { height:30px; }
+.share-facebook, .share-google-plus, .share-fa-twitter { width:50px; height:50px; padding-top:13px; }
+.share-facebook .fa-facebook, .share-google-plus .fa-google-plus, .share-fa-twitter .fa-twitter { font-size:20px; }
+.share-pop-up .modal-body { padding:30px 15px; }
+.share-pop-up .modal-title { font-size:15px; }
+.add-favorite .info-icon img { height:90px;  }
+.add-favorite .contain-center h2 { font-size:24px; }
+.add-favorite .contain-center p { font-size:16px; }
+.add-favorite .yes-button a, .add-favorite .cancel-button a { font-size:15px; padding: 10px 15px; }
+.top-header .btn-secondary { margin-top:8px; }
+
+.login .dropdown img { padding-right:0; height:30px; }
+.top-header .dropdown button span { display: none; }
+.top-header .dropdown-menu { margin-left:-88px; }
+
+.profile-right-box { padding-left:0 !important; }
+.profile-page-section { position: relative; width:100%; overflow-y: auto; }
+.profile-left { margin:0; width:100%; padding:25px 0;  }
+.profile { width:150px; margin: 0 auto; }
+.profile img { width:100%; margin: 0 auto; }
+.profile-left h2 { margin:10px 0 0 0; font-size:15px;  }
+.profile .camera { right:-15px; }
+.profile .camera img { height:44px; }
+.profile-contain { margin:20px 0 15px 0; }
+.profile-contain h2 { font-size:18px; }
+.profile-main-box .profile-left-box { margin:0 0px 30px 0px; padding: 15px 15px 8px 15px; }
+.profile-main-box .profile-left-box .form-group input { height:50px; }
+.profile-main-box h2 { font-size:15px; }
+.upload-button { margin:0px 0 50px 15px; height: 50px; }
+.profile-main-box .quick-tip { padding:0 0 30px 0px; }
+.three-section { padding:30px 15px 90px 15px;   }
+.profile-list { display:none; }
+.profile-right-box .form-box .my-favorite-tabs { margin:0; }
+.profile-right-box .form-box .my-favorite-tabs .nav-tabs .nav-item .nav-link { padding:10px 14px; font-size:14px; }
+.profile-right-box .form-box .my-favorite-tabs .nav-tabs .nav-link.active {  font-size:14px; }
+.favorite-gallery-box .favorite-gallery h2 { margin:10px 0 20px 0; }
+
+.three-box-section { position: relative; }
+
+.navigation-left { display: none; }
+.contain-main { padding-left: 0; }
+.main-homepage { margin:0; }
+.left-box-info { }
+
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+
+
+}
+@media (max-width: 575px) {
+.mortgage-calculator .modal-dialog { width:90%; margin:30px auto; }
+.login-section .modal-dialog { width:90%; }
+.login-section .tab-content { padding:15px; }
+.login-section .tab-box .input-group-addon { padding:10px 0 10px 10px; }
+.login-section .tab-box .login-button { height:50px; font-size: 16px; }
+.login-section .social-btn { margin-right:0; margin-bottom:10px; width:100%; }
+.login-section .social-btn-margin-none { margin-left:0; }
+.divider-text { margin:15px 0; }
+.login-section .nav-tabs .nav-link img { display: none; }
+.login-section .nav-tabs .nav-link { font-size:11px; }
+.login-section button.close img { width:24px; }
+.login-section button.close { margin-top:-12px; margin-right:-12px; }
+.login-section .tab-box p { font-size:13px;  }
+.avery-box h2 { font-size:18px; }
+.avery-box { margin:0; }
+.contact-detail { margin:30px 0 0 0; }
+.table-text-box h2 { font-size:13px; }
+.table-text-box i { font-size:16px; }
+.share-pop-up-section { margin:0;}
+.share-on-facebook p { font-size:13px; line-height:18px;  }
+.share-pop-up .share-pop-up-section .border-bottom { margin:15px 0; }
+
+.mortgage-calculator-mobile .mortgage-calculator-right-box { margin-top:20px; padding-top:20px; border-top: solid 1px #cacaca;  }
+.mortgage-calculator-mobile .modal-dialog { max-width: none; width: auto; margin:20px 15px; }
+.mortgage-calculator-mobile button.close { margin-right:-28px; margin-top:-40px; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .right-box-border { border-left:0; }
+
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box { margin:0 5px; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box img { width:32px; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box p { font-size:12px; }
+.mobile-information button.close { margin-right:-25px; }
+}

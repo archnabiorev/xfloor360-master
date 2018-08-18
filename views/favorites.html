@@ -1,0 +1,151 @@
+ <!-- Begin Navigation Left -->
+        <div class="profile-page-section">
+          <div class="profile-left">
+            <div class="profile">
+               <img ng-if="user.photoURL" src="{{user.photoURL}}" alt="" class="user-image" />
+               <img ng-if="!user.photoURL" src="images/default-user-image.png" alt="" style="border-radius: 100%;" />
+            </div>
+            <h2>{{user.displayName}}</h2>
+            <div class="profile-list">
+                <ul>
+                    <li><a class="active" href="/#!/favorites"><i class="fa fa-heart-o"></i>Favorites</a></li>
+                    <li><a class="" href="/#!/profile"><i class="fa fa-pencil"></i>Edit Profile</a></li>
+                    <li><a href="" ng-click="logout()"><i class="fa fa-sign-out"></i>Logout</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      <!-- End Navigation Left -->
+
+          <!-- Begin profile-right -->
+          <div class="profile-right-box">
+            <div class="form-box">
+                <div class="row">
+                  <div class="col-md-12 col-lg-12 col-xl-12">
+                    <div class="profile-contain">
+                      <h2>My Favorites</h2>
+                      <p>Your favorite desings are listed here</p>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-lg-12 col-xl-12">
+                    <div class="my-favorite-tabs">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link active" id="tab01" data-toggle="tab" data-target="#favorite01" role="tab" aria-controls="favorite01" aria-selected="true">All</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="tab02" data-toggle="tab" data-target="#favorite02" role="tab" aria-controls="favorite02" aria-selected="false">xFloor360</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="tab03" data-toggle="tab" data-target="#favorite03" role="tab" aria-controls="favorite03" aria-selected="false">xHome360</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active" id="favorite01" role="tabpanel" aria-labelledby="tab01">
+                            <div class="favorite-gallery-box">
+                             <div class="row">
+                                
+                                <div ng-repeat="(key ,fav) in favs.floorX.data.favorites" id="fav-{{key}}" data-category="2" data-title="{{fav.label}}" class="col-md-12 col-lg-4 fav-item">
+                                   <div class="favorite-gallery">
+                                      <div class="gallery-favorite">
+                                        
+                                        <img ng-if="fav.image.indexOf('firebase') > -1" src="{{fav.image}}" alt="Floor Image" class="img-thumbnail" />
+                        <img ng-if="fav.image.indexOf('firebase') == -1"  src="http://forbes.xfloor360.com/{{fav.image}}" alt="Floor Image" class="img-thumbnail" />
+
+
+                                        <div class="overlay">
+                                          <div class="icon-favorite-box">
+                                            <a href="/#!/final/{{fav.sessionID}}">
+                                              <img src="images/view-icon.png" alt="" />
+                                            </a>
+                                            <a href="javascript:;" ng-click="delete(key)">
+                                              <img src="images/delete-icon.png" alt="" />
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <h2><a href="/#!/final/{{fav.sessionID}}">{{fav.label}}</a></h2>
+                                   </div>
+                      </div>
+
+
+                                <div ng-repeat="(key ,fav) in favs.homeX.data.favorites" id="fav-{{key}}" data-category="1" data-title="{{fav.label}}" class="col-md-12 col-lg-4 fav-item">
+                                   <div class="favorite-gallery">
+                                      <div class="gallery-favorite">
+                                        <img class="img-thumbnail" src="{{fav.image}}" alt="" />
+                                        <div class="overlay">
+                                          <div class="icon-favorite-box">
+                                            <a href="/#!/final/{{fav.sessionID}}">
+                                              <img src="images/view-icon.png" alt="" />
+                                            </a>
+                                            <a href="javascript:;" ng-click="delete(key)">
+                                              <img src="images/delete-icon.png" alt="" />
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <h2><a href="/#!/final/{{fav.sessionID}}">{{fav.label}}</a></h2>
+                                   </div>
+                                </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="favorite02" role="tabpanel" aria-labelledby="tab02">
+                            <div class="favorite-gallery-box">
+                             <div class="row">
+                                <div ng-repeat="(key ,fav) in favs.floorX.data.favorites" id="fav-{{key}}" data-category="2" data-title="{{fav.label}}" class="col-md-12 col-lg-4 fav-item">
+                                   <div class="favorite-gallery">
+                                      <div class="gallery-favorite">
+                                        
+                                        <img ng-if="fav.image.indexOf('firebase') > -1" src="{{fav.image}}" alt="Floor Image" class="img-thumbnail" />
+                        <img ng-if="fav.image.indexOf('firebase') == -1"  src="http://forbes.xfloor360.com/{{fav.image}}" alt="Floor Image" class="img-thumbnail" />
+
+
+                                        <div class="overlay">
+                                          <div class="icon-favorite-box">
+                                            <a href="/#!/final/{{fav.sessionID}}">
+                                              <img src="images/view-icon.png" alt="" />
+                                            </a>
+                                            <a href="javascript:;" ng-click="delete(key)">
+                                              <img src="images/delete-icon.png" alt="" />
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <h2><a href="/#!/final/{{fav.sessionID}}">{{fav.label}}</a></h2>
+                                   </div>
+                                </div>
+                             </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="favorite03" role="tabpanel" aria-labelledby="tab03">
+                            <div class="favorite-gallery-box">
+                             <div class="row">
+                                <div  ng-repeat="(key ,fav) in favs.homeX.data.favorites" id="fav-{{key}}" data-category="1" data-title="{{fav.label}}"  class="col-md-12 col-lg-4">
+                                   <div class="favorite-gallery">
+                                      <div class="gallery-favorite">
+                                        <img class="img-thumbnail" src="{{fav.image}}" alt="" />
+                                        <div class="overlay">
+                                          <div class="icon-favorite-box">
+                                            <a href="/#!/final/{{fav.sessionID}}">
+                                              <img src="images/view-icon.png" alt="" />
+                                            </a>
+                                            <a href="javascript:;" ng-click="delete(key)">
+                                              <img src="images/delete-icon.png" alt="" />
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <h2><a href="javascript:;">Saxton</a></h2>
+                                   </div>
+                                </div>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           <!-- End profile-right -->

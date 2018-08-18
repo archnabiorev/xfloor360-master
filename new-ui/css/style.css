@@ -1,0 +1,620 @@
+body { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:14px;  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing:  antialiased;  }
+* { margin:0; padding:0; }
+a {  text-decoration: none; outline: none; }
+a:hover, a:focus, .active { color:#333; text-decoration: none; outline: none; }
+.btn.focus, .btn:focus { box-shadow:none!important; }
+.wrapper { width:100%; margin:0; padding:0; }
+.top-header { background-color:#fff; margin:0; padding:6px 0; box-shadow:0 0 8px #3d3d3d;  }
+.logo { float: left; margin:0 0 0 15px; }
+.logo img { height:51px; }
+.login { float:right; margin:6px 15px 0 0; }
+.login .dropdown img { width: 40px; }
+.login-btn { width:100px; height:40px; border-radius:0; background-color:#7cc035; padding:0; font-family: 'Open Sans', sans-serif; font-size:16px; line-height: 18px; color:#fff; text-align: center; font-weight:600; letter-spacing:2px; text-transform: uppercase; border: none; cursor: pointer;  }
+.login-btn:hover { background-color:#5d991f;  }
+.three-box-section {
+  margin:0 auto;
+  padding:0 ;
+  width: 100vw;
+  vertical-align: middle;
+  text-align: center;
+ align-self: center;
+height: calc(100vh - 85px - 30px);
+display: table-cell;
+vertical-align: middle;
+}
+.three-section{
+  padding-bottom: 50px;
+}
+
+.gallery-box { margin:10px 0; padding:0; position: relative; }
+.gallery-box .img-thumbnail { border-radius:0; }
+.text-box { position: relative; top:84%; bottom:0; right:0; left:0; width:100%; height:100%; text-align: center;  }
+.text-box a { font-size:18px; color:#fff; font-weight:600; text-transform: uppercase; position: absolute; left:42%; bottom:15px; }
+
+/*** Begin homepage ***/
+.contain-main { margin:0; height: 100vh; }
+.main-homepage { margin:0; text-align: center; display: flex; height: 100%; width: 100%; align-items: center; }
+/*.main-homepage .img-thumbnail { height:100%; padding:0; border: none; border-radius: 0; display: flex; vertical-align: middle; text-align: center; align-items: center; } */
+
+/*** End homepage ***/
+
+/*** Begin Profile and my-favorite ***/
+.profile-page-section { margin:0; padding:0;  position: fixed; height:100%; overflow-y: auto; }
+.profile-left { width:280px; background-color:#2a2c30; margin:0; padding:40px 0 0 0; height:100%; }
+.top-header .btn-secondary { box-shadow: none; border-color: transparent; border-radius:0; background-color:#7cc035; cursor: pointer; padding:2px 8px;  }
+.top-header .show > .btn-secondary.dropdown-toggle { box-shadow: none; border-color: transparent; border-radius:0; background-color:#7cc035; }
+.top-header .dropdown .dropdown-toggle img { padding-right:8px; }
+.top-header .dropdown button span { font-family:'Open Sans', sans-serif; font-size:14px; color:#fff; font-weight:600; letter-spacing:1px; }
+.top-header .dropdown-menu { padding:0; margin-top:-2px; font-size:15px; color:#333333; font-weight:400; border-radius:0; border: solid 1px #e5e5e5; }
+.top-header .dropdown-menu i { padding-right:8px; }
+.top-header .dropdown-item { padding:8px 15px; display: inline-block; border-bottom: solid 1px #e5e5e5; }
+.top-header .dropdown-item:last-child { border-bottom: 0; }
+.top-header .dropdown-item:active { background-color: transparent; color: #333; }
+.profile { text-align: center; margin:0; padding:0; position: relative; }
+.profile .camera { position: absolute;  margin:0; padding:0; bottom:22px; right:25px; cursor: pointer; }
+.profile-left h2 {  margin:15px 0 40px 0; padding:0; font-family:'Open Sans', sans-serif; font-size:16px; color:#fff; text-align: center; font-weight:600; text-transform: uppercase; }
+
+.profile-list { margin:0; padding:0; }
+.profile-list ul { list-style: none; margin:0; padding:0; }
+.profile-list ul li { display:block; margin:0; padding:0; border-top: solid 1px #47494d; }
+.profile-list ul li:last-child { border-bottom: solid 1px #47494d; }
+.profile-list ul li a { display:block; margin:0; padding:16px 15px; font-family:'Open Sans', sans-serif; font-size:16px; color:#fff; text-align:left; font-weight:400; }
+.profile-list ul li a i {  margin-right:8px; }
+.profile-list ul li a:hover {  color:#cea126; padding:16px 15px; background-color:#232426; }
+.profile-list ul li a.active {  color:#cea126; padding:16px 15px; background-color:#232426; }
+
+.profile-right-box { padding-left:310px !important; margin:0; }
+.profile-right-box .form-box { padding:0; margin:0 15px; }
+.profile-right-box .form-box .my-favorite-tabs { padding:0; margin:0 15px 0 -15px; }
+.profile-right-box .form-box .my-favorite-tabs .tab-content { padding:30px; margin:0; border: solid 1px #afafaf; border-top:0; }
+.profile-right-box .form-box .my-favorite-tabs .nav-tabs { border-bottom: solid 1px #afafaf; }
+.profile-right-box .form-box .my-favorite-tabs .nav-tabs .nav-item { border-right: solid 1px #fff; }
+.profile-right-box .form-box .my-favorite-tabs .nav-tabs .nav-item .nav-link { background-color:#2a2c30; font-size:16px; color:#fff; border-radius:0; padding:8px 24px; line-height:24px; }
+.profile-right-box .form-box .my-favorite-tabs .nav-tabs .nav-link:hover { background-color:#2a2c30; border-color:#2a2c30 #2a2c30 #2a2c30; border-radius:0; color:#fff; }
+.profile-right-box .form-box .my-favorite-tabs .nav-tabs .nav-link.active {  border-color:#afafaf #afafaf #fff; border-radius:0; background-color:#fff; font-family:'Open Sans', sans-serif; font-size:16px; color:#333; text-align:left; font-weight:400;  }
+
+.favorite-gallery-box { margin:0; padding:0; }
+.favorite-gallery-box .favorite-gallery { display: inline-block; margin:0; padding:0; text-align: center;  }
+.favorite-gallery-box .favorite-gallery h2 { margin:10px 0 20px 0; padding:0; text-align: center; font-family:'Open Sans', sans-serif; font-size:18px; color:#333; font-weight:600; }
+.favorite-gallery-box .favorite-gallery h2 a { color:#333; }
+.favorite-gallery-box .favorite-gallery .gallery-favorite { padding:0; margin:0; position: relative; }
+.favorite-gallery-box .favorite-gallery .gallery-favorite .img-thumbnail { border:solid 1px #aaaaaa; padding:0; border-radius:0; }
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.favorite-gallery-box .favorite-gallery .gallery-favorite:hover .overlay {
+  opacity:5;
+  height: 100%;
+}
+
+.favorite-gallery-box .icon-favorite-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.profile-contain { margin:30px 0 15px -15px; padding:0; float: left; text-align: left; }
+.profile-contain h2 { margin:0; padding:0; font-family:'Open Sans', sans-serif; font-size:20px; color:#333; text-align:left; font-weight:700; text-transform: uppercase; }
+.profile-contain p { margin:0; padding:0; font-family:'Open Sans', sans-serif; font-size:13px; color:#333; text-align:left; font-weight:400; }
+.profile-main-box { margin:0; padding:0; }
+.profile-main-box .profile-left-box { margin:0 15px 0 -15px; padding:28px 30px 10px 30px; background-color:#f1f1f1;  }
+.profile-main-box h2 { margin:0 0 15px 0; padding:0; font-family:'Open Sans', sans-serif; font-size:16px; color:#333; text-align:left; font-weight:700; text-transform: uppercase;  }
+.profile-main-box .profile-left-box .form-group { margin-bottom:10px; }
+.profile-main-box .profile-left-box .form-group input { height:50px; margin:0; padding:15px; background-color:#fff; border: none; border-radius: 0; font-size:15px; }
+.upload-button { width:120px; height:50px; text-align: center; margin:30px 0 48px 0; padding:0; background-color:#7cc035; font-family:'Open Sans', sans-serif; font-size:16px; color:#fff; font-weight:600; text-transform: uppercase; border-radius:0; border: none; cursor: pointer; }
+.upload-button:focus, .upload-button:hover, .upload-button:hover { background-color:#5d991f; border-radius:0; border: none; }
+.upload-button:not([disabled]):not(.disabled):active { background-color:#5d991f; border-radius:0; border: none; }
+
+.profile-main-box .quick-tip { padding-top:50px; margin:0; }
+.profile-main-box .quick-tip h2 { margin:0 0 5px 0; padding:0; font-family:'Open Sans', sans-serif; font-size:18px; color:#333; text-align:left; font-weight:700; text-transform: uppercase; }
+.profile-main-box .quick-tip p { margin:0; padding:0; font-family:'Open Sans', sans-serif; font-size:14px; color:#333; text-align:left; font-weight:400; }
+
+/*** End Profile and my-favorite ***/
+
+
+
+
+/*** Begin tabs ***/
+.login-section { margin:0; padding:0; }
+.login-section .modal-dialog { max-width:563px;  }
+.login-section .modal-dialog-centered {
+    min-height: calc(100% - (2rem * 2));
+}
+.login-section .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+}
+.login-section .modal-content { width:563px; border-radius:0; border: none; }
+.login-section .nav-tabs .nav-link { border-top-left-radius:0; border-top-right-radius:0; font-family: 'Open Sans', sans-serif; color:#333; padding: 15px 0; margin:0; font-size:14px; font-weight: 600; text-shadow: none;  }
+.login-section .nav-tabs .nav-item.show .nav-link, .login-section .nav-tabs .nav-link.active { padding: 15px 0; border:0; background-color:#2a2c30; color:#fff;  }
+.login-section .nav-tabs .nav-item { width:33.3%; padding:0; margin-bottom:-2px; text-align: center; border-right:solid 1px #ddd; }
+.login-section .nav-tabs .nav-item:last-child { border-right:none; }
+.login-section .nav-tabs .nav-link:focus, .login-section .nav-tabs .nav-link:hover { border-color: transparent; }
+.login-section .tab-content { padding:30px; }
+.login-section .modal-body { padding:0; }
+.login-section button.close { text-align: right; margin-right: -20px; margin-top: -20px; cursor: pointer; outline: none; }
+.login-section .close { position: absolute; right: 0; opacity:9; z-index: 999;   }
+.login-section .tab-box { padding:0; margin:0; }
+.login-section .tab-box p { padding:0; margin:0 0 15px 0; font-family: 'Open Sans', sans-serif; font-size:14px; line-height:18px; color:#666; font-weight:400; }
+.login-section .tab-box .input-group-addon { padding:15px 0 15px 15px; margin:0; background-color:#fff; border-radius:0;  }
+.login-section .tab-box .form-control { /*height:54px;*/  border-radius:0; border-left:0; font-size:15px; color:#666666;  }
+.login-section .tab-box .form-control:focus { box-shadow: none; border: solid 1px #cacaca; border-left:0; }
+.login-section .tab-box .login-button { height:50px; border-radius:0; background-color:#7cc035; font-family: 'Open Sans', sans-serif; font-size:18px; line-height: 18px; color:#fff; text-align: center; font-weight:700; text-transform: uppercase; border: none; cursor: pointer;  }
+.login-section .tab-box .login-button:hover { background-color:#5d991f;  }
+.login-section .tab-box .login-button:not([disabled]):not(.disabled):active { background-color:#5d991f; /*box-shadow: none;*/ }
+.login-section .tab-box .login-button.btn-primary:focus { background-color:#5d991f; /*box-shadow: none;*/ }
+.login-section .tab-box .input-group { margin-bottom:15px; }
+.login-section .social-btn { margin-right:5px; margin-bottom:30px; padding:0; width:48.5%; float: left; }
+.login-section .social-btn-margin-none { margin-left:5px; }
+.login-section .social-btn .facebook { color: #fff; background-color:#3b5998; border-color:transparent; /*padding:14px 0 !important;*/ padding:0; border: 0; border-radius: 0; }
+.login-section .social-btn .facebook:hover { background-color:#2b4781; }
+.login-section .social-btn .facebook .fa-facebook { padding:15px; margin-right:6px; border-right: solid 1px #7990bf; font-size:18px; }
+.login-section .social-btn a { font-size:14px; color:#fff; font-weight: 700; text-align: left; text-decoration:none; text-shadow: none; text-transform: uppercase; }
+.login-section .social-btn .google { color: #fff; background-color:#d05840; border-color:transparent; /*padding: 14px 0 !important;*/ padding:0; border: 0; border-radius: 0; }
+.login-section .social-btn .google:hover { background-color:#ba4832; }
+.login-section .social-btn .google .fa-google-plus { padding:15px 10px; margin-right:6px; border-right: solid 1px #e17b66; font-size:18px; }
+
+.divider-text { position: relative; text-align: center; margin:30px 0; }
+.divider-text::after { content: ""; position: absolute; width: 100%; border-bottom: 1px solid #ddd; top: 55%; left: 0; z-index: 1; }
+.divider-text span { padding: 7px; position: relative; z-index: 2; font-family: 'Open Sans', sans-serif; font-size:18px; color:#333; text-align: center; font-weight:700; }
+.bg-light { background-color: #fff !important; }
+/*** End tabs ***/
+
+/*** Begin Mortgage Calculator ***/
+.mortgage-calculator { margin:0; padding:0; }
+.mortgage-calculator .modal-body { padding:30px 15px; }
+.mortgage-calculator .modal-dialog { max-width: 768px; }
+.mortgage-calculator .modal-dialog-centered {
+    min-height: calc(100% - (2rem * 2));
+}
+.mortgage-calculator .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+}
+
+.mortgage-calculator .modal-content { border-radius: 0; border: none; }
+.mortgage-calculator .modal-header { background-color:#2a2c30; margin:0; padding:18px 15px; border-radius:0; border: none; }
+.mortgage-calculator .modal-title {  margin:0; font-family: 'Open Sans', sans-serif; font-size:18px; color:#fff; font-weight:400; line-height:18px; }
+.mortgage-calculator button.close { text-align: right; margin-right:-36px; margin-top:-52px; cursor: pointer; outline: none; }
+.mortgage-calculator .close { position: absolute; right: 0; opacity:9; z-index: 999; }
+
+.mortgage-calculator .mortgage-calculator-form-box { margin:0; padding:0 15px; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group { margin-bottom:10px; position: relative; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group select { border-radius:0; padding:8px; height:42px;  }
+.mortgage-calculator .mortgage-calculator-form-box .form-group input { border-radius:0; border: solid 1px #cacaca; padding:8px; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .input-overlay-text { padding: 0; position: relative; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group label { display: inline-block; margin-bottom:3px; width: 100%; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group label .fa-question-circle { font-size:15px; color:#989898; margin-left:4px; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group span { margin-left:25px; font-size:15px; color:#7cc035; font-weight: 500; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .input-overlay-text_right { position: absolute; top:35px; right:9px; text-align: right; color: #aaa; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .down-payment { width:78%; display: inline-block; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .down-payment .year { position: absolute; right:24%; top: 35px; color: #aaa; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .down-payment input {  border-radius:0; border: solid 1px #cacaca; padding:8px; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .downPercent { width:22%; margin-left:-5px; display: inline-block; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .downPercent input {  border-radius:0; border: solid 1px #cacaca; padding:8px; }
+
+.mortgage-calculator .mortgage-calculator-right-box { margin:0; padding:0 15px; }
+.mortgage-calculator .mortgage-calculator-right-box .right-box-border { height: 100%; position: absolute; left:0px;  border-left: solid 1px #cacaca; }
+.mortgage-calculator .mortgage-calculator-right-box .insurance-chart { margin:0; padding:0; text-align: center; }
+.mortgage-calculator .mortgage-calculator-right-box hr { margin:28px 0; border-color:#cacaca; }
+.mortgage-calculator .mortgage-calculator-right-box .mortgage-contain { margin:0; padding:0; }
+.mortgage-calculator .mortgage-calculator-right-box .mortgage-contain h2 { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:14px; color:#333; font-weight:600; text-transform: uppercase; }
+.mortgage-calculator .mortgage-calculator-right-box .mortgage-contain .base-price { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:14px; color:#707070; font-weight:400; line-height:24px; }
+.mortgage-calculator .mortgage-calculator-right-box .mortgage-contain .base-price span { margin:0 15px 0 0; padding:0; font-family: 'Open Sans', sans-serif; font-size:14px; color:#333333; font-weight:400; text-align: right; position: absolute; right:15px; }
+.mortgage-calculator .mortgage-calculator-right-box .mortgage-contain .price-text { margin:8px 0; padding:0; font-family: 'Open Sans', sans-serif; font-size:22px; color:#7cc035; font-weight:600; }
+.mortgage-calculator .mortgage-calculator-right-box .mortgage-contain .space { margin:0; display: inline-block; }
+
+.mortgage-calculator .mortgage-calculator-form-box .form-group .switch-box { margin:0; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .switch-box p { margin:0; font-family: 'Open Sans', sans-serif; font-size:15px; color:#333333; font-weight:400; line-height:18px;  }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .switch-box i { color:#989898;  }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .switch-box .switch-round-box span { margin-left:0;  }
+.mortgage-calculator .switch-box { width:100%; margin:0 0 10px 0; display: inline-block; }
+.mortgage-calculator .switch-round-box { width:46px; float: left; margin-right:5px; }
+.mortgage-calculator .switch { position: relative; display: inline-block; width:32px; height:20px; }
+.mortgage-calculator .switch input {display:none;}
+.mortgage-calculator .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #a1a1a1; -webkit-transition: .4s; transition: .4s; }
+.mortgage-calculator .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left:2px; bottom:2px; background-color: white; -webkit-transition: .4s; transition: .4s; }
+.mortgage-calculator input:checked + .slider { background-color: #7cc035; }
+.mortgage-calculator input:focus + .slider { box-shadow: 0 0 1px #2196F3; }
+.mortgage-calculator input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px); }
+.mortgage-calculator .slider.round { border-radius: 34px; }
+.mortgage-calculator .slider.round:before { border-radius: 50%; }
+
+/*** End Mortgage Calculator ***/
+/*** Begin Congratulations ***/
+.congratulations-section { margin:30px 0; padding:0; }
+.avery-box { margin:0 0 0 15px; padding:0; }
+.avery-box h2 { margin:0 0 10px 0; padding:0; font-family: 'Open Sans', sans-serif; font-size:24px; color:#333333; font-weight:600; }
+.avery-img-box { margin:0; padding:0; border-top: solid 4px #2d2e30; }
+.avery-img-box img { width:100%; }
+.contact-detail { margin:30px 0 0 15px; padding:0; }
+.contact-detail-title { margin:0; padding:10px 15px; background-color:#2d2e30; font-family:'Open Sans', sans-serif; font-size:18px; color:#fff; font-weight:400;  }
+.light-grey-bg { width:100%; height:46px; background-color:#f5f5f5; padding:12px 15px; margin:0; }
+.table-text-box { width:50%; float:left; padding:0; margin:0; }
+.table-text-box h2 { padding:0; margin:0; font-family:'Open Sans', sans-serif; font-size:16px; color:#333; font-weight:400; }
+.table-text-box i { padding:0; margin-right:8px; font-size:20px; color:#7cc035; }
+.dark-grey-bg { background-color:#e0e0e0; }
+
+.congratulations-right-box { margin:0; padding:0 15px 0 0; }
+.congratulations-contain { margin:0; padding:0; display: inline-block; width:100%; }
+.congratulations-contain h2 { margin:0; padding:0; font-family:'Open Sans', sans-serif; font-size:24px; color:#333; font-weight:600; }
+.congratulations-contain p { margin:0; padding:0; font-family:'Open Sans', sans-serif; font-size:14px; color:#333; font-weight:400; }
+.congratulations-contain hr { margin:15px 0; padding:0; border-color:#dddddd; }
+.congratulations-contain .social-icon { float: left; margin:12px 16px 12px 0; padding:0; text-align: center; font-size:13px; color:#999999;  }
+/*.congratulations-contain .social-icon:nth-child(1) { margin-left:0; background-color: red; }*/
+.congratulations-contain .social-icon .social-icon-box { width:60px; height:60px; background-color:#7cc035; margin:0 0 3px 0; padding-top:12px; text-align: center; }
+.congratulations-contain .social-icon a { color:#999; }
+.table-your-selection { margin:0; padding:0; }
+.table-your-selection .your-selection-title { margin:0; padding:10px 15px; background-color:#2d2e30; font-family:'Open Sans', sans-serif; font-size:18px; color:#fff; font-weight:600;  }
+.table-your-selection .light-grey { width:100%; background-color:#f5f5f5; padding:12px 15px; margin:0; }
+.table-your-selection .light-grey h2 { padding:0; margin:0; font-family:'Open Sans', sans-serif; font-size:14px; color:#333; font-weight:700; }
+.table-your-selection .light-grey h2 span { float: right; padding:0; margin:0; font-family:'Open Sans', sans-serif; font-size:14px; color:#333; font-weight:400; }
+.table-your-selection .light-grey p { padding:0; margin:0; font-family:'Open Sans', sans-serif; font-size:14px; color:#333; font-weight:400; }
+.table-your-selection .light-grey p span { padding:0; margin:0; float: right; text-align: right; }
+.table-your-selection .dark-grey { background-color:#e0e0e0; }
+.table-your-selection .green-light { background-color:#d5edbd; }
+.table-your-selection .green-dark { background-color:#e5f6d4; }
+.table-your-selection .green { background-color:#7cc035; }
+.table-your-selection .green h2 { color:#fff; }
+.table-your-selection .green h2 span { color:#fff; }
+/*** End Congratulations ***/
+
+/*** Begin Share On Facebook Pop Up ***/
+.share-pop-up { margin:0; padding:0; }
+.share-pop-up .modal-dialog { max-width:563px; }
+.share-pop-up .modal-dialog-centered {
+    min-height: calc(100% - (2rem * 2));
+}
+.share-pop-up .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+}
+.share-pop-up .modal-content {
+    border-radius: 0;
+    border: none;
+    width: 563px;
+}
+
+.share-pop-up .modal-body { padding: 30px 15px; }
+.share-pop-up-section { margin:0 15px; padding:0; }
+.share-on-facebook { width:32%; display: inline-block; margin:0; text-align: center; }
+.share-on-facebook p { margin:10px 0 0 0; text-align: center; font-family:'Open Sans', sans-serif; font-size:15px; color:#333; font-weight:400; }
+.share-on-facebook p a { color:#333; }
+.share-facebook, .share-google-plus, .share-fa-twitter { width:60px; height:60px; display: inline-block;  margin:0; padding-top:16px; background-color:#5d82d1; }
+.share-google-plus { background-color:#eb5e4c; }
+.share-fa-twitter { background-color:#40bff5; }
+.share-facebook .fa-facebook, .share-google-plus .fa-google-plus, .share-fa-twitter .fa-twitter  { margin:0; padding:0; font-size:28px; color:#fff; }
+.share-google-plus .fa-google-plus  { margin:0; padding:0; font-size:26px; color:#fff; }
+.share-pop-up .share-pop-up-section .border-bottom { margin:25px 0; padding:0; border-bottom: solid 1px #cacaca; }
+.share-pop-up .share-pop-up-section h2 { margin:0; padding:0; text-align: center; font-family:'Open Sans', sans-serif; font-size:18px; color:#333; font-weight:400;  }
+.share-pop-up-section .input-group { margin-top:20px; }
+.share-pop-up-section .input-group input { border-radius: 0; border: solid 1px #d3d3d3; padding:15px 0 15px 15px; }
+.share-pop-up-section .input-group .input-group-prepend { background-color:#fff; padding:15px 20px; border: solid 1px #d3d3d3; border-left:0; cursor: pointer; }
+
+/*** End Share On Facebook Pop Up ***/
+
+/*** Begin Add Favorite Pop Up ***/
+.sweet-alert .form-group input {  border-radius: 0; border: solid 1px #d3d3d3; margin:0; padding:10px; font-family:'Open Sans', sans-serif; font-size:15px; color:#333; font-weight:400; }
+.sweet-alert h2 { margin:0; padding:0; text-align: center; font-family:'Open Sans', sans-serif; font-size:30px; color:#333; font-weight:700; }
+.sweet-alert p.text-muted { margin:10px 0 20px 0; text-align: center; font-family:'Open Sans', sans-serif; font-size:18px; color:#333 !important; font-weight:400; }
+.sweet-alert .sa-button-container button.cancel { border-radius: 0; margin:0; padding:13px 20px;  background-color:#333333; font-family:'Open Sans', sans-serif; font-size:16px; color:#fff; font-weight:800; letter-spacing:1px; text-transform: uppercase; }
+.sweet-alert .sa-button-container button.confirm { border-radius: 0; border: none; margin:0; padding:13px 26px;  background-color:#7cc035; font-family:'Open Sans', sans-serif; font-size:16px; color:#fff; font-weight:800; letter-spacing:1px; text-transform: uppercase; }
+.sweet-alert .sa-button-container button.confirm:focus { box-shadow: 0 0 0 .2rem rgba(40,167,69,.5); }
+
+/*** End Add Favorite Pop Up ***/
+
+
+
+
+/*** Begin Footer Section ***/
+.footer-section {  background-color: #f3f3f3; margin: 0; padding:15px 0; position: fixed; bottom: 0; width: 100%;}
+.footer-left-text { float: left; font-family: 'Roboto', sans-serif; font-size:14px; color:#666666; text-align: left; font-weight:400; }
+.footer-right-text { float: right; font-family: 'Roboto', sans-serif; font-size:14px; color:#666666; text-align: right; font-weight:400; }
+.footer-left-text a, .footer-right-text a { font-size:14px; color:#666; }
+
+.footer-wrapper { margin:0; padding:0; position: relative;  z-index:999; }
+.footer { width:100%; margin:0; padding:5px 0; border-top: solid 1px #cacaca; background-color:#fff; position: fixed; bottom: 0;  }
+.footer .avery-leftbox { margin:0; padding:0; }
+.footer .avery-leftbox .avery-leftbox-main { height:70px; margin:0; padding:0 20px 0 0; border-right: solid 1px #cacaca; float: left; }
+.footer .avery-leftbox .avery-leftbox-main:last-child { border-right:0;}
+.footer .avery-leftbox .avery-leftbox-main .avery-img-contain { margin-top:7px; }
+.footer .avery-leftbox .avery-leftbox-main .forbes-capretto-homes { margin:0 15px 0 0; padding:0; float: left; }
+.footer .avery-leftbox .avery-leftbox-main .forbes-capretto-homes img { height:45px; }
+.footer .avery-leftbox .avery-contain { margin:0; padding:0; float: left; }
+.footer .avery-leftbox .avery-contain h2 { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:18px; color:#333333; font-weight:700; }
+.footer .avery-leftbox .avery-contain p { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:15px; color:#333333; font-weight:400; }
+
+.footer .avery-leftbox .avery-contain .icon-box { float: left; margin:0 15px; padding:0; text-align: center; }
+.footer .avery-leftbox .avery-contain .icon-box:last-child { margin-right:0; }
+.footer .avery-leftbox .avery-contain .icon-box img { width:40px; }
+.footer .avery-leftbox .avery-contain .icon-box p { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:13px; color:#333333; font-weight:400; }
+.footer .avery-leftbox .avery-contain .icon-box h2 { margin-top:10px; padding:0; font-family: 'Open Sans', sans-serif; font-size:24px; color:#7cc035; font-weight:400; }
+.footer .avery-leftbox .avery-contain .mortgage { margin-top:22px; padding:0; float: left; }
+.footer .avery-leftbox .avery-contain .mortgage a { max-width:148px; margin:0; padding:12px 25px; font-family: 'Open Sans', sans-serif; font-size:16px; color:#333; font-weight:600; text-transform: uppercase; text-align: center; letter-spacing: 1px; border: solid 1px #7cc035; }
+
+.footer .floor-plan { float:right; margin-top:11px; }
+.footer .floor-plan .floor-plan-btn { margin:0 0 0 5px; float:left; }
+.footer .floor-plan .floor-plan-btn a { width:170px; position: relative; border-radius:0; background-color:#7cc035; padding:15px 16px; font-family: 'Open Sans', sans-serif; font-size:16px; line-height: 18px; color:#fff; text-align:left; font-weight:600; letter-spacing:1px; text-transform: uppercase; border: none; cursor: pointer;  }
+.footer .floor-plan .floor-plan-btn a:hover { background-color:#5d991f;  }
+.footer .floor-plan .floor-plan-btn i { font-size:26px; color:#fff; margin:0; position: absolute; right:10px; top:10px;  }
+/*** End Footer Section ***/
+
+/*** Begin mortgage-calculator-mobile ***/
+.footer-mobile-button { display: inline-block; width:100%; margin-top:10px; background-color: #fff; position:absolute; bottom:125px; text-align:center; padding:5px; }
+.footer-mobile-button a { width:150px; position: relative; border-radius:0; background-color:#7cc035; padding:10px 16px; font-family: 'Open Sans', sans-serif; font-size:16px; line-height: 18px; color:#fff; text-align:left; font-weight:600; letter-spacing:1px; text-transform: uppercase; border: none; cursor: pointer;  }
+.footer-mobile-button a:hover { background-color:#5d991f;  }
+.footer-mobile-button i { font-size:24px; color:#fff; margin:0; position: absolute; right:10px; top:6px;  }
+
+.mortgage-calculator-mobile { margin:0; padding:0; }
+.mortgage-calculator-mobile .modal-content { border-radius: 0; border: none; margin:0 auto; /*width:560px;*/ }
+.mortgage-calculator-mobile .modal-header { background-color:#2a2c30; margin:0; padding:12px 15px; border-radius:0; border: none; }
+.mortgage-calculator-mobile .modal-title {  margin:0; font-family: 'Open Sans', sans-serif; font-size:15px; color:#fff; font-weight:400; line-height:18px; }
+.mortgage-calculator-mobile button.close { text-align: right; margin-right:-28px; margin-top:-43px; cursor: pointer; outline: none; }
+.mortgage-calculator-mobile .close { position: absolute; right: 0; opacity:9; z-index: 999; }
+.mortgage-calculator-mobile button.close img { width:30px; }
+
+.mortgage-calculator-mobile .modal-dialog-centered { display: flex; align-items: center; }
+.mortgage-calculator-mobile .modal-dialog-centered { min-height: calc(100% - (2rem * 2)); }
+.mortgage-calculator-mobile .modal-dialog { max-width: 520px; }
+
+.mortgage-calculator-mobile .mortgage-calculator-form-box { margin:0 -12px; padding:0 12px; height:225px; overflow-y: auto;  }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group { margin-bottom:10px; position: relative; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group input { font-size:13px; border-radius:0; border: solid 1px #cacaca; padding:4px; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group .input-overlay-text { padding: 0; position: relative; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group select { height:30px; font-size:13px; padding:4px; border-radius:0; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group label { display: inline-block; margin-bottom: .4rem; width: 100%; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group label .fa-question-circle { font-size:15px; color:#989898; margin-left:4px; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group span { margin-left:25px; font-size:14px; color:#7cc035; font-weight: 500; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group .input-overlay-text_right { position: absolute; top:32px; right:9px; text-align: right; color: #aaa; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group .down-payment { width:78%; display: inline-block; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group .down-payment .year { position: absolute; right:24%; top:32px; color: #aaa; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group .down-payment input {  border-radius:0; border: solid 1px #cacaca; padding:4px; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group .downPercent { width:22%; margin-left:-5px; display: inline-block; }
+.mortgage-calculator-mobile .mortgage-calculator-form-box .form-group .downPercent input {  border-radius:0; border: solid 1px #cacaca; padding:4px; }
+
+.mortgage-calculator-mobile .mortgage-calculator-right-box { margin-top:0; padding:0; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .right-box-border { height: 100%; position: absolute; left:0px;  border-left: solid 1px #cacaca; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .insurance-chart { margin:0; padding:0; text-align: center; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box hr { margin:6px 0; border-color:#cacaca; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .mortgage-contain { margin:0; padding:0; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .mortgage-contain h2 { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:13px; color:#333; font-weight:600; text-transform: uppercase; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .mortgage-contain .base-price { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:14px; color:#707070; font-weight:400; line-height:24px; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .mortgage-contain .base-price span { margin:0 15px 0 0; padding:0; font-family: 'Open Sans', sans-serif; font-size:14px; color:#333333; font-weight:400; text-align: right; position: absolute; right:15px; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .mortgage-contain .price-text { margin:4px 0; padding:0; font-family: 'Open Sans', sans-serif; font-size:18px; color:#7cc035; font-weight:600; }
+.mortgage-calculator-mobile .mortgage-calculator-right-box .mortgage-contain .space { margin:0; display: inline-block; }
+
+.mortgage-calculator-mobile  .mortgage-calculator-form-box .form-group .switch-box { margin:0; }
+.mortgage-calculator .mortgage-calculator-form-box .form-group .switch-box p { margin:0; font-family: 'Open Sans', sans-serif; font-size:15px; color:#333333; font-weight:400; line-height:18px;  }
+.mortgage-calculator-mobile  .mortgage-calculator-form-box .form-group .switch-box i { color:#989898;  }
+.mortgage-calculator-mobile  .mortgage-calculator-form-box .form-group .switch-box .switch-round-box span { margin-left:0;  }
+.mortgage-calculator-mobile  .switch-box { width:100%; margin:0 0 10px 0; display: inline-block; }
+.mortgage-calculator-mobile  .switch-round-box { width:46px; float: left; margin-right:5px; }
+.mortgage-calculator-mobile  .switch { position: relative; display: inline-block; width:32px; height:20px; }
+.mortgage-calculator-mobile  .switch input {display:none;}
+.mortgage-calculator-mobile  .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #a1a1a1; -webkit-transition: .4s; transition: .4s; }
+.mortgage-calculator-mobile  .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left:2px; bottom:2px; background-color: white; -webkit-transition: .4s; transition: .4s; }
+.mortgage-calculator-mobile  input:checked + .slider { background-color: #7cc035; }
+.mortgage-calculator-mobile  input:focus + .slider { box-shadow: 0 0 1px #2196F3; }
+.mortgage-calculator-mobile  input:checked + .slider:before { -webkit-transform: translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px); }
+.mortgage-calculator-mobile  .slider.round { border-radius: 34px; }
+.mortgage-calculator-mobile  .slider.round:before { border-radius: 50%; }
+/*** End mortgage-calculator-mobile ***/
+
+/*** Begin Mobile Information ***/
+.mobile-information { margin:0; padding:0; }
+.mobile-information .modal-content { border-radius: 0; border: none; margin:0 auto; width:370px; }
+.mobile-information .modal-header { background-color: transparent; margin:0; padding:0; border-radius:0; border: none; }
+.mobile-information .modal-title {  margin:0; font-family: 'Open Sans', sans-serif; font-size:15px; color:#fff; font-weight:400; line-height:18px; }
+.mobile-information button.close { text-align: right; margin-right:-30px; margin-top:-30px; cursor: pointer; outline: none; }
+.mobile-information .close { position: absolute; right: 0; opacity:9; z-index: 999; }
+.mobile-information button.close img { width:30px; }
+
+.mobile-information .modal-dialog-centered { display: flex; align-items: center; }
+.mobile-information .modal-dialog-centered { min-height: calc(100% - (2rem * 2)); }
+.mobile-information .modal-dialog { /*max-width:370px;*/ }
+
+
+.mobile-information .mobile-info-box { display: inline-block; width:100%; margin:0; padding:0 0 15px 0; border-bottom: solid 1px #cacaca; background-color:#fff; position: relative; bottom: 0;  }
+.mobile-information .mobile-info-box-BorderNone { border-bottom:0 !important; padding:0; }
+.mobile-information .mobile-info-box .avery-leftbox { margin:0; padding:0; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-leftbox-main { height:auto; margin:0; padding:0; border-right:0; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-leftbox-main:last-child { border-right:0;}
+.mobile-information .mobile-info-box .avery-leftbox .avery-leftbox-main .avery-img-contain { margin-top:0px; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-leftbox-main .forbes-capretto-homes { margin:0 15px 0 0; padding:0; float: left; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-leftbox-main .forbes-capretto-homes img { height:45px; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain { width:100%; margin:0; padding:0; float: left; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain-text { margin:0; padding:0; float: left; }
+
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain-text h2 { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:18px; color:#333333; font-weight:700; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain-text p { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:15px; color:#333333; font-weight:400; }
+
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box { float: left; margin:0 10px; padding:0; text-align: center; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box:last-child { margin-right:0; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box img { width:40px; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box p { margin:0; padding:0; font-family: 'Open Sans', sans-serif; font-size:13px; color:#333333; font-weight:400; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box h2 { margin:10px 0 0 0; padding:0; font-family: 'Open Sans', sans-serif; font-size:20px; color:#7cc035; font-weight:400; }
+.mobile-information .mobile-info-box .mortgage { margin-top:22px; padding:0; float: right; }
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .mortgage a {  margin:0; padding:10px 25px; font-family: 'Open Sans', sans-serif; font-size:14px; color:#333; font-weight:600; text-transform: uppercase; text-align: center; letter-spacing: 1px; border: solid 1px #7cc035; }
+
+
+/*** End Mobile Information ***/
+
+
+/* CUSTOM CODE */
+#mortgage-collapse-wrapper{
+  overflow: hidden;
+}
+
+#mortgage-collapse-wrapper{
+  overflow: hidden;
+}
+
+.canvas-spoofer{
+position: absolute;
+}
+
+.collapse-mortgage{
+    transition: all 1s linear;
+}
+
+.collapse-mortgage--expanded{
+    height: 100%;
+    overflow: hidden;
+}
+
+.collapse-mortgage--collapsed{
+    height: 0px;
+}
+
+
+/*Loading*/
+div#fs-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 99999;
+}
+
+.fs-loading-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform : translate(-50%,-50%);
+}
+
+
+.item {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.item-1 {
+  background-color: #FA5667;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: item-1_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
+}
+
+.item-2 {
+  background-color: #7A45E5;
+  top: 0;
+  right: 0;
+  animation: item-2_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
+}
+
+.item-3 {
+  background-color: #1B91F7;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  animation: item-3_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
+}
+
+.item-4 {
+  background-color: #FAC24C;
+  bottom: 0;
+  left: 0;
+  animation: item-4_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
+}
+
+@keyframes item-1_move {
+  0%, 100% {transform: translate(0, 0)} 
+  25% {transform: translate(0, 50px)} 
+  50% {transform: translate(50px, 50px)} 
+  75% {transform: translate(50px, 0)} 
+}
+
+@keyframes item-2_move {
+  0%, 100% {transform: translate(0, 0)} 
+  25% {transform: translate(-50px, 0)} 
+  50% {transform: translate(-50px, 50px)} 
+  75% {transform: translate(0, 50px)} 
+}
+
+@keyframes item-3_move {
+  0%, 100% {transform: translate(0, 0)} 
+  25% {transform: translate(0, -50px)} 
+  50% {transform: translate(-50px, -50px)} 
+  75% {transform: translate(-50px, 0)} 
+}
+
+@keyframes item-4_move {
+  0%, 100% {transform: translate(0, 0)} 
+  25% {transform: translate(50px, 0)} 
+  50% {transform: translate(50px, -50px)} 
+  75% {transform: translate(0, -50px)} 
+}
+
+
+/*End Loading*/
+
+#finish-modulesz{
+  color:#fff!important;
+}
+
+
+.top-img--custom{
+  text-align: center;
+}
+
+@media (min-width: 991px) {
+  #interactive-wrapper{
+    width : calc(100% - 280px);
+  }
+  }
+
+.xfloor-list{
+  position: relative;
+}
+
+.preventor {
+    width: 100%;
+    height: 43px;
+    background: transparent;
+    /*background: rgba(255,0,0,0.5);*/
+    position: absolute;
+    cursor: not-allowed;
+    z-index: 999;
+}
+.depends-preventor {
+    width: 100%;
+    height: 43px;
+    background: transparent;
+    /*background: rgba(0,255,0,0.5);*/
+    position: absolute;
+    cursor: not-allowed;
+    z-index: 999;
+}
+.preventor-cathe {
+    width: 100%;
+    height: 43px;
+    background: transparent;
+    /*background: rgba(0,255,0,0.5);*/
+    position: absolute;
+    cursor: not-allowed;
+    z-index: 999;
+}
+
+
+
+
+/* ./CUSTOM CODE */
+
+

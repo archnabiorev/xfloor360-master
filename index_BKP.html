@@ -1,0 +1,631 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <title>xFloor360 | Forbes Capretto Homes</title>
+    <link rel="shortcut icon" href="http://dev.xdesign360.com/favicon.png" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/nouislider/distribute/nouislider.min.css" />
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  
+    <script>
+window.GLOBAL_FINAL_HOMEX = false;
+var urlParams;
+    (window.onpopstate = function () {
+        var match,
+            pl     = /\+/g,  // Regex for replacing addition symbol with a space
+            search = /([^&=]+)=?([^&]*)/g,
+            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+            query  = window.location.search.substring(1);
+
+        urlParams = {};
+        while (match = search.exec(query))
+           urlParams[decode(match[1])] = decode(match[2]);
+    })();
+    
+    
+
+       function uuid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4() + '_' + s4() + '_' + s4() + '_' +
+            s4() + '_' + s4() + s4() + s4();
+        }
+    window.MEGAQUEUE = [];
+      var FLOORXDATA = [ 
+{
+  name : "Avery",
+  image : "images/avery.png",
+  bedrooms : 3,
+  bathrooms : 2,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 1812,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_s9eft4aaa"], //"Floor_y5e2pxel8" was basement
+
+},
+
+
+{
+  name : "Lexinton",
+  image : "images/lexinton.png",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2620,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_scdxlnh09" , "Floor_pm444uazi"],
+
+},
+
+{
+  name : "Saxton",
+  image : "images/saxton.png",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2490,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_mikvlav3x" , "Floor_mex2rtxla"],
+
+},
+
+
+
+{
+  name : "Ryley",
+  image : "images/saxton.png",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2490,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_97xn6tjwr" , "Floor_522aagcxq"],
+
+},
+
+
+
+{
+  name : "Fairway",
+  image : "https://firebasestorage.googleapis.com/v0/b/forbes-xhome.appspot.com/o/k02k3p5a4.png?alt=media&token=a2dfbfa3-4630-40a4-aea5-182bb470df0b",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2490,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_qr6rmpet9"],
+
+},
+
+
+{
+  name : "Crestwood",
+  image : "https://firebasestorage.googleapis.com/v0/b/forbes-xhome.appspot.com/o/3yrchnm2x.png?alt=media&token=69df4117-05d4-45e2-965d-5d7f2b153b42",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2490,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_bh1kuwaau"],
+
+},
+
+
+
+{
+  name : "Monore",
+  image : "https://firebasestorage.googleapis.com/v0/b/forbes-xhome.appspot.com/o/o4vejtrt0.png?alt=media&token=6f92cf76-c8d9-45ec-b947-1ed6da857ea7",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2490,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_8kquve10j"],
+
+},
+
+{
+  name : "Bradly",
+  image : "https://firebasestorage.googleapis.com/v0/b/forbes-xhome.appspot.com/o/xzemqc0hb.png?alt=media&token=1d457611-2f03-4e81-812f-73c6d16a8936",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2490,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_uetr90ejo" , "Floor_a7aikam7x"],
+
+},
+
+
+{
+  name : "Hennefield",
+  image : "http://forbes.xhome360.com/images/base-elevations/hennefield.jpg",
+  bedrooms : 4,
+  bathrooms : 2.5,
+  cars : 2,
+  main_floor : 1248,
+  price : "363,000",
+  upper_floor : 1372,
+  floors : 2,
+  total : 2490,
+  garage : 2, 
+  // planID : ["FLOORX_TEMPLATE_8508518b_3b37_c418_e38c_598e81092d1c" , "FLOORX_TEMPLATE_1cb8a27f_f70c_79e6_3ff4_20eca083dd31"],
+  planID : ["Floor_ex1ceai81" , "Floor_kksawochk"],
+
+}
+
+// {
+//   name : "Kingston-II",
+//   image : "floorx-data/data/kingston-II.jpg",
+//   bedrooms : 3,
+//   bathrooms : 2,
+//   cars : 3,
+//   main_floor : false,
+//   price : "283,000",
+//   upper_floor : false,
+//   floors : 1,
+//   total : 2128,
+//   garage : 3, 
+//   planID : ["Floor_qnfjq2b4t"],
+
+// },
+// {
+//   name : "Springwood",
+//   image : "floorx-data/data/springwood.jpg",
+//   bedrooms : 3,
+//   bathrooms : 2,
+//   cars : 3,
+//   price : "191,000",
+//   main_floor : 2083,
+//   upper_floor : false,
+//   floors : 1,
+//   total : 2083,
+//   garage : 3, 
+//   planID : ["FLOORX_TEMPLATE_f6c340cc_1219_fa83_210f_0c8d58c3948b"],
+
+// }
+
+  ];
+
+/*================================
+=            DATABASE            =
+================================*/
+var DB = {};
+
+
+
+/*=====  End of DATABASE  ======*/
+
+
+
+
+    </script>
+
+
+  </head>
+  <body ng-app="floorxApp">
+    <div id="fs-loading">
+    <div class="fs-loading-content center-middle">
+      <p class="fs-loading-icon"> 
+      
+          <div class="item item-1"></div>
+          <div class="item item-2"></div>
+          <div class="item item-3"></div>
+          <div class="item item-4"></div>
+      
+      </p>
+      <p class="fs-loading-text"> Loading </p>
+    </div>
+  </div>
+    
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container-fluid">
+    <div class="row">
+
+    <div class="col-sm-12" id="header">
+              <div class="brand-image text-center pull-left">
+                <a href="http://forbes.xfloor360.com"><img src="images/forbes-capretto.png" class="img-responsive"/></a>
+              </div>
+                  <div class="brand-login text-center pull-right">
+                  
+                      <a ng-if="!authed" href data-toggle="modal" data-target="#Loginmodal" class="loginbtn btn btn-success"> <i class="fa fa-user"></i><span class="hidden-text"> Login </span> </a>
+
+                      <!-- <a  onClick="swal('In development' , 'This module is currently under development' , 'warning');" class="loginbtn btn btn-success"> <i class="fa fa-user"></i><span class="hidden-text"> Login </span> </a> -->
+
+                            
+                      <a ng-if="authed" href="/#!/profile" class="userafterlogin"> 
+                        
+                        <img ng-if="user.photoURL" src="{{user.photoURL}}" class="img-circle img-user" />
+
+                        <img ng-if="!user.photoURL" src="images/default-user-image.png" class="img-circle img-user" />
+
+                        <span class="user-info">
+                          <span class="UserName"> {{user.displayName}} </span>
+                          <span class="UserPostion"> USER </span> 
+                        </span>
+                      </a>
+
+
+
+                </div>
+                <!-- <div id="sidebar" class="pull-right" onclick="window.open('http://dashboard.biorev.com');">
+                    <div class="sb-toggler "> 
+                
+                
+                    <img src="images/assets/images/a4.png" alt="">
+                
+                    </div>
+                
+                  </div> -->
+            </div>
+      
+    </div>
+    </div>
+      
+
+
+
+    <div ng-view=""></div>
+
+
+
+
+<!-- MODALS -->
+
+<div id="Loginmodal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        
+        
+        <div class="modal-form">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+               <div class="col-sm-12">
+              
+                <ul class="nav md-pills nav-justified pills-secondary">
+                <li class="nav-item active">
+                    <a class="nav-link " data-toggle="tab" href="#panel4" role="tab" onclick="return false;">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#panel11" role="tab" onclick="return false;">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#panel12" role="tab" onclick="return false;">Forget Password</a>
+                </li>
+            </ul>
+
+            <!-- Tab panels -->
+            <div class="tab-content">  
+
+                <!--Panel 1-->
+                <div class="tab-pane fade in active" id="panel4" role="tabpanel">
+                    <form ng-submit="signin()" id="signup-form">
+
+                        <input type="email" ng-model="si_email" name="email" placeholder="Enter Your Email"/>
+                        <input type="password" ng-model="si_password" name="password" placeholder="Your Password"/>
+                        <input type="submit" value="Login"/>
+
+                        <hr/>
+                          <div class="row social-wrap a">
+                         <div class="col-sm-6">
+                            <button type="button" ng-click="fblogin()" id="facebook">Sign in with Facebook</button>
+                        </div>
+                          <!-- <hr/> -->
+                          <div class="col-sm-6">
+                            <button type="button" ng-click="googlelogin()" id="googleplus">Sign in with Google</button>
+                        </div>
+                      </div>
+
+
+
+                    </form>
+
+                </div>
+                <!--/.Panel 1-->
+
+                <!--Panel 2-->
+                <div class="tab-pane fade" id="panel11" role="tabpanel">
+                  
+                    <form id="sign-up-form"  ng-submit="signup()" name="sign_up_form">
+                        <input type="text" ng-model="su_name" name="name" placeholder="Enter Your Full Name" required="" />
+                        <input type="email" ng-model="su_email" name="email" placeholder="Enter Your Email" required="" />
+                        <input type="password" ng-model="su_password" name="password" placeholder="Your Password" required="" />
+                        <input type="submit" value="Sign Up"  />
+                        <hr/>
+                          <div class="row social-wrap a">
+                         <div class="col-sm-6">
+                            <a type="button" ng-click="fblogin()" id="facebook">Signup with Facebook</a>
+                        </div>
+                          <!-- <hr/> -->
+                          <div class="col-sm-6">
+                            <a ng-click="googlelogin()" type="button" id="googleplus">Signup with Google</a>
+                        </div>
+                      </div>
+
+                  </form>
+  <br>
+                </div>
+                <!--/.Panel 2-->
+
+                <!--Panel 3-->
+                <div class="tab-pane fade" id="panel12" role="tabpanel">
+                     <form ng-submit="resetpassword();" id="forgot-form">
+                     <br/>
+                        <small>We will send you a reset password email, kindly check your email and follow the given instruction.</small>
+                        <input ng-model="email" type="email" name="email" placeholder="Enter Your Email" required=""/>
+                        <input type="submit" value="Proceed"/>
+                </form>
+                  <br>
+
+                </div>
+                <!--/.Panel 3-->
+
+              
+
+            </div>
+                                        
+                         
+           </div>
+           <div class="col-sm-6 hide hidden" style="display: none;">
+                asfafsf
+             </div>
+           
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ./MODALS -->
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+       <script>
+// Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAgLc7S4GYtaaq5UVFp3Ntv3FWETybHS-M",
+          authDomain: "forbes-xhome.firebaseapp.com",
+          databaseURL: "https://forbes-xhome.firebaseio.com",
+          projectId: "forbes-xhome",
+          storageBucket: "forbes-xhome.appspot.com",
+          messagingSenderId: "436329022030"
+        };
+        firebase.initializeApp(config);
+        var storageRef = firebase.storage().ref();
+        const floorID = "Floor_lnpszjcf3";
+       </script>
+    
+
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+  
+    <script src="https://code.createjs.com/createjs-2014.12.12.min.js"></script>
+    <script src="bower_components/handlebars/handlebars.min.js"></script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jQuery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jssor-slider/js/jssor.slider.min.js"></script>
+    <script src="bower_components/nouislider/distribute/nouislider.js"></script>
+    <script src="bower_components/mustache.js/mustache.js"></script>
+    <script src="bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <script src="bower_components/jquery.panzoom/dist/jquery.panzoom.js"></script>
+    <script src="bower_components/blockUI/jquery.blockUI.js"></script>
+    <script src="bower_components/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="bower_components/wnumb/wNumb.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- CUSTOM  -->
+    <script src="scripts/floorx.js"></script>
+    <script src="scripts/script.js"></script>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/services/userservice.js"></script>
+        <!-- endbuild -->
+  
+        <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/controllers/forgot.js"></script>
+        <script src="scripts/controllers/favorites.js"></script>
+        <script src="scripts/controllers/final.js"></script>
+        
+        
+       
+        <script>
+          Handlebars.registerHelper('json', function(context) {
+            return JSON.stringify(context);
+          });
+
+          Handlebars.registerHelper('dependantElement', function(context) {
+              if( typeof context == "string" ){
+                return '';
+              }
+              var sendBack = '';
+              for( var i in context  ){
+                sendBack += 'dependent-'+context[i]+'-element'
+              }
+              return sendBack;
+          });
+        /*===============================================
+        =            GENERAL CONFING INITERS            =
+        ===============================================*/
+          
+          function generalConfig(){
+
+            if( window.location.href.indexOf('id') != -1  ){
+  var __base = window.location.href.split('?id=')[1].split('&name=');
+  __base2 = __base[1].split('&token=');
+  __base.splice(1,1);
+  __base = __base.concat(__base2);
+  
+  var sessionid = __base[0];
+  // var sessionid = urlParams.id;
+  const name = __base[1];
+  window.TOKEN = __base[2].trim();
+  if( __base[2].trim().length > 5 ){
+    firebase.auth().signInWithCustomToken(__base[2]).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode);
+      
+      });
+
+  }
+
+  var toUse = '';
+
+  for( var i in FLOORXDATA ){
+    var inst = FLOORXDATA[i];
+    if( inst.name == name ){
+      toUse = inst;
+    }
+  }
+
+  FLOORXDATA = [toUse];
+
+  // $('.single-elevation').
+        //dbModel = dbModel(firebase);
+
+    firebase.database().ref('forbesxHome/'+sessionid).once('value').then(function(resp){
+        var data = resp.val();
+        GLOBAL_IMAGE = data.image;
+        GLOBAL_FINAL_HOMEX = data;
+        console.log(data);
+        $(function(){
+            $('.front-image-wrapper').find('img').attr('src' , GLOBAL_IMAGE);
+            $('#elevation-wrapper .single-elevation').eq(0).find('img').attr('src' , GLOBAL_IMAGE);
+        });
+        var FX = new floorx();
+        
+    }).catch(function(err){
+      alert('Session data corrupt. Reverting to default');
+      // GLOBAL_IMAGE = "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/0000000aaaaaKeegan%20Base%20Image.jpg?alt=media&token=31a717ee-e6fd-4246-a08a-1be12a3b0b81";
+      var FX = new floorx();
+    });
+    
+    /*=====  End of FIREBASE  ======*/
+  $('#next-btn').show();  
+}else{
+  
+  setTimeout(function(){
+    $('#next-btn').hide();    
+    // GLOBAL_IMAGE  = "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/0000000aaaaaKeegan%20Base%20Image.jpg?alt=media&token=31a717ee-e6fd-4246-a08a-1be12a3b0b81";
+  var FX = new floorx();
+  },2000);
+  
+  // $('#next-btn').hide();
+  
+  
+}
+
+          }
+        
+        
+        /*=====  End of GENERAL CONFING INITERS  ======*/
+        
+
+       /*================================
+    =            FIREBASE            = */
+    window.GLOBAL_IMAGE = FLOORXDATA[0].image;
+
+    firebase.database().ref('/forbeshomes/xFloor360/floors').once('value').then(function(snap){
+        window.FLOORSLIST = snap.val()
+        generalConfig()
+    }).catch(function(err){
+      alert('An error occured')
+      console.log(err)
+    })
+
+    </script>
+
+
+</body>
+</html>

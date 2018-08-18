@@ -1,0 +1,53 @@
+						<ul class="nav navbar-nav navbar-left">
+							                    <li>
+							                        <a href="javascript:void(0)" data-toggle="search">
+							                            {{total}} Sq. Ft.
+							                        </a>
+							                    </li>
+							                    <li>
+							                        <a href="#">
+							                           {{floors}} Floor(s)
+							                        </a>
+							                    </li>
+							                    <li>
+							                        <a href="#">
+							                           {{bedrooms}} Bed(s)
+							                        </a>
+							                    </li>
+							                    <li>
+							                        <a href="#">
+							                           {{bathrooms}} Bath(s)
+							                        </a>
+							                    </li>
+							                    <li>
+							                        <a href="#">
+							                          {{garage}} Car Garage(s)
+							                        </a>
+							                    </li>
+							          
+							          </ul>    
+							          <ul class="nav navbar-nav navbar-right">
+							                   
+							                    <!-- <li>
+							                        <a href="javascript:void(0)">
+							                           <i class="fa fa-refresh" aria-hidden="true"></i>
+							                        </a>
+							                    </li>
+							                     <li>
+							                        <a href="javascript:void(0)" >
+							                       		<i class="fa fa-external-link" aria-hidden="true"></i>
+							                        </a>
+							                    </li> -->
+							           			<li>
+							                        <a href="javascript:void(0)" onclick="window.print();" >
+							                          <i class="fa fa-print" aria-hidden="true"></i>
+							                        </a>
+							                    </li>
+							                     <li>
+							                        <a href="javascript:void(0)" onClick="$('.loginbtn').trigger('click');">
+							                       		<i class="fa fa-floppy-o" aria-hidden="true"></i>
+							                        </a>
+							                    </li>
+
+							            
+							          </ul>

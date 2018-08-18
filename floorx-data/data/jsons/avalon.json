@@ -1,0 +1,12 @@
+{
+	name : "Avalon",
+	bedrooms : 4,
+	bathrooms : 2.5,
+	cars : 2,
+	main_floor : 1075,
+	upper_floor : 1252,
+	total : 2327,
+	garage : 2, 
+	planID : "",
+
+}

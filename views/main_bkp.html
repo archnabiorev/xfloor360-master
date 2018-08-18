@@ -1,0 +1,380 @@
+<script>
+  $(function(){
+    setTimeout(function(){
+      $(document).scrollTop(0);  
+    },300);
+    
+  });
+</script>
+
+<section class="main fullwidth background-container">
+      
+
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-sm-8 col-md-9 col-lg-10 widthDesk">
+            <div class="row">
+              
+                <div id="sliderJquery" class="hide" >
+                    
+                    
+                <nav class="navbar navbar-ct-blue custom-navbar" role="navigation" id="menus">
+                   
+                      <div class="navbar-header">
+                     <!-- 
+                      ############# Mobile Button ###############
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                       <span class="sr-only">Toggle navigation</span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                     </button> -->
+                     
+                      </div>
+                      <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                      </div><!-- /.navbar-collapse -->
+                
+                  </nav>
+              <!--  end navbar -->
+                      
+                  </div>
+          
+                <div class="clearfix"></div>
+            </div>
+              <div class="clearfix"></div>
+            <div class="row">
+        
+              <div class="col-sm-12">
+                <div class="main-stage text-center" id="some_id"> 
+
+                    <!-- Begin:row  -->
+                    <div id="right-wrapper" class="row">
+                        
+                    </div>
+
+                    <!-- End:row  -->
+
+                    <!-- Begin:Row for interactive -->
+
+                    <div id="interactive-pre-wrapper" class="row" style="display:none;">
+                        
+                    </div>
+
+                    <!-- End:Row for interactive -->
+
+                </div>
+              
+
+
+              </div>
+          
+            </div>
+
+        </div>
+        <div class="col-sm-4 col-md-3 col-lg-2 dark-bg viewhieght" id="MobileOPtions">
+            
+            <div class="brand-text height52 padding10 hide">
+              <h2 class="text-uppercase text-center">Aspen</h2>
+            </div>
+            <!-- <div class="brand-sub-text">
+              <h3 class="text-uppercase text-center" id="elevation-name"></h3>
+            </div> -->
+
+            <div class="row">
+              <ul class="nav nav-tabs custom-tabs">
+                  <li class="active"><a id="elevation-tab" data-toggle="tab" href="#home" onclick="return false;"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-xs hide">Elevation</span></a></li>
+                  <li><a id="floor-tab" onclick="return false;" data-toggle="tab" href="#menu1"><i class="fa fa-object-group" aria-hidden="true"></i> <span class="hidden-xs hide">Floor</span></a></li>
+                  <!-- <li><a data-toggle="tab" href="#menu2"><i class="fa fa-th-large" aria-hidden="true"></i> Options</a></li>
+                  <li><a data-toggle="tab" href="#menu3"><i class="fa fa-bed" aria-hidden="true"></i> Furniture</a></li> -->
+                  <li><a data-toggle="tab" id="notes-tab" onclick="return false;" href="#menu4"><i class="fa fa-pencil-square" aria-hidden="true"></i><span class="hidden-xs hide"> Notes</span></a></li>
+                </ul>
+
+                <div class="tab-content col-scroll">
+                  <div id="home" class="tab-pane fade in active">
+                  <div class="brand-text">  
+                      <h3>Elevation   <span class="visible-xs" id="close">X</span></h3>
+                   </div>
+                  <div class="outter-wrapper">
+
+                       <div id="elevation-wrapper">
+
+
+                        
+                       </div>
+
+                     </div>
+
+
+                  </div>
+                  <div id="menu1" class="tab-pane fade">
+                    <div class="brand-text">
+                      <h3> Floor  <span class="visible-xs" id="close">x</span></h3>
+                  </div>
+                  <div class="outter-wrapper-y">
+                    <ul class="e-variations " role="tablist" id="floorvars-wrapper"  aria-multiselectable="true">
+                          
+                          
+                        
+                        </ul>
+                      </div>
+                  <div class="clearfix"></div>
+                    <div class="desc-box hide">
+                      <div class="desc-box-title">
+                        View The Floor
+                      </div>
+
+                      <div class="desc-box-content">
+                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </div>
+      
+                    </div>
+                  </div>
+                 
+                  <div id="menu4" class="tab-pane fade">
+                      <div class="brand-text">
+                      <h3  >Note <span class="visible-xs" id="close">X</span></h3>
+                  </div>
+                    <form class="notes" id="notes-form">
+                      <textarea name="textarea" id="note-textarea" cols="30" rows="6" class="form-control custom" placeholder="Enter Message" required=""></textarea>
+                    <input type="button" id="clear-button" class="pull-left btn btn-default btn-sm" value="Clear">
+                    <input type="submit" class="pull-right btn btn-success btn-sm" value="Save">
+                    <div class="clearfix"></div>
+                    </form>
+
+                <!--    <div class="desc-box hide">
+                                      <div class="desc-box-title">
+                                        View The Floor
+                                      </div>
+                
+                                      <div class="desc-box-content">
+                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                      </div>
+                      
+                                    </div>  -->
+                  </div>
+                </div>
+
+            </div>
+
+          </div>
+      </div>
+
+
+  </section>  
+
+
+
+<footer id="footer-wrapper" class="hidden-xs  background-container">
+
+    <div class="footer-center">
+
+        <nav class="navbar  ">
+
+            <div class="container-fluid">
+
+                <div class="navbar-header rightborder">
+
+                    <div class="footer-icon" href="#">
+                        <img src="images/assets/images/cooking.svg" class="kitchen pull-left" width="50">
+                        <span class="big-heading" id="footer-home-name">Bradly ACM House</span>
+                        <span class="sub-heading dullcolor">Forbes Capretto Homes</span>
+                    </div>
+                </div>
+                <div class="deails-icons rightborder">
+                    <div class="f-icon">
+                        <img src="images/assets/icons/area.svg">
+                        <span class="titles"><span id="footer-area"></span> Sq. ft.</span>
+
+                    </div>
+                    <div class="f-icon">
+                        <img src="images/assets/icons/bed.svg">
+                        <span class="titles"><span id="footer-beds">2</span> Bedrooms</span>
+                    </div>
+                    <div class="f-icon">
+                        <img src="images/assets/icons/bath.svg">
+                        <span class="titles"> <span id="footer-bath">2</span> Bathrooms</span>
+                    </div>
+                    <div class="f-icon">
+                        <img src="images/assets/icons/garage.svg">
+                        <span class="titles">1 Garage</span>
+                    </div>
+                </div>
+
+                <div class="price price-left hide">
+
+                    <span class="big-heading text-secondary">$<span data-base-price="263000" id="UpdatedPrice">263,000</span></span>
+                    <span class="sub-heading">$<span class="total-emi-counter">4,521</span> / month</span>
+
+                </div>
+                <div class="price price-left mt6 hide">
+
+                    <div class="dropdown">
+                        <button class="round-btn dropdown-toggle" type="button" data-toggle="modal" data-target="#MortgageModal">Mortgage
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="price pull-right mt6">
+
+                    <div class="dropdown">
+                      
+                      <a id="finish-modulesz" style="margin-left: 10px!important;" class="round-btn fill-secondary text-uppercase text-center pull-right">
+                                                  Finish <i class="glyphicon glyphicon-menu-right"></i>
+                                                </a>
+                    <a id="next-btn" class="round-btn fill-secondary text-uppercase text-center pull-right">
+                                                  <i class="glyphicon glyphicon-menu-left pull-left"></i> Exterior 
+                                                </a>
+                      
+                      
+                        <a class="round-btn fill-dull circlebtn hide" href="#">
+                            <i class="glyphicon glyphicon-menu-left"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+    <div class="clearfix"></div>
+</footer>
+
+
+
+<div class="modal fade" id="MortgageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Mortgage Calculator</h4>
+      </div>
+      <div class="modal-body">
+            
+        <div class="big-heading pricing text-center">
+          <!-- <div class="" id="mortgagePricing"> $263,000 </div> -->
+        
+       
+        </div>
+          <div class="mort-content row">
+               <div class="col-sm-7">
+
+                   <div class="details row">
+                      <div class="subtitle pricing"> Down Payment </div>
+                   
+                     <div class="col-xs-4  pricebox">
+                        $<span  id="pslider-value"> 8956</span>  
+                     </div>
+                      <div class="col-xs-8">
+                        <div class="pslider" id="pslider" data-min="0" data-max="263000" data-start="40000"  data-decimal="0"></div>
+                      </div>
+                  </div>
+
+                  
+                  <div class="details row">
+                      <div class="subtitle pricing"> Interest Rate </div>
+                   
+                     <div class="col-xs-4  pricebox">
+                        <span  id="pslider1-value"> 0.00</span>%
+                     </div>
+                     <div class="col-xs-8">
+                        <div class="pslider" id="pslider1"  data-min="0" data-max="20" data-start="4"  data-decimal="2"></div>
+                      </div>
+                  </div>
+
+                  
+                  <div class="details row">
+                      <div class="subtitle pricing"> Loan Term </div>
+                   
+                     <div class="col-xs-4  pricebox">
+                        <span  id="pslider2-value"> 20</span> Year 
+                     </div>
+                     <div class="col-xs-8">
+                      <div class="pslider" id="pslider2"  data-min="0" data-max="30" data-start="5" data-decimal="0"></div>
+                    </div>
+                  </div>
+
+                  
+                 <!--  <div class="details row">
+                     <div class="subtitle pricing"> Property Taxes </div>
+                  
+                    <div class="col-xs-4  pricebox">
+                       <span  id="pslider3-value"> 1 </span>% 
+                    </div>
+                    <div class="col-xs-8">
+                       <div class="pslider " id="pslider3"  data-min="00.00" data-max="20.00"></div>
+                   </div>
+                 </div>
+                  -->
+                  
+                  
+                  
+                  <hr/>
+
+
+
+                </div>
+                 <div class="col-sm-5">
+                  <div class="img-container img-round">
+                    <img src="images/assets/images/Home.jpg" class="img-responsive img-round">
+                  </div>
+                  <p>TOTAL PRICE OF HOME</p>
+                  <div class="big-heading">$<span id="total-price-counter" class="loanAmountCounter">297,000</span></div>
+ 
+                       <table class="table">
+                    <tr>
+                 
+                       <td>Base Price</td>
+                       <td>$<span id="popup-base-price">263,000</span> </td>
+                   
+                      <!-- <td><span id="loanTermCounter">30</span> Year</td> -->
+                    </tr>
+                    <!-- <tr>
+                      <td>Loan Amount</td>
+                      <td>$<span class="loanAmountCounter">297,000</span></td>
+                    </tr> -->
+                    <tr>
+                      <td>Designs Selected</td>
+                      <td>$<span id="popup-options-selected">0</span></td>
+                    </tr>
+ 
+                  </table>
+                 
+                 
+ 
+ 
+<!--
+                  <table class="table">
+                    <tr>
+                      <td>Principle & Interest </td>
+                      <td>$ 1051</td>
+                    </tr>
+                    <tr>
+                      <td>Taxes & Insurance </td>
+                      <td>$ 649</td>
+                    </tr>
+                    <tr>
+                      <td>PMI </td>
+                      <td>$ 00</td>
+                    </tr>
+                  </table> -->
+ 
+                 <!--  <p>TOTAL</p> -->
+                  <p  class="text-center">Monthly Estimated Payment</p>
+                  <div class="big-heading">$<span class="total-emi-counter">17,000</span></div>
+                </div>
+        </div>
+        </div>
+      </div>
+   
+    </div>
+  </div>
+
+
+

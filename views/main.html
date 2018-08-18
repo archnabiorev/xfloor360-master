@@ -1,0 +1,669 @@
+<script>
+  $(function(){
+    $(document).scrollTop(0);
+
+Chart.pluginService.register({
+  beforeDraw: function (chart) {
+    if (chart.config.options.elements.center) {
+      //Get ctx from string
+      var ctx = chart.chart.ctx;
+
+      //Get options from the center object in options
+      var centerConfig = chart.config.options.elements.center;
+      var fontStyle = centerConfig.fontStyle || 'Arial';
+      var txt = centerConfig.text;
+      var color = centerConfig.color || '#000';
+      var sidePadding = centerConfig.sidePadding || 20;
+      var sidePaddingCalculated = (sidePadding/100) * (chart.innerRadius * 2)
+      //Start with a base font of 30px
+      ctx.font = "30px " + fontStyle;
+
+      //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+      var stringWidth = ctx.measureText(txt).width;
+      var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+      // Find out how much the font can grow in width.
+      var widthRatio = elementWidth / stringWidth;
+      var newFontSize = Math.floor(30 * widthRatio);
+      var elementHeight = (chart.innerRadius * 2);
+
+      // Pick a new font size so it will not be larger than the height of label.
+      var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+      //Set font settings to draw it correctly.
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+      var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+      ctx.font = fontSizeToUse+"px " + fontStyle;
+      ctx.fillStyle = color;
+
+      //Draw text in center
+      ctx.fillText(txt, centerX, centerY);
+    }
+  },
+  afterUpdate: function (chart) {
+    console.log('update called');
+    if (chart.config.options.elements.center) {
+      //Get ctx from string
+      var ctx = chart.chart.ctx;
+
+      //Get options from the center object in options
+      var centerConfig = chart.config.options.elements.center;
+      var fontStyle = centerConfig.fontStyle || 'Arial';
+      var txt = centerConfig.text;
+      var color = centerConfig.color || '#000';
+      var sidePadding = centerConfig.sidePadding || 20;
+      var sidePaddingCalculated = (sidePadding/100) * (chart.innerRadius * 2)
+      //Start with a base font of 30px
+      ctx.font = "30px " + fontStyle;
+
+      //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+      var stringWidth = ctx.measureText(txt).width;
+      var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+      // Find out how much the font can grow in width.
+      var widthRatio = elementWidth / stringWidth;
+      var newFontSize = Math.floor(30 * widthRatio);
+      var elementHeight = (chart.innerRadius * 2);
+
+      // Pick a new font size so it will not be larger than the height of label.
+      var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+      //Set font settings to draw it correctly.
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+      var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+      ctx.font = fontSizeToUse+"px " + fontStyle;
+      ctx.fillStyle = color;
+
+      //Draw text in center
+      ctx.fillText(txt, centerX, centerY);
+    }
+  }
+});
+
+var data = {
+        labels: ["Taxes", "Insurance", "HOA", "P&I"],
+        datasets: [{
+            data: [0, 0, 0, 1280],
+            backgroundColor: [
+                '#5CB0F1',
+                '#2992E3',
+                '#D8F0F8',
+                '#0077DD'
+            ],
+            borderColor: [
+              '#5CB0F1',
+                '#2992E3',
+                '#D8F0F8',
+                '#0077DD'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+
+var ctx = $.find("#mortgage-chart")[0].getContext('2d');
+window.donutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options : {
+      legend : {
+        display : true,
+        position : 'bottom'
+      },
+      tooltips : {
+        enabled : true,
+        position : 'nearest'
+      },
+
+     elements: {
+      center: {
+      text: '$1,280',
+      color: '#36A2EB', //Default black
+      fontStyle: 'Helvetica', //Default Arial
+      sidePadding: 15 //Default 20 (as a percentage)
+    }
+  },
+
+    cutoutPercentage : 90,
+    legend : {
+      display : false
+        }
+    }
+});
+
+
+
+  });
+</script>
+
+
+
+<!-- Begin xfloor section -->
+<div class="left-mortgage-box">
+  <div class="left-fixed-box">
+    <a href="javascript:;" data-toggle="modal" data-target="#mobileinformation"><img src="/new-ui/images/info-icon-mobile.png" alt="" /></a>
+  </div>
+  <div class="left-fixed-box">
+    <a href="javascript:;" data-toggle="modal" data-target="#exampleModalCenter"><img src="/new-ui/images/dollar-icon-mobile.png" alt="" /></a>
+  </div>
+</div>
+<div class="xfloor-section clearfix">
+  <div class="elevation-home-img">
+    <div class="xfloor-section-center">
+      <div class="mx-auto front-image-wrapper" id="right-wrapper">
+        
+      </div>
+    </div>
+    <div class="footer-mobile-button">
+      
+      <div class="floor-plan-btn">
+                          <a id="next-btn" class="btn btn-success floor-plan-btn">Floor Plan <i class="fa fa-angle-right"></i></a>
+      </div>
+
+      <div class="floor-plan">
+        <a id="finish-modules" class="btn btn-success floor-plan-btn">Finish <i class="fa fa-angle-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="floor-plan-img" id="interactive-pre-wrapper">
+              <div class="xfloor-section-left">
+                 <div class="top-img">
+                      <img src="/new-ui/images/champass.png" alt="" />
+                 </div>
+                  <div class="bottom-img ">
+                   <div class="zoom-slider">
+                   <div id="slider-huge"></div>
+                  <!--<span class="example-val" id="huge-value"></span>   -->
+                     <!-- <span><img src="images/zoom-slider-img.png" alt="" /></span>-->
+                       <a href="#" class="refrest-btn"><img src="/new-ui/images/refresh-btn.png" alt="" /></a>
+                    </div>
+                </div>
+              </div>
+              <div class="xfloor-section-center floor-map-center">
+                  <div class="mx-auto">
+                      <img class="img-fluid" src="/new-ui/images/xfloor-chart.png" alt="" />
+
+                  </div>
+
+              </div>
+              <div class="footer-mobile-button">
+
+              <!-- Begin Footer -->
+      <div class="footer-wrapper">
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-7 col-xl-8">
+                        <div class="avery-leftbox">
+                            <div class="avery-leftbox-main">
+                              <div class="avery-img-contain">
+                                  <div class="forbes-capretto-homes">
+                                      <img src="/new-ui/images/forbes-capretto-homes.png" alt="" />
+                                  </div>
+                                  <div class="avery-contain">
+                                         <h2>Avery</h2>
+                                      <p>Forbes Capretto Homes</p>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="avery-leftbox-main icon-box-displayNone">
+                              <div class="avery-contain">
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/squar-feet-icon.png" alt="" />
+                                    <p>1860 Sq.ft.</p>
+                                 </div>
+                                  <div class="icon-box">
+                                    <img src="/new-ui/images/3-bedroom-icon.png" alt="" />
+                                    <p>3 Bedrooms</p>
+                                 </div>
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/2-bedroom-icon.png" alt="" />
+                                    <p>2 Bedrooms</p>
+                                 </div>
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/car-icon.png" alt="" />
+                                    <p>2 Cars</p>
+                                 </div>
+                                 </div>
+                            </div>
+                            <div class="avery-leftbox-main">
+                              <div class="avery-contain">
+                                 <div class="icon-box">
+                                    <h2>$263,000</h2>
+                                    <p>$4,521 / month</p>
+                                 </div>
+                                 <div class="mortgage">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#exampleModalCenter">Mortgage</a>
+                                 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-xl-4">
+                      <div class="floor-plan-btn">
+                          <a id="next-btn" class="btn btn-success floor-plan-btn">Floor Plan <i class="fa fa-angle-right"></i></a>
+                      </div>
+
+                      <div class="floor-plan">
+                        <div class="floor-plan-btn">
+                          <a id="finish-modulesz" class="btn btn-success floor-plan-btn">Finish <i class="fa fa-angle-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                </div>
+            </div>
+         </div>
+      </div>
+      <!-- End Footer -->
+      <div class="floor-plan-btn">
+                          <a id="next-btn" class="btn btn-success floor-plan-btn">Floor Plan <i class="fa fa-angle-right"></i></a>
+      </div>
+                  <div class="floor-plan">
+                    <a id="finish-modulesz" class="btn btn-success floor-plan-btn">Finish <i class="fa fa-angle-right"></i></a>
+                  </div>
+              </div>
+            </div>
+  <!--<div class="xfloor-section-left">
+    <div class="top-img">
+      <img src="/new-ui/images/champass.png" alt="" />
+    </div>
+    <div class="bottom-img ">
+      <img src="/new-ui/images/bottom-img.png" alt="" />
+    </div>
+  </div>-->
+  <div class="xfloor-section-right">
+    <div class="xfloor-tabs-box">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link xfloor-home active" id="community-tab" data-toggle="tab" data-target="#community" role="tab" aria-controls="community" aria-selected="true"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link xfloor-floor" id="imageGallery-tab" data-toggle="tab" data-target="#imageGallery" role="tab" aria-controls="imageGallery" aria-selected="false"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link xfloor-note" id="availableNow-tab" data-toggle="tab" data-target="#availableNow" role="tab" aria-controls="availableNow" aria-selected="false"></a>
+        </li>
+      </ul>
+      <div class="tab-content right-part-tabs" >
+        <div class="tab-pane fade show active" id="community" role="tabpanel" aria-labelledby="community-tab">
+          <div class="community-header-bg clearfix">
+            <div class="tabs-scroll-area">
+              <div class="tabs-scroll-content">
+                <div class="community-header">
+                  <h2>Elevation</h2>
+                  <button type="button" class="close community-header-close-button" id="close-btn2">
+                  <img src="/new-ui/images/close-button.png" alt="">
+                  </button>
+                </div>
+                <div class="community-main-header-bg">
+                  <div class="biorev-gallery">
+                    <div class="image-gallery-box" id="elevation-wrapper">
+                      <a href="images/carrington.jpg" itemprop="contentUrl" data-size="600x360" data-author="Biorev">
+                        <img src="/new-ui/images/carrington.jpg" itemprop="thumbnail" alt="" width="100%">
+                        <h2>Carrington</h2>
+                      </a>
+                    </div>
+                  </div>
+                  <!--<div class="elevation-box-main">
+                    <div class="image-floor-box">
+                      <a href="javascript:;"><img src="/new-ui/images/carrington-img.jpg" alt="">
+                        <h2>Carrington</h2>
+                      </a>
+                    </div>
+                    <div class="image-floor-box">
+                      <a href="javascript:;"><img src="/new-ui/images/aspen-img.jpg" alt="">
+                        <h2>Aspen</h2>
+                      </a>
+                    </div>
+                    <div class="image-floor-box">
+                      <a href="javascript:;"><img src="/new-ui/images/avalon-img.jpg" alt="">
+                        <h2>Avalon</h2>
+                      </a>
+                    </div>
+                  </div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="imageGallery" role="tabpanel" aria-labelledby="imageGallery-tab">
+          <div class="community-header-bg" id="community-scroll">
+            <div class="tabs-scroll-area" >
+              <div class="tabs-scroll-content">
+                <div class="community-header">
+                  <h2>Floor </h2>
+                  <button type="button" class="close community-header-close-button" id="close-btn2">
+                  <img src="/new-ui/images/close-button.png" alt="">
+                  </button>
+                </div>
+                <div class="community-main-header-bg xfloor-header-list-main">
+                  <div class="filter-price-box floor-box-main">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      
+                      <!-- Single Instance -->
+                      
+                      <div id="floorvars-wrapper"></div>
+
+                      <!-- ./ Single Instance -->
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="availableNow" role="tabpanel" aria-labelledby="availableNow-tab">
+          <div class="community-header-bg">
+            <div class="tabs-scroll-area" >
+              <div class="tabs-scroll-content">
+                <div class="community-header">
+                  <h2>Note</h2>
+                  <button type="button" class="close community-header-close-button" id="close-btn3">
+                  <img src="/new-ui/images/close-button.png" alt="">
+                  </button>
+                </div>
+                <div class="community-main-header-bg">
+                  <div class="note-area-main">
+                    <textarea class="form-control" name="" id="note_textarea" placeholder="Enter Message"></textarea>
+                    <div class="clear-save-btn">
+                      <button class="btn btn-default clear-btn">Clear</button>
+                      <button class="btn btn-primary save-btn" data-toggle="modal" data-target="#download">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End xfloor section -->
+
+<!-- Begin Footer -->
+      <div class="footer-wrapper">
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-7 col-xl-8">
+                        <div class="avery-leftbox">
+                            <div class="avery-leftbox-main">
+                              <div class="avery-img-contain">
+                                  <div class="forbes-capretto-homes">
+                                      <img src="/new-ui/images/forbes-capretto-homes.png" alt="" />
+                                  </div>
+                                  <div class="avery-contain">
+                                         <h2 id="footer-home-name">Avery</h2>
+                                      <p>Forbes Capretto Homes</p>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="avery-leftbox-main icon-box-displayNone">
+                              <div class="avery-contain">
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/squar-feet-icon.png" alt="" />
+                                    <p><span id="footer-area"></span>Sq.ft.</p>
+                                 </div>
+                                  <div class="icon-box">
+                                    <img src="/new-ui/images/3-bedroom-icon.png" alt="" />
+                                    <p><span id="footer-beds"></span> Bedrooms</p>
+                                 </div>
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/2-bedroom-icon.png" alt="" />
+                                    <p> <span id="footer-baths"></span> Bathrooms</p>
+                                 </div>
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/car-icon.png" alt="" />
+                                    <p>2 Cars</p>
+                                 </div>
+                                 </div>
+                            </div>
+                            <div class="avery-leftbox-main">
+                              <div class="avery-contain">
+                                 <div class="icon-box">
+                                    <h2>$ {{mortgage__home_price}}</h2>
+                                    <p>$ {{A}} / month</p>
+                                 </div>
+                                 <div class="mortgage">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#exampleModalCenter">Mortgage</a>
+                                 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-xl-4">
+                    
+                      <div class="floor-plan">
+                      <div class="floor-plan-btn">
+                          <a id="next-btn" class="btn btn-success floor-plan-btn">Interiors<i class="fa fa-angle-right"></i></a>
+                        </div>
+
+                        <div class="floor-plan-btn">
+                          <a id="finish-modulesz" class="btn btn-success floor-plan-btn">Finish <i class="fa fa-angle-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+
+                </div>
+            </div>
+         </div>
+      </div>
+      <!-- End Footer -->
+
+
+       <!-- Begin Mobile Information -->
+       <div class="mobile-information">
+          <div class="modal fade" id="mobileinformation" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <!--<div class="modal-title" id="exampleModalLongTitle">Mortgage Calculator</div>-->
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="/new-ui/images/close-btn.png" alt="">
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="mobile-info-box">
+                            <div class="avery-leftbox">
+                              <div class="avery-leftbox-main">
+                                <div class="avery-img-contain">
+                                    <div class="forbes-capretto-homes">
+                                        <img src="/new-ui/images/forbes-capretto-homes.png" alt="" />
+                                    </div>
+                                    <div class="avery-contain-text">
+                                           <h2>Avery</h2>
+                                        <p>Forbes Capretto Homes</p>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                         </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mobile-info-box">
+                              <div class="avery-leftbox">
+                                 <div class="avery-leftbox-main">
+                                    <div class="avery-contain">
+                                       <div class="icon-box">
+                                    <img src="/new-ui/images/squar-feet-icon.png" alt="" />
+                                    <p><span id="footer-area"></span>Sq.ft.</p>
+                                 </div>
+                                  <div class="icon-box">
+                                    <img src="/new-ui/images/3-bedroom-icon.png" alt="" />
+                                    <p><span id="footer-beds"></span> Bedrooms</p>
+                                 </div>
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/2-bedroom-icon.png" alt="" />
+                                    <p> <span id="footer-baths"></span> Bathrooms</p>
+                                 </div>
+                                 <div class="icon-box">
+                                    <img src="/new-ui/images/car-icon.png" alt="" />
+                                    <p>2 Cars</p>
+                                 </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mobile-info-box mobile-info-box-BorderNone">
+                            <div class="avery-leftbox">
+                              <div class="avery-leftbox-main">
+                                <div class="avery-contain">
+                                   <div class="icon-box">
+                                    <h2>$ {{mortgage__home_price}}</h2>
+                                    <p>$ {{A}} / month</p>
+                                   </div>
+                                   <div class="mortgage">
+                                      <a href="javascript:;" data-toggle="modal" data-target="#mobileModalCenter" data-dismiss="modal" aria-label="Close">Mortgage</a>
+                                   </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+       <!-- End Mobile Information -->
+
+
+
+
+      <!-- Begin Modal Mortgage Calculator -->
+       <div class="mortgage-calculator">
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="modal-title" id="exampleModalLongTitle">Mortgage Calculator</div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="/new-ui/images/close-btn.png" alt="">
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class=" col-md-6">
+                            <div class="mortgage-calculator-form-box">
+                                <form>
+                                  <div class="form-group">
+                                    <label>Home price</label>
+                                    <input ng-model="mortgage__home_price" ng-change="updateMortgage()" type="text" class="form-control" ng-value="mortgage__home_price" placeholder="$ {{mortgage__home_price}}" readonly="" />
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Down payment</label>
+                                    <div class="down-payment">
+                                      <input type="text" id="mortgage__down_payment" class="form-control" ng-change="updateDownPercent(); updateMortgage()" ng-model="mortgage__down_payment" ng-change=" formatter('mortgage__down_payment');" placeholder="$1,000" data-value="1000" ng-value="mortgage__down_payment" value="{{mortgage__down_payment}}" />
+                                    </div>
+                                    <div class="downPercent">
+                                      <input type="text" class="form-control" ng-change="updateDownVal()"  ng-model="mortgage__down_percent"  placeholder="20">
+                                      <div class="input-overlay-text_right">%</div>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Loan program</label>
+                                    <select ng-change="updateMortgage()" ng-model="mortgage__loan_term" ng-value="mortgage__loan_term" value="{{mortgage__loan_term}}" class="form-control" id="exampleFormControlSelect1">
+                                      <option value="30">30 - Year Fixed</option>
+                                      <option value="15">15 - Year Fixed</option>
+                                      <option value="5">5/1 ARM</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="form-group input-overlay-text">
+                                    <label>Interest rate <span ng-click="expanded = (expanded) ? false : true" ng-init="expanded = false">Advanced</span></label>
+                                    <input type="text" class="form-control" ng-change="updateMortgage()"  ng-model="mortgage__rate"  placeholder="4.297" />
+                                    <div class="input-overlay-text_right">%</div>
+                                  </div>
+  
+
+  <div id="mortgage-collapse-wrapper" ng-class="{ 'collapse-mortgage--collapsed' : !expanded , 'collapse-mortgage--expanded' : expanded }">
+                                  <div class="form-group">
+                                  <div class="switch-box">
+                                    <div class="switch-round-box">
+                                        <label class="switch">
+                                          <input ng-model="mortgage__pmi"  type="checkbox">
+                                          <span class="slider round"></span>
+                                        </label>
+                                      </div>
+                                      <p>Include PMI <i class="fa fa-question-circle"></i></p>
+                                     </div>
+                                     <div class="switch-box">
+                                    <div class="switch-round-box">
+                                      <label class="switch">
+                                        <input ng-change="updateMortgage()"  ng-model="mortgage__taxes" type="checkbox" checked>
+                                      <span class="slider round"></span>
+                                    </label>
+                                    </div>
+                                    <p>Include taxes/insurance</p>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Property tax <i class="fa fa-question-circle"></i></label>
+
+                                    <div class="down-payment">
+                                      <input id="" type="text" class="form-control" ng-change="updatePropPercent(); updateMortgage();"  ng-model="mortgage__property_tax" placeholder="$0"  />
+                                      <div class="year">/Year</div>
+                                    </div>
+                                    <div class="downPercent">
+                                      <input type="text" class="form-control" ng-change="updatePropVal(); updateMortgage()"  ng-model="mortgage__property_tax_percent"  placeholder="1.2" />
+                                      <div class="input-overlay-text_right">%</div>
+                                    </div>
+                                  </div>
+                                  <div class="form-group input-overlay-text">
+                                    <label>Home insurance <i class="fa fa-question-circle"></i></label>
+                                    <input type="text" class="form-control"  placeholder="$ 800" ng-change="updateMortgage()"  ng-model="mortgage__home_insurance" />
+                                    <div class="input-overlay-text_right">/Year</div>
+                                  </div>
+                                  <div class="form-group input-overlay-text">
+                                    <label>HOA dues <i class="fa fa-question-circle"></i></label>
+                                    <input type="text" class="form-control"  placeholder="$ 0" ng-change="updateMortgage()"  ng-model="mortgage__hoa" />
+                                    <div class="input-overlay-text_right">/Month</div>
+                                  </div>
+                  </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class=" col-md-6">
+                            <div class="mortgage-calculator-right-box">
+                               <div class="right-box-border"></div>
+                                <div class="insurance-chart">
+                                    <!-- <img src="images/insurance-img.jpg" alt="" /> -->
+                                  
+                                  <canvas id="mortgage-chart" class="img-fluid"></canvas>
+
+
+                                </div>
+                                <hr>
+                                <div class="mortgage-contain">
+                                    <h2>TOTAL PRICE OF HOME</h2>
+                                    <div class="price-text">$ {{ mortgage__home_price }}</div>
+                                    <div class="base-price">Base Price <span>$ {{ mortgage__home_price }}</span></div>
+                                    <div class="base-price">Designs Selected<span>$1,519</span></div>
+                                    <div class="space"></div>
+                                    <h2>Monthly Estimated Payment</h2>
+                                    <div class="price-text">$ {{A}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+       <!-- End Modal Mortgage Calculator -->

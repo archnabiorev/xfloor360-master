@@ -1,0 +1,27 @@
+<img src="{{image}}" class="img-fluid" style=" " />
+<!-- <div class="col-lg-4">
+<div class="wellington_detail">
+    	<h3>Elevation Details</h3>
+        <ul class="wellingtop_badroom">
+            <li><h4>{{bedrooms}}</h4><h5>Bedrooms</h5>
+              <img src="assets/icons/bed.png" alt="bed.png">
+            </li>
+            
+            <li><h4>{{bathrooms}}</h4><h5>Bathrooms</h5>
+            	<img src="assets/icons/tub.png" alt="tub.png">
+            </li>
+            <li><h4>{{cars}}</h4>
+            	<h5>Cars</h5>
+            	<img src="assets/icons/car.png" alt="car.png">
+            </li>
+        </ul>
+        <ul class="floor_detail">
+          <li>Main Floor <span>{{main_floor}} SQ FT</span></li>
+          <li>Upper Floor <span>{{upper_floor}}</span></li>
+          <li>Total <span>{{total}} SQ FT</span></li>
+          <li>Garage <span>{{garage}}</span></li>
+        </ul>
+</div>
+
+</div> -->
+<div class="clearfix"></div>

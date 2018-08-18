@@ -1,0 +1,21 @@
+{{#floors}}
+
+<li>
+<label  data-floorid="{{FLOORID}}" id="floor-{{id}}" data-toggle="collapse" data-target="#ul{{id}}" aria-expanded="false" aria-controls="ul{{id}}"  class="floor-selectron collapsed floor-collapse" data-name="{{floor_name}}" data-parent="#floorvars-wrapper">
+		<img src="images/assets/icons/clean-floor.png" class="small-img"/>  FLOOR : {{floor_name}}
+		<input data-floorid="{{FLOORID}}" type="radio" id="{{id}}" name="floor-select" class="option-input floor-selector pull-right"></label>
+		<ul class="e-variations collapse collapse-parent" data-target="#floor-{{id}}" id="ul{{id}}">
+		{{#variations}}
+	      	<li>
+	      		<label class="option-tab" > 
+		      		<!--<img src="{{imageURL}}" class="small-img"/> -->
+		      		 {{#alias}}{{{alias}}}{{/alias}}
+		      		 {{^alias}}{{{name}}}{{/alias}}
+		      		<input type="checkbox" id="cbox-{{name}}" data-conflicts="{{conflicts}}" data-switchable="{{switchable}}"  data-coords ="{{coords}}" data-stageid="stage-{{FLOORID}}" data-url="{{imageURL}}" data-combo="{{fileName}}" data-floor="{{floor_name}}" data-name="{{name}}" data-price="{{#price}} {{price}} {{/price}} {{^price}}300{{/price}}" class="checkbox-gk floor-element-switcher">
+		      		<span class="check-slider round"></span>
+	      		</label>
+	      	</li>
+	    {{/variations}}
+		</ul> 
+</li>
+{{/floors}}

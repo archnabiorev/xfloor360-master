@@ -1,0 +1,82 @@
+[ 
+
+	{
+	name : "Aspen",
+	bedrooms : 4,
+	bathrooms : 2.5,
+	cars : 2,
+	main_floor : 1248,
+	upper_floor : 1372,
+	total : 2620,
+	garage : 2, 
+	planID : "",
+
+},
+
+{
+	name : "Avalon",
+	bedrooms : 4,
+	bathrooms : 2.5,
+	cars : 2,
+	main_floor : 1075,
+	upper_floor : 1252,
+	total : 2327,
+	garage : 2, 
+	planID : "",
+
+},
+
+{
+	name : "Carrington",
+	bedrooms : 3,
+	bathrooms : 2,
+	cars : 2,
+	main_floor : 1845,
+	upper_floor : false,
+	total : 1845,
+	garage : 2, 
+	planID : "",
+
+},
+{
+	name : "Kingston-II",
+	bedrooms : 3,
+	bathrooms : 2,
+	cars : 3,
+	main_floor : "N/A",
+	upper_floor : false,
+	total : 2128,
+	garage : ,3 
+	planID : "",
+
+}
+,
+{
+	name : "Kingston",
+	bedrooms : 3,
+	bathrooms : 2,
+	cars : 3,
+	main_floor : 2083,
+	upper_floor : false,
+	total : 2083,
+	garage : ,3 
+	planID : "",
+
+}
+
+,
+
+{
+	name : "Springwood",
+	bedrooms : 3,
+	bathrooms : 2,
+	cars : 3,
+	main_floor : 2083,
+	upper_floor : false,
+	total : 2083,
+	garage : 3, 
+	planID : "",
+
+}
+
+	]

@@ -1,0 +1,12 @@
+<?php
+$filename = md5( time().uniqid() ).'.pdf';
+
+if( !isset($_GET['id']){
+die('ID not found');
+}
+
+exec('/home/priyanshu/x-series-pdf-generator/php/php/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs phantom.js "http://45.118.133.182:8899/template-hx.php?id='.$_GET['id'].'  '.$filename)
+
+echo 'http://45.118.133.182:8899/pdf-stash'.$filename;
+
+?>

@@ -1,0 +1,12 @@
+{
+	name : "Kingston-II",
+	bedrooms : 3,
+	bathrooms : 2,
+	cars : 3,
+	main_floor : "N/A",
+	upper_floor : false,
+	total : 2128,
+	garage : ,3 
+	planID : "",
+
+}

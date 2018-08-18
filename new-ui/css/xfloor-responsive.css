@@ -1,0 +1,112 @@
+@media (min-width: 1200px) and (max-width: 1305px) {
+     .footer .avery-leftbox .avery-contain .mortgage a { padding: 11px 15px;}
+     .icon-box-displayNone{display:block;}
+     .footer .avery-leftbox .avery-contain .icon-box img{width:32px;}
+     .footer .avery-leftbox .avery-contain .icon-box p{font-size:11px;}
+     .footer .avery-leftbox .avery-contain .icon-box{margin:0 5px;}
+     .footer .avery-leftbox .avery-contain p{font-size:13px;}
+     .footer .avery-leftbox .avery-contain{padding-top:5px;}
+     .footer .avery-leftbox .avery-contain .icon-box h2{margin-top:0;}
+     .footer .avery-leftbox .avery-contain .mortgage{margin-top:12px;}
+
+}
+@media (max-width: 1200px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.icon-box-displayNone { display: none; }
+.footer .avery-leftbox .avery-leftbox-main .forbes-capretto-homes img { height:40px; }
+.footer .floor-plan{margin:11px 0;}
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.other-details .wellington_detail { margin:15px 5px }
+.other-details .wellington_detail ul li { margin:0 2px; padding:10px 7px; }
+.other-details .wellington_detail ul li a span { font-size:13px; }
+
+}
+@media (min-width: 992px) {
+.footer-mobile-button { display:none; }
+.tabs-scroll-area{padding-bottom:205px;}
+   .xfloor-section .xfloor-section-center  img{height:calc(100vh - 85px - 40px); width:auto;}
+}
+
+@media (max-width: 991px) {
+.other-details .wellington_detail ul li a img { height:30px;  }
+
+
+.xfloor-section .xfloor-section-center {padding:0 30px 124px 60px}
+.bottom-img { width: 60px; z-index:1;}
+.bottom-img  { margin-bottom: 75px;}
+
+.xfloor-section .xfloor-section-left {padding-top:10px; padding-bottom:10px;}
+.xfloor-section .xfloor-section-left .top-img img{width:50px;}
+.zoom-slider span img {width:16px; height:70px;}
+
+.xfloor-section .xfloor-section-right {right: auto; bottom:60px;  left:auto; height:350px; width: 100%; top:auto; z-index:99;}
+.xfloor-tabs-box .nav-tabs {position: fixed; bottom:0; width:100%;}
+.tabs-scroll-area, .tabs-scroll-area.area-extra-pd{ padding-bottom:0;}
+.view-on-google-map-box {display: none;}
+.view-on-google-map-box.visible-small-device {display: block; position: relative; bottom: auto;}
+/*.community-header-close-button { display: block; position: relative; top: -25px; right: 10px; outline: none !important; } */
+.community-header-close-button { display: block; position: absolute; top: 7px; right: 12px; outline: none !important; }
+.xfloor-tabs-box .tab-content .community-header { padding: 12px 0;}
+.xfloor-tabs-box .nav-tabs .nav-item a{height: 60px!important; background-size: 32px!important; padding:26px!important;}
+.lot-details-section .modal-content .lot-details-left-box h2 { font-size:18px; }
+
+.googleMaps .googleMaps-left-main-box { margin:15px;}
+/*.xfloor-section .xfloor-section-left, .xfloor-section .xfloor-section-left .bottom-img { display: none; }   */
+.xfloor-section .xfloor-section-center { padding: 0 0 124px 0; }
+.xfloor-section .xfloor-section-center.floor-map-center{padding: 0 30px 124px 60px;}
+.xfloor-tabs-box .tab-content .note-area-main .clear-btn { padding:8px 24px; font-size:14px;  }
+.xfloor-tabs-box .tab-content .note-area-main .save-btn { padding:8px 24px; font-size:14px;  }
+
+.mobile-information .mobile-info-box{padding:4px 0 6px 0;}
+.left-mortgage-box .left-fixed-box a img{width:24px; height:24px;}
+.left-mortgage-box .left-fixed-box{box-shadow: 0 0 3px 0 #666;}
+.mobile-information .mobile-info-box .avery-leftbox .avery-contain .icon-box img{width:32px;}
+  .login-btn {  width: 100px;    height: 38px;    padding: 10px;    font-size: 14px;    margin-top: 6px;}
+
+
+.elevation-box-main{overflow-x: scroll; overflow-y: hidden; white-space: nowrap;height:190px;}
+.elevation-box-main  .image-floor-box{ width: 48%; display: inline-block; margin:0 1% 0 1%!important;vertical-align: top; border-bottom:0!important; }
+
+.note-area-main textarea {float: left; width:70%; margin-right:2%; margin-bottom:0px!important; height:100px;}
+.note-area-main .clear-save-btn{float: right; width:28%!important;}
+.xfloor-tabs-box .tab-content .note-area-main .clear-btn, .xfloor-tabs-box .tab-content .note-area-main .save-btn{float:none;clear:both; margin:0 0 5px 0; padding: 5px 15px; display: block; width:100%;}
+ .xfloor-list-main-box .xfloor-list-heading-box{height: 85px; overflow: auto;}
+   .xfloor-tabs-box .tab-content .community-main-header-bg {padding-bottom:0;}
+
+ .xfloor-section .xfloor-section-center  img{height:calc(100vh - 85px - 40px); width:auto;}
+
+ .noUi-vertical .noUi-tooltip{right:100%; padding:1px 3px; font-size:10px;}
+  .noUi-vertical{height:90px; }
+
+}
+
+@media (max-width: 767px) {
+.lot-details-section .modal-content .modal-body { padding:15px;  }
+.other-details .wellington_detail ul li { padding:6px; }
+.other-details .wellington_detail ul li a span { font-size:11px; }
+
+.xfloor-section .xfloor-section-right {height: 250px;}
+.googleMaps iframe { width:100%; margin-left:0; padding:15px; height:300px; }
+
+.googleMaps .googleMaps-left-main-box { margin:0;}
+/*.footer { display:none; } */
+
+
+}
+@media (min-width: 576px) and (max-width: 991px) {
+ .xfloor-tabs-box .tab-content .image-gallery-box { overflow-x: scroll; overflow-y: hidden; white-space: nowrap; margin-bottom:15px; padding-bottom:15px;}
+ .xfloor-tabs-box .tab-content .image-gallery-box > a { width: 50%; display: inline-block; margin-bottom:0; border-right: solid 1px #666; border-bottom:0}
+ .xfloor-tabs-box .tab-content .image-gallery-box img {height: 140px; width: auto; margin-bottom:0;}
+
+}
+@media (max-width: 575px) {
+.googleMaps iframe { width:100%; margin-left:0 !important; }
+
+.elevation-box-main  .image-floor-box{ width: 98%;}
+}

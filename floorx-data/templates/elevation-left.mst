@@ -1,0 +1,10 @@
+{{#elevations}}
+
+<a href="images/carrington.jpg" itemprop="contentUrl" data-size="600x360" data-author="Biorev" class="single-elevation" data-floors="{{planID}}" data-bedrooms="{{bedrooms}}" data-bathrooms="{{bathrooms}}" data-price="{{price}}" data-total="{{total}}" data-name="{{name}}">
+		<img src="{{image}}" itemprop="thumbnail" alt="" width="100%">
+<h2>{{name}}</h2>
+</a>
+
+{{/elevations}}
+
+

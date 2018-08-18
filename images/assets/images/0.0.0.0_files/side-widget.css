@@ -1,0 +1,74 @@
+body{
+	/*background: #000;*/
+}
+#side-widget{
+	/*background-color: red;*/
+	overflow: hidden;
+	position : fixed;
+	z-index: 2;
+}
+
+
+#side-widget .side-widget-section{
+	text-align: center;
+	position: relative;
+	border : 1px solid #000;
+}
+
+.side-widget-section .side-widget-icon>img{
+	width:65px;
+	height: 65px;
+}
+
+/*Override mScroll outside positon*/
+.mCSB_outside+.mCSB_scrollTools{
+	right : -14px;
+}
+
+.mCustomScrollBox+.mCSB_scrollTools+.mCSB_scrollTools.mCSB_scrollTools_horizontal, .mCustomScrollBox+.mCSB_scrollTools.mCSB_scrollTools_horizontal{
+	    bottom: 100px;
+}
+
+
+
+#side-widget-data-container{
+	width: 0px;
+	overflow: hidden;
+	height: 100%;
+	z-index: 1;
+	top:0;
+	left: 0;
+	position: absolute;
+	background: #EEEEEE;
+	transition: all 0.3s linear;
+}
+
+.side-widget-data-container-expanded {
+	width: 400px!important;
+}
+
+#side-widget-data-container-close{
+	float : right;
+}
+
+#side-widget-section-wrapper{
+	width: 1000px;
+	display: inline-block;
+}
+
+.side-widget-data-container-vertical{
+	width: 100%!important;
+	overflow: hidden;
+	height: 0px!important;
+	z-index: 1;
+	bottom:0px!important;
+	left: 0px;
+	position: absolute;
+	background: #EEEEEE;
+	transition: all 0.3s linear;
+}
+
+.side-widget-data-container-expanded-vertical {
+	height: 400px!important;
+}
+

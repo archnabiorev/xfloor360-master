@@ -1,0 +1,12 @@
+{
+	name : "Carrington",
+	bedrooms : 3,
+	bathrooms : 2,
+	cars : 2,
+	main_floor : 1845,
+	upper_floor : false,
+	total : 1845,
+	garage : 2, 
+	planID : "",
+
+}

@@ -1,0 +1,513 @@
+<style>
+	body, .wrapper{
+		overflow-y: auto!important;
+	}
+	footer{
+		display: none;
+	}
+</style>
+
+
+<!-- Begin three-box-section -->
+      <div class="congratulations-section">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7 col-lg-8 col-xl-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="avery-box">
+                            <h2>{{data.elevationName}}</h2>
+                            <div class="avery-img-box">
+                                <img src="{{data.base.image}}" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+				
+				<div class="row">
+					<div class="col-md-12" ng-repeat="(index , module) in data.modules">
+						<h2>{{index}}</h2>
+						<img src="{{module.extraInfo.image}}" alt="" class="img-fluid img-responsive" />
+					</div>
+				</div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="contact-detail">
+                      <div class="contact-detail-title">
+                         Contact Detail
+                      </div>
+                      <div class="light-grey-bg">
+                        <div class="table-text-box">
+                          <h2>
+                            <i class="fa fa-building-o"></i>
+                            Biorev LLC.
+                          </h2>
+                        </div>
+                        <div class="table-text-box">
+                          <h2>
+                            <i class="fa fa-envelope"></i>
+                            info@biorev.us
+                          </h2>
+                        </div>
+                      </div>
+                      <div class="light-grey-bg dark-grey-bg">
+                        <div class="table-text-box">
+                          <h2>
+                            <i class="fa fa-map-marker"></i>
+                            Irving, TX, USA
+                          </h2>
+                        </div>
+                        <div class="table-text-box">
+                          <h2>
+                            <i class="fa fa-phone"></i>
+                            +1 770-572-1828
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 col-lg-4 col-xl-4">
+                <div class="congratulations-right-box">
+                  <div class="congratulations-contain">
+                    <h2>Congratulations</h2>
+                    <p>You've designed your new House</p>
+                    <hr>
+                    <div class="social-icon">
+                      <a href="javascript:;" data-toggle="modal" data-target="#exampleModalCenter">
+                        <div class="social-icon-box">
+                          <img src="/new-ui/images/share-icon.png" alt="" />
+                        </div>
+                        Share
+                      </a>
+                    </div>
+                    <div class="social-icon">
+                      <a  ng-click="downloadPdf(sessionID)" id="download-pdf">
+                        <div class="social-icon-box">
+                          <img src="/new-ui/images/download-icon.png" alt="" />
+                        </div>
+                        Download
+                      </a>
+                    </div>
+                    <div class="social-icon">
+                      <a onclick="window.location = '/#!/'; window.location.reload();">
+                        <div class="social-icon-box">
+                          <img src="/new-ui/images/new-icon.png" alt="" />
+                        </div>
+                        New
+                      </a>
+                    </div>
+                    <div class="social-icon">
+                      <a ng-if="authed" class="selection-wrapper"  ng-click="addToFavorite(sessionID , data.base.image)">
+                        <div class="social-icon-box">
+                          <img src="/new-ui/images/favorite-icon.png" alt="" />
+                        </div>
+                        Favorite
+                      </a>
+
+                      <a ng-if="!authed" class="selection-wrapper"  ng-click="$('#exampleModal').modal('show');">
+                        <div class="social-icon-box">
+                          <img src="/new-ui/images/favorite-icon.png" alt="" />
+                        </div>
+                        Favorite
+                      </a>
+                    </div>
+                  </div>
+                  <div class="table-your-selection">
+                    <div class="your-selection-title">
+                        Your Selection
+                    </div>
+                    <div ng-repeat="(index , module) in data.modules" class="light-grey dark-grey">
+                      <h2>{{index}}</h2>
+                      <p>{{theme}} <span style="display: none;">$60</span></p>
+
+                      <div  ng-repeat="( optx , opt ) in module" class="light-grey" ng-if="optx != 'extraInfo'">
+                      <h2>{{optx}}</h2>
+                      <p ng-repeat="mod in opt"> 
+						{{ mod.name }}
+                       </p>
+                    </div>
+
+                    </div>
+						
+					
+                    <div style="display: none;" class="light-grey green-light">
+                      <h2>Options Total <span>$290</span></h2>
+                    </div>
+                    <div style="display: none;" class="light-grey green-dark">
+                      <p>Base Price of Home <span>$263,000</span></p>
+                    </div>
+                    <div style="display: none;" class="light-grey green">
+                      <h2>Total Cost <span>$263,290</span></h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- End three-box-section -->
+
+	
+	 <!-- Begin Share Pop Up -->
+         <div class="mortgage-calculator share-pop-up">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered " role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class="modal-title" id="exampleModalLongTitle">Share this design with your friends</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <img src="/new-ui/images/close-btn.png" alt="">
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="row">
+                          <div class=" col-md-12">
+                              <div class="share-pop-up-section">
+                                  <div class="share-on-facebook">
+                                   <a socialshare
+      socialshare-provider="facebook" 
+      socialshare-media="{{data.base.image}}" 
+      socialshare-type="article" 
+      socialshare-text="{{elevationName}} | xFloor360" 
+      socialshare-hashtags="xHome360, xSeries" 
+      socialshare-url="http://forbes.xhome360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}">
+                                    <div class="share-facebook">
+                                      <i class="fa fa-facebook"></i>
+                                     </div>
+                                   </a>
+                                     <p><a href="javascript:;">Share on Facebook</a></p>
+                                  </div>
+                                  <div class="share-on-facebook">
+                                     <a socialshare
+      socialshare-provider="google"
+      socialshare-media="{{data.base.image}}"
+      socialshare-text="{{elevationName}} | xHome360"
+      socialshare-hashtags="xhome360, xSeries"
+      socialshare-url="http://forbes.xhome360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}">
+                                     <div class="share-google-plus">
+                                        <i class="fa fa-google-plus"></i>
+                                     </div>
+                                     </a>
+                                     <p><a href="javascript:;">Share on Google</a></p>
+                                  </div>
+                                  <div class="share-on-facebook">
+                                     <a socialshare
+      socialshare-provider="twitter"
+      socialshare-media="{{data.base.image}}"
+      socialshare-text="{{elevationName}} | xHome360"
+      socialshare-hashtags="xhome360, xSeries"
+      socialshare-url="http://forbes.xhome360.com/#!/final/{{sessionID}}">
+                                     <div class="share-fa-twitter">
+                                        <i class="fa fa-twitter"></i>
+                                     </div>
+                                     </a>
+                                     <p><a href="javascript:;">Share on Twitter</a></p>
+                                  </div>
+                                  <div class="border-bottom"></div>
+                                  <h2>Share via link</h2>
+                                  <div class="input-group">
+                                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="http://dev.xdesign360.com/sharer.php?sid=38076298_91fc" aria-describedby="validationTooltipUsernamePrepend" required>
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-file"></i></span>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+       <!-- End Share Pop Up -->
+
+
+<!-- OLD CODE STARTS FROM HERE -->
+<div class="container-fluid" style="padding-bottom:20px;display: none;">
+	<div class="row">
+		<div class="col-sm-9">
+		<h3> <span class="pull-right main-title"> {{elevationName}} </span> </h3>
+			<img src="{{data.base.image}}" alt="image" class="img-responsive final-image" />
+			
+			
+			<div class="row">&emsp;</div>
+	<div class="row">
+				<div class="col-sm-12">
+					
+					<div class="row" ng-repeat="(floor , module) in data.modules">
+						<div class="col-sm-12">
+							<h3> <span class="pull-right">{{floor}}</span> </h3>
+							<img src="{{module.extraInfo.image}}" alt="{{floor}}" class="img-responsive" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							
+
+							<div class="contact-box">
+
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<h4>
+											Contact Detail
+										</h4>									
+									</div>
+
+									<div class="col-xs-12 col-sm-6" style="margin-left: -11px;width: 51%;">
+										<h4>
+											&emsp;
+										</h4>									
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<p>
+											Biorev LLC.
+										</p>									
+									</div>
+
+									<div class="col-xs-12 col-sm-6">
+										Email  info@biorev.us
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12 col-sm-6">
+										<p>
+											Irving, TX, USA
+										</p>									
+									</div>
+
+									<div class="col-xs-12 col-sm-6">
+										    Tel  +1 770-572-1828
+									</div>
+								</div>
+
+
+
+
+
+								<!-- <h4>
+									Contact Detail
+								</h4>
+
+								<p>
+									Biorev LLC.
+								</p>
+
+								<p>
+									 Irving, TX, USA
+								</p>
+
+								<p>
+									Email : info@biorev.us
+								</p>
+
+								<p>
+									Tel : +1 770-572-1828
+								</p>	 -->
+
+							</div>
+							
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+
+		<div class="col-sm-3" style="padding-top: 20px;">
+			<h3 class="main-title">Congratulations</h3>
+			<p><small>You've designed your new House</small></p>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="list-inline final-actions">
+						<li  ng-click="shareDialog()" >
+							<div class="selection-wrapper">
+								<i class="fa fa-share-alt"></i>
+								<p>Share</p>
+							</div>
+
+						</li>
+
+						
+						<li  ng-click="downloadPdf(sessionID)" id="download-pdf" >
+							<div class="selection-wrapper">
+								<i class="fa fa-download"></i>
+								<p>Downoad</p>
+							</div>
+						</li>
+
+						<li onclick="window.location = '/#!/'; window.location.reload();">
+							<div class="selection-wrapper">
+								<i class="fa fa-file"></i>
+								<p>New Design</p>
+							</div>
+						</li>
+							<li>
+							<div ng-if="authed" class="selection-wrapper"  ng-click="addToFavorite(sessionID , data.base.image)" >
+								<i class="fa fa-heart"></i>
+								<p>Favorite</p>
+							</div>
+
+							<div class="selection-wrapper" ng-if="!authed" onClick="$('#Loginmodal').modal('show')" >
+								<i class="fa fa-heart"></i>
+								<p>Favorite</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				
+
+				<div class="col-sm-12">
+
+							<p class="selection-header">Your Selection</p>
+							<ul class="list-unstyled selected-wrapper">
+								
+								<li>
+									<h5 class="selection-cat">
+										Themes Selected		
+									</h5>
+									
+									<table>
+										<tr  ng-repeat="(module , theme) in data.themes">
+											<td style="width:100%; vertical-align:top;">
+												{{module}}
+											</td>
+											
+											<td>
+												{{theme}}
+											</td>
+										</tr>
+									</table>
+									
+								</li>
+
+								<li ng-if="data.additional.length > 0">
+									<h5 class="selection-cat">
+										Additional Components
+									</h5>
+									
+									<p class="selection-module" ng-repeat="components in data.additional">
+										<strong>{{components}}</strong> <!-- <span>${{module.price}}</span> -->
+									</p>
+								
+								</li>
+
+
+
+								<li>
+									<hr />
+								</li>								
+							</ul>
+							
+						</div>
+
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+
+
+
+<!-- Modal Template -->
+
+  <div id="share-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div> -->
+      <div id="share-modal-body" class="modal-body">
+				
+				<div class="row">
+					<div class="col-xs-12 center-text">
+						<h3>
+							Share this design with your friends
+						</h3>
+					</div>
+				</div>
+				<hr/>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <a socialshare
+			socialshare-provider="facebook" 
+			socialshare-media="{{data.base.image}}" 
+			socialshare-type="article" 
+			socialshare-text="{{elevationName}} | xFloor360" 
+			socialshare-hashtags="xHome360, xSeries" 
+			socialshare-url="http://forbes.xhome360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}" class="social-icon social-fb"> </a>
+            <p>
+            	Share on Facebook
+            </p>
+          </div>
+
+          <div class="col-xs-12 col-sm-4">
+            <a socialshare
+			socialshare-provider="google"
+			socialshare-media="{{data.base.image}}"
+			socialshare-text="{{elevationName}} | xHome360"
+			socialshare-hashtags="xhome360, xSeries"
+			socialshare-url="http://forbes.xhome360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}" class="social-icon social-g"> </a>
+          <p>
+          	Share on Google
+          </p>
+          </div>
+
+          <div class="col-xs-12 col-sm-4">
+            <a socialshare
+			socialshare-provider="twitter"
+			socialshare-media="{{data.base.image}}"
+			socialshare-text="{{elevationName}} | xHome360"
+			socialshare-hashtags="xhome360, xSeries"
+			socialshare-url="http://forbes.xhome360.com/#!/final/{{sessionID}}" class="social-icon social-tw"></a>
+				<p>Share on Twitter</p>
+          </div>
+
+        </div>
+        
+        <hr />
+        
+        <div class="row">
+        	<div class="col-xs-12">
+        		<p class="text-center">Share via link</p>
+        	</div>
+        </div>
+        
+        <div class="row">
+        	<div class="col-xs-12">
+        		<!-- Target -->
+						<input class="form-control" id="share-clip" value="http://forbes.xhome360.com/sharer.php?sid={{sessionID}}&i={{data.base.image}}&t={{elevationName}}" readonly/>
+						<!-- Trigger -->
+						<button class="share-clip-btn" data-toggle="tooltip" data-placement="left" title="Copy to Clipboard" data-clipboard-target="#share-clip">
+						    <i class="glyphicon glyphicon-file"></i>
+						</button>
+					</div>
+        </div>
+        
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

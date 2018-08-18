@@ -1,0 +1,2763 @@
+<!doctype html> <html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.90c282b0.css"> <link rel="stylesheet" href="styles/main.f4b6a30f.css"> <script>function uuid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4() + '_' + s4() + '_' + s4() + '_' +
+            s4() + '_' + s4() + s4() + s4();
+        }
+    window.MEGAQUEUE = [];
+      var FLOORXDATA = [ 
+
+  {
+  name : "Avery III",
+  image : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c3908a2d_3f72_693e_2d11_cb3e31fefada.png?alt=media&token=c10f968c-bdfa-4572-ad1f-7c9bbbd00e1e",
+  bedrooms : 3,
+  bathrooms : 2,
+  cars : 2,
+  main_floor : 1845,
+  upper_floor : false,
+  floors : 1,
+  price : "263,000",
+  total : 1845,
+  garage : 2, 
+  planID : ["FLOORX_TEMPLATE_c40a2e24_0e3f_fe99_ff93_20002abca64a"],
+
+}
+// ,{
+//   name : "Aspen",
+//   image : "floorx-data/data/aspen.jpg",
+//   bedrooms : 4,
+//   bathrooms : 2.5,
+//   cars : 2,
+//   main_floor : 1248,
+//   price : "363,000",
+//   upper_floor : 1372,
+//   floors : 2,
+//   total : 2620,
+//   garage : 2, 
+//   planID : ["FLOORX_TEMPLATE_19f765aa_7670_f3a4_bbd4_a5cfd6a253cb" , "FLOORX_TEMPLATE_6ba46a47_8b13_685e_a93d_17ca093ee910"],
+
+// },
+
+// {
+//   name : "Avalon",
+//   image : "floorx-data/data/avalon.jpg",
+//   bedrooms : 4,
+//   bathrooms : 2.5,
+//   cars : 2,
+//   price : "293,000",
+//   main_floor : 1075,
+//   upper_floor : 1252,
+//   floors : 2,
+//   total : 2327,
+//   garage : 2, 
+//   planID : ["FLOORX_TEMPLATE_541a284a_6406_38c8_0973_a404cd91306d" , "FLOORX_TEMPLATE_bc6d9165_abdf_5b1b_ce9a_6e8046f9c8f6"],
+
+// },
+
+
+// {
+//   name : "Kingston-II",
+//   image : "floorx-data/data/kingston-II.jpg",
+//   bedrooms : 3,
+//   bathrooms : 2,
+//   cars : 3,
+//   main_floor : false,
+//   price : "283,000",
+//   upper_floor : false,
+//   floors : 1,
+//   total : 2128,
+//   garage : 3, 
+//   planID : ["FLOORX_TEMPLATE_fc251a91_1999_2a59_525b_adfe603da14c"],
+
+// },
+// {
+//   name : "Springwood",
+//   image : "floorx-data/data/springwood.jpg",
+//   bedrooms : 3,
+//   bathrooms : 2,
+//   cars : 3,
+//   price : "191,000",
+//   main_floor : 2083,
+//   upper_floor : false,
+//   floors : 1,
+//   total : 2083,
+//   garage : 3, 
+//   planID : ["FLOORX_TEMPLATE_f6c340cc_1219_fa83_210f_0c8d58c3948b"],
+
+// }
+
+  ];
+
+
+/*================================
+=            DATABASE            =
+================================*/
+var DB = {
+  "batches" : {
+    "0G2UOP" : [ [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 12 ", " layer_6c729e99_5e1a_16c8_9dbc_670fc28b73fe.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 13 ", " layer_5f13fd45_07fe_c893_b4fe_5dd4f74321c8.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 14 ", " layer_686555d9_7bb7_1905_526f_acdce3fa439c.png" ] ],
+    "JBKT7O" : [ [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 6 ", " layer_d0f8a540_b75c_67f5_a985_cfe566ae4198.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 7 ", " layer_33ca87dc_eb50_c586_15c6_6b35abe42438.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 8 ", " layer_3667ca6d_3e22_13dc_ad27_804585055898.png" ] ],
+    "NALDAK" : [ [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 0 ", " layer_8f35aef7_2908_60c4_b48d_855ae0f05f33.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 1 ", " layer_c08b442d_f4d1_a779_bb5a_8fc09aac46f2.png" ] ],
+    "NOYFZL" : [ [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 3 ", " layer_5ba47525_9d34_1707_b0c4_bef027d1c50e.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 4 ", " layer_585e311d_2670_a1d8_7ee2_3e3fd2cbf3f0.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 5 ", " layer_8c6ef892_3cdb_ca4c_6ed5_4f60670cce98.png" ] ],
+    "P0C55F" : [ [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 0 ", " layer_8f35aef7_2908_60c4_b48d_855ae0f05f33.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 1 ", " layer_c08b442d_f4d1_a779_bb5a_8fc09aac46f2.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 2 ", " layer_3dfaf083_4edb_512c_02f2_e0499d2f4ec5.png" ] ],
+    "PMCCI0" : [ [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 9 ", " layer_0cce630c_6c05_8620_a8e6_c1f6905c9f4c.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 10 ", " layer_d851db3d_1ef5_bdb3_594f_8552b69d37fa.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 11 ", " layer_375ad882_28c9_a169_8319_e2c21cc1c255.png" ] ],
+    "WAWEEC" : [ [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 0 ", " layer_8f35aef7_2908_60c4_b48d_855ae0f05f33.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 1 ", " layer_c08b442d_f4d1_a779_bb5a_8fc09aac46f2.png" ], [ "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268 ", " 2 ", " layer_3dfaf083_4edb_512c_02f2_e0499d2f4ec5.png" ] ]
+  },
+  "designXusers" : {
+    "JdB9Lgvf1gS3GROEkLxTACz5MPF2" : {
+      "favorites" : {
+        "586d693f_51b1_97af_1480_53914174b0a7" : {
+          "image" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/586d693f_51b1_97af_1480_53914174b0a7.png?alt=media&token=9582d1a2-a9c3-4ff9-82c5-dfc07f445f77",
+          "items" : {
+            "module_d04fbd99_b96b_5ea0_58b3_368593da2e71" : {
+              "category" : "Cabinets",
+              "id" : "layer_9da4c3ca_ee9c_884d_dbb8_933f40397a1a",
+              "image" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_9da4c3ca_ee9c_884d_dbb8_933f40397a1a.png?alt=media&token=04f255ac-3690-4895-a5de-c58ae7a597b5",
+              "label" : "Wood",
+              "price" : 250
+            }
+          }
+        }
+      }
+    }
+  },
+  "floorXusers" : {
+    "JdB9Lgvf1gS3GROEkLxTACz5MPF2" : {
+      "company" : "Biorev LLC",
+      "position" : "",
+      "work_address" : "",
+      "work_number" : ""
+    }
+  },
+  "footer" : {
+    "text" : "© Biorev 2017"
+  },
+  "header" : {
+    "logo" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/b5420adf_0639_4a39_de14_025d05ec7c51?alt=media&token=efd057c4-258e-4239-acf9-5899943a10f1"
+  },
+  "homesList" : {
+    "HOME_b75d4960_ae38_5f11_b679_081056187a3a" : {
+      "bathrooms" : "1",
+      "bedrooms" : "2",
+      "cars" : "2",
+      "cover" : "https://picsum.photos/1024/786?image=10",
+      "floors" : 1,
+      "floorsArea" : [ "1" ],
+      "floorsTemplate" : [ "FLOORX_TEMPLATE_3d41a25a_16ed_f887_8316_081fe51b67b0" ],
+      "garage" : "1",
+      "name" : "Done",
+      "total" : "1"
+    }
+  },
+  "layer_packs" : {
+    "FLOORX_TEMPLATE_19f765aa_7670_f3a4_bbd4_a5cfd6a253cb" : {
+      "layer_pack_a871556b_aa3d_71da_eddb_4c58831082db" : [ {
+        "alias" : "Bench",
+        "caption" : "",
+        "coords" : {
+          "x" : 535,
+          "y" : 379
+        },
+        "description" : "",
+        "fileName" : "layer_ee01ef1d_2e61_137c_2371_eedc3f4fa70b.png",
+        "imagePath" : "Floor_1/Bench.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_ee01ef1d_2e61_137c_2371_eedc3f4fa70b.png?alt=media&token=f535d528-a659-47b2-957b-92a776263eac",
+        "manufacturing" : {
+          "id" : "",
+          "name" : "",
+          "url" : ""
+        },
+        "name" : "Bench",
+        "price" : "45"
+      }, {
+        "coords" : {
+          "x" : 32,
+          "y" : 560
+        },
+        "fileName" : "layer_b4e1b7f9_cda8_6fd7_05e7_ce93312db7af.png",
+        "imagePath" : "Floor_1/Car.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_b4e1b7f9_cda8_6fd7_05e7_ce93312db7af.png?alt=media&token=95e6aeb5-0f60-4a38-8c59-bcd0680a62b3",
+        "name" : "Car"
+      }, {
+        "coords" : {
+          "x" : 907,
+          "y" : 645
+        },
+        "fileName" : "layer_2344ade3_f3b0_140e_ba97_9c57fa492c3c.png",
+        "imagePath" : "Floor_1/Door.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_2344ade3_f3b0_140e_ba97_9c57fa492c3c.png?alt=media&token=a1c402a0-cbb5-4919-886d-ccfd52e279ce",
+        "name" : "Door"
+      }, {
+        "coords" : {
+          "x" : 1038,
+          "y" : 92
+        },
+        "fileName" : "layer_d97ab7a5_a3bb_d21f_dce6_a5f3b5418b30.png",
+        "imagePath" : "Floor_1/Fire_Place.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_d97ab7a5_a3bb_d21f_dce6_a5f3b5418b30.png?alt=media&token=e4522c19-84ea-4c7e-b764-3fcb13e0718a",
+        "name" : "Fire_Place"
+      } ]
+    },
+    "FLOORX_TEMPLATE_541a284a_6406_38c8_0973_a404cd91306d" : {
+      "layer_pack_f7d1c7e2_f0a9_e48d_36c2_ab9241795850" : [ {
+        "coords" : {
+          "x" : 70,
+          "y" : 384
+        },
+        "fileName" : "layer_69e647c8_51d7_4d58_ec45_3fa588c49808.png",
+        "imagePath" : "First_Floor/3_Car_garage.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_69e647c8_51d7_4d58_ec45_3fa588c49808.png?alt=media&token=5c7c239a-531e-43ec-b31b-15950e84c9cf",
+        "name" : "3_Car_garage"
+      }, {
+        "coords" : {
+          "x" : 983,
+          "y" : 109
+        },
+        "fileName" : "layer_aff52767_376a_a2e5_b679_364930cc6cb0.png",
+        "imagePath" : "First_Floor/Fire_Place.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_aff52767_376a_a2e5_b679_364930cc6cb0.png?alt=media&token=80e2b002-e9b8-4a61-8e1e-d371737c7e4c",
+        "name" : "Fire_Place"
+      }, {
+        "coords" : {
+          "x" : 812,
+          "y" : 467
+        },
+        "fileName" : "layer_8ffbf253_62f7_dd51_17db_a60eeb061afa.png",
+        "imagePath" : "First_Floor/french_door.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8ffbf253_62f7_dd51_17db_a60eeb061afa.png?alt=media&token=b6f9991d-87fe-416c-a9b7-80b2362599b4",
+        "name" : "french_door"
+      }, {
+        "coords" : {
+          "x" : 333,
+          "y" : 359
+        },
+        "fileName" : "layer_19230986_6696_1dd5_952a_041e021c7371.png",
+        "imagePath" : "First_Floor/garage_door.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_19230986_6696_1dd5_952a_041e021c7371.png?alt=media&token=8649b368-57f9-43fa-84fd-e9b8793a6e0e",
+        "name" : "garage_door"
+      } ]
+    },
+    "FLOORX_TEMPLATE_5ccf56f4_c8c5_27ad_fc94_8f1d016405dd" : {
+      "layer_pack_bbe3367b_1095_02f9_60d0_0196d1790d8c" : [ {
+        "coords" : {
+          "x" : 165,
+          "y" : 779
+        },
+        "fileName" : "layer_00d9050f_1ef8_21fa_01b9_65513d98b77e.png",
+        "imagePath" : "FCB_Elevation/uaStone_Base_Front_Garage.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_00d9050f_1ef8_21fa_01b9_65513d98b77e.png?alt=media&token=ccf662f9-3395-451b-872a-8f0ac0fefcfa",
+        "name" : "uaStone_Base_Front_Garage"
+      }, {
+        "coords" : {
+          "x" : 1072,
+          "y" : 359
+        },
+        "fileName" : "layer_3ec20a53_3812_7e8f_42fd_5483af549e97.png",
+        "imagePath" : "FCB_Elevation/vaShake_Siding_Garage.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_3ec20a53_3812_7e8f_42fd_5483af549e97.png?alt=media&token=03587198-1929-40f1-9862-a0da9fb4a98b",
+        "name" : "vaShake_Siding_Garage"
+      }, {
+        "coords" : {
+          "x" : 213,
+          "y" : 423
+        },
+        "fileName" : "layer_6aee66ee_5453_0680_6d18_cb0a42e14f86.png",
+        "imagePath" : "FCB_Elevation/vbShake_Siding_bed_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_6aee66ee_5453_0680_6d18_cb0a42e14f86.png?alt=media&token=f392823d-07e0-4158-be58-bac86ad2f8b3",
+        "name" : "vbShake_Siding_bed_2"
+      }, {
+        "coords" : {
+          "x" : 657,
+          "y" : 595
+        },
+        "fileName" : "layer_67dcff19_6101_6073_6164_53c0e1eddb68.png",
+        "imagePath" : "FCB_Elevation/vcShake_Siding_bed_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_67dcff19_6101_6073_6164_53c0e1eddb68.png?alt=media&token=d84bee5a-d56b-4667-a748-76778d2071ff",
+        "name" : "vcShake_Siding_bed_3"
+      }, {
+        "coords" : {
+          "x" : 1071,
+          "y" : 359
+        },
+        "fileName" : "layer_724588de_ceec_8b88_f525_6c3171f5262c.png",
+        "imagePath" : "FCB_Elevation/waStone_Garage.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_724588de_ceec_8b88_f525_6c3171f5262c.png?alt=media&token=50086dae-1935-4900-ad69-76c25e1e4107",
+        "name" : "waStone_Garage"
+      }, {
+        "coords" : {
+          "x" : 197,
+          "y" : 422
+        },
+        "fileName" : "layer_52e3a8f0_2321_5f26_74e6_d3d62b2c252b.png",
+        "imagePath" : "FCB_Elevation/wbStone_Bedroom_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_52e3a8f0_2321_5f26_74e6_d3d62b2c252b.png?alt=media&token=8bc3335d-6e2f-48a6-864e-72d68e9cb0e8",
+        "name" : "wbStone_Bedroom_2"
+      }, {
+        "coords" : {
+          "x" : 443,
+          "y" : 248
+        },
+        "fileName" : "layer_bfbe0929_5058_3ddf_f500_41d0c98869d3.png",
+        "imagePath" : "FCB_Elevation/xaGable_Shake.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_bfbe0929_5058_3ddf_f500_41d0c98869d3.png?alt=media&token=40d91736-9e9c-4633-8a0e-999c48adcd5b",
+        "name" : "xaGable_Shake"
+      }, {
+        "coords" : {
+          "x" : 442,
+          "y" : 248
+        },
+        "fileName" : "layer_4f251f5a_cdb9_b841_833b_5234cb93105f.png",
+        "imagePath" : "FCB_Elevation/xbdGable_Siding.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_4f251f5a_cdb9_b841_833b_5234cb93105f.png?alt=media&token=ad02ddb8-e5a2-4e18-bfaf-f8c3c384d3ec",
+        "name" : "xbdGable_Siding"
+      }, {
+        "coords" : {
+          "x" : 668,
+          "y" : 373
+        },
+        "fileName" : "layer_3c72b1fd_265c_bf20_a8a1_8519f218dfb2.png",
+        "imagePath" : "FCB_Elevation/yaDormer.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_3c72b1fd_265c_bf20_a8a1_8519f218dfb2.png?alt=media&token=c8d04bb2-38bf-4f8d-bb0e-53ce9080c4a5",
+        "name" : "yaDormer"
+      }, {
+        "coords" : {
+          "x" : 155,
+          "y" : 320
+        },
+        "fileName" : "layer_06ecc3b7_caec_5ef8_9549_f42194a56a12.png",
+        "imagePath" : "FCB_Elevation/zaNormal_Roof.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_06ecc3b7_caec_5ef8_9549_f42194a56a12.png?alt=media&token=5f7cc05e-5a6d-442a-8d39-fc0af05ab103",
+        "name" : "zaNormal_Roof"
+      }, {
+        "coords" : {
+          "x" : 142,
+          "y" : 320
+        },
+        "fileName" : "layer_7ad31aeb_5645_94cb_8d80_b26d5406b0fd.png",
+        "imagePath" : "FCB_Elevation/zbHip_Roof.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_7ad31aeb_5645_94cb_8d80_b26d5406b0fd.png?alt=media&token=cd00a721-ede7-4136-9a3c-673bda5d83c1",
+        "name" : "zbHip_Roof"
+      } ]
+    },
+    "FLOORX_TEMPLATE_6ba46a47_8b13_685e_a93d_17ca093ee910" : {
+      "layer_pack_ead2c48f_50ce_3744_03b4_efdd2330d104" : [ {
+        "coords" : {
+          "x" : 744,
+          "y" : 124
+        },
+        "fileName" : "layer_fa2d6eeb_b2b8_51a0_0deb_d4503cd26ac3.png",
+        "imagePath" : "Second_Floor/Tray_Ceiling.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_fa2d6eeb_b2b8_51a0_0deb_d4503cd26ac3.png?alt=media&token=685f4161-b905-4bd1-a6b3-e86fbb78f8cb",
+        "name" : "Tray_Ceiling"
+      } ]
+    },
+    "FLOORX_TEMPLATE_bc6d9165_abdf_5b1b_ce9a_6e8046f9c8f6" : {
+      "layer_pack_f6a220ac_42de_0d30_14da_9fb347ca3a57" : [ {
+        "coords" : {
+          "x" : 235,
+          "y" : 190
+        },
+        "fileName" : "layer_34cab24e_0f29_5d36_fa0d_744c55e3b95b.png",
+        "imagePath" : "First_Floor/Trey_celling.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_34cab24e_0f29_5d36_fa0d_744c55e3b95b.png?alt=media&token=de0260f3-4ee5-445f-8642-6522b438a1a8",
+        "name" : "Trey_celling"
+      } ]
+    },
+    "FLOORX_TEMPLATE_c40a2e24_0e3f_fe99_ff93_20002abca64a" : {
+      "layer_pack_319dec15_bcdb_3fa9_deaa_d9d94e4696fd" : [ {
+        "coords" : {
+          "x" : 1034,
+          "y" : 370
+        },
+        "fileName" : "layer_26319fdf_938f_c76e_9850_a9e6d1bb3054.png",
+        "imagePath" : "FCB_Elevation_Floors/bay_window.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_26319fdf_938f_c76e_9850_a9e6d1bb3054.png?alt=media&token=9ed5d969-7f54-4687-8ae2-4d5dd8ca247f",
+        "name" : "Bay Window"
+      }, {
+        "coords" : {
+          "x" : 1094,
+          "y" : 421
+        },
+        "fileName" : "layer_69aa9d02_0888_391f_e089_b65edf7234a8.png",
+        "imagePath" : "FCB_Elevation_Floors/suite_bath.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_69aa9d02_0888_391f_e089_b65edf7234a8.png?alt=media&token=4641e95d-efc9-4bbf-ae4b-9c8498362571",
+        "name" : "Owner&#39;s Suite Bath"
+      }, {
+        "coords" : {
+          "x" : 1069,
+          "y" : 476
+        },
+        "fileName" : "layer_78f7d2d5_d12f_d3db_7e3a_ff88652bd708.png",
+        "imagePath" : "FCB_Elevation_Floors/raised_celling.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_78f7d2d5_d12f_d3db_7e3a_ff88652bd708.png?alt=media&token=75c0cb5e-0e73-496d-8822-599abb08156c",
+        "name" : "Owner's Suite  raised ceiling"
+      }, {
+        "coords" : {
+          "x" : 1061,
+          "y" : 921
+        },
+        "fileName" : "layer_9f132ea7_39ed_00f1_c501_efd51167056c.png",
+        "imagePath" : "FCB_Elevation_Floors/side_load_one.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_9f132ea7_39ed_00f1_c501_efd51167056c.png?alt=media&token=621588d3-e69c-4537-8278-0368176d37c9",
+        "name" : "Garage side load Add 1&#39;-0&#34;"
+      }, {
+        "coords" : {
+          "x" : 1450,
+          "y" : 941
+        },
+        "fileName" : "layer_af8d5622_8383_7f4c_cae3_668a1b7a1348.png",
+        "imagePath" : "FCB_Elevation_Floors/garage_optional.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_af8d5622_8383_7f4c_cae3_668a1b7a1348.png?alt=media&token=f57024ae-6648-4ce5-b49c-b622c6c1148e",
+        "name" : "Garage Optional"
+      },
+
+
+       {
+        "coords" : {
+          "x" : 1061,
+          "y" : 940
+        },
+        "fileName" : "layer_dd9c2ae8_2fd5_b61e_12c5_d657104ca0fa.png",
+        "imagePath" : "FCB_Elevation_Floors/side_load_two_four.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_dd9c2ae8_2fd5_b61e_12c5_d657104ca0fa.png?alt=media&token=12c2e56c-a819-40b0-a12f-63ab52976499",
+        "name" : "Garage side load add 2&#39;-4&#34;"
+      } ]
+    },
+    "FLOORX_TEMPLATE_c6044d5f_29b6_fac1_0a25_927f1d0716f0" : {
+      "layer_pack_eb6f5126_d917_c75d_162d_d4831343faa0" : [ {
+        "coords" : {
+          "x" : 24,
+          "y" : 633
+        },
+        "fileName" : "layer_bd53a420_6170_74c5_877a_3ff5a50f6e43.png",
+        "imagePath" : "First/3_car_garage.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_bd53a420_6170_74c5_877a_3ff5a50f6e43.png?alt=media&token=9244923d-6f7b-4e22-9f58-32b76df82d23",
+        "name" : "3_car_garage"
+      }, {
+        "coords" : {
+          "x" : 444,
+          "y" : 585
+        },
+        "fileName" : "layer_731f72b9_5383_3d78_a311_41dbcbf14d82.png",
+        "imagePath" : "First/Bench.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_731f72b9_5383_3d78_a311_41dbcbf14d82.png?alt=media&token=f1c97ff6-e724-46c8-90f8-e3e52d3f927d",
+        "name" : "Bench"
+      }, {
+        "coords" : {
+          "x" : 448,
+          "y" : 88
+        },
+        "fileName" : "layer_4dee2890_c267_30f9_27e7_c204f40bfad6.png",
+        "imagePath" : "First/Fire_place.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_4dee2890_c267_30f9_27e7_c204f40bfad6.png?alt=media&token=d2a0d7bc-b400-402d-a81d-ec40fbb9df48",
+        "name" : "Fire_place"
+      }, {
+        "coords" : {
+          "x" : 749,
+          "y" : 540
+        },
+        "fileName" : "layer_fc2195f7_cf85_8a41_078c_f99316bf0a4b.png",
+        "imagePath" : "First/office_door.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_fc2195f7_cf85_8a41_078c_f99316bf0a4b.png?alt=media&token=fa4738a6-8d5d-498c-8e3e-6016442f0c1f",
+        "name" : "office_door"
+      } ]
+    },
+    "FLOORX_TEMPLATE_f6c340cc_1219_fa83_210f_0c8d58c3948b" : {
+      "layer_pack_6db8575b_22f1_80db_c22a_212535c459be" : [ {
+        "coords" : {
+          "x" : 742,
+          "y" : 523
+        },
+        "fileName" : "layer_bd31bab8_75a9_803c_5ae7_c7e69455b44f.png",
+        "imagePath" : "First_Floor/Door.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_bd31bab8_75a9_803c_5ae7_c7e69455b44f.png?alt=media&token=20b0be87-4b6d-40c7-95da-cc5257b92f4b",
+        "name" : "Door"
+      }, {
+        "coords" : {
+          "x" : 1039,
+          "y" : 69
+        },
+        "fileName" : "layer_a6c3e954_ff86_cae2_7778_595659a99f1b.png",
+        "imagePath" : "First_Floor/Fire_Place.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_a6c3e954_ff86_cae2_7778_595659a99f1b.png?alt=media&token=24b0dc05-e231-437a-acf1-8cacf11b1434",
+        "name" : "Fire_Place"
+      }, {
+        "coords" : {
+          "x" : 256,
+          "y" : 89
+        },
+        "fileName" : "layer_f7bb2920_0318_a5a5_a557_ec5699537c0a.png",
+        "imagePath" : "First_Floor/Tray_Ceiling.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_f7bb2920_0318_a5a5_a557_ec5699537c0a.png?alt=media&token=1ac650f5-a958-4e67-b8cb-be908d988b96",
+        "name" : "Tray_Ceiling"
+      } ]
+    },
+    "FLOORX_TEMPLATE_fc251a91_1999_2a59_525b_adfe603da14c" : {
+      "layer_pack_e58b47fd_888b_cb64_b73e_1340d58d565f" : [ {
+        "coords" : {
+          "x" : 733,
+          "y" : 507
+        },
+        "fileName" : "layer_aa6834bb_a451_273b_1f0b_a4a7dac3cbea.png",
+        "imagePath" : "First_Floor/Door.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_aa6834bb_a451_273b_1f0b_a4a7dac3cbea.png?alt=media&token=34cb402a-bba0-43ba-b444-8f7df5f7f576",
+        "name" : "Door"
+      }, {
+        "coords" : {
+          "x" : 248,
+          "y" : 246
+        },
+        "fileName" : "layer_f37fa825_cf63_e3ed_e838_bde1b44b9f27.png",
+        "imagePath" : "First_Floor/Fire_Place.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_f37fa825_cf63_e3ed_e838_bde1b44b9f27.png?alt=media&token=743a2e5c-7e87-4a52-bfc6-6904656f33ae",
+        "name" : "Fire_Place"
+      }, {
+        "coords" : {
+          "x" : 397,
+          "y" : 659
+        },
+        "fileName" : "layer_ff33e7f0_3b78_f805_bc8f_56a1715a252f.png",
+        "imagePath" : "First_Floor/French_Door.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_ff33e7f0_3b78_f805_bc8f_56a1715a252f.png?alt=media&token=fa4c1d0a-73b4-4daa-8a02-476cfe1bf869",
+        "name" : "French_Door"
+      }, {
+        "coords" : {
+          "x" : 839,
+          "y" : 129
+        },
+        "fileName" : "layer_9f495ca9_8434_306f_2dd4_047c57867e97.png",
+        "imagePath" : "First_Floor/Tray_Ceiling.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_9f495ca9_8434_306f_2dd4_047c57867e97.png?alt=media&token=b3eb7b98-cbfd-4bcc-add9-fa7f3ba45e38",
+        "name" : "Tray_Ceiling"
+      } ]
+    },
+    "KITCHEN_TEMPLATE_1bf2fb71_887a_bce4_8ffb_8042aa25f168" : {
+      "layer_pack_2b2f70bf_4589_3acc_d318_b896f96f59a7" : [ {
+        "alias" : "Standard",
+        "caption" : "",
+        "coords" : {
+          "x" : 158,
+          "y" : 369
+        },
+        "description" : "Standard island",
+        "fileName" : "layer_a3cbd6be_f1f3_0f4f_12a9_7dbc3305481d.png",
+        "imagePath" : "Islands/Island_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_a3cbd6be_f1f3_0f4f_12a9_7dbc3305481d.png?alt=media&token=31d3e003-c1e0-4fdc-b888-6516717c3ab1",
+        "manufacturing" : {
+          "id" : "63QL8",
+          "name" : "Standard",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Island_1",
+        "price" : "650",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/d2f66c83_53dd_8eec_92f5_2da3cd02bba1?alt=media&token=712a6c00-0c7e-4286-a134-ce1a160f8781"
+      }, {
+        "alias" : "Modern",
+        "caption" : "",
+        "coords" : {
+          "x" : 149,
+          "y" : 359
+        },
+        "description" : "Modern Island",
+        "fileName" : "layer_1977beec_ff9c_7009_c805_767ac4ccc93f.png",
+        "imagePath" : "Islands/Island_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_1977beec_ff9c_7009_c805_767ac4ccc93f.png?alt=media&token=3edcc8ec-5bfe-4840-a6b4-39fc1b8918b4",
+        "manufacturing" : {
+          "id" : "86LQ9",
+          "name" : "Modern",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Island_2",
+        "price" : "580",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/4c8b0f7d_f4f8_21f4_524a_4e0afb828d82?alt=media&token=e1a0178b-3ed7-4842-8fb9-31aa1af040c3"
+      }, {
+        "alias" : "Upgrade",
+        "caption" : "",
+        "coords" : {
+          "x" : 149,
+          "y" : 354
+        },
+        "description" : "Upgrade island",
+        "fileName" : "layer_51634bfc_893d_ff28_edc7_ab7abf9f01e0.png",
+        "imagePath" : "Islands/Island_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_51634bfc_893d_ff28_edc7_ab7abf9f01e0.png?alt=media&token=861903a7-9c30-461b-9b15-6438f6037dbd",
+        "manufacturing" : {
+          "id" : "60QP0",
+          "name" : "Upgrade",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Island_3",
+        "price" : "710",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/e1993678_4005_8969_961b_12b557c7d868?alt=media&token=2b0da0ee-ae71-4fe7-94cb-7aa08bd7106f"
+      } ],
+      "layer_pack_383fe1b5_4646_4c62_872f_9320db391717" : [ {
+        "alias" : "Double Oven",
+        "caption" : "",
+        "coords" : {
+          "x" : 101,
+          "y" : 277
+        },
+        "description" : "Double oven set",
+        "fileName" : "layer_0e25378b_b8ae_d187_d3b0_18d384e3574a.png",
+        "imagePath" : "Micro_Ovens/Micro_Oven_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_0e25378b_b8ae_d187_d3b0_18d384e3574a.png?alt=media&token=ad97e06d-4b7a-42c2-b438-a901d3d9bf27",
+        "manufacturing" : {
+          "id" : "73LA8",
+          "name" : "Double Oven",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Micro_Oven_1",
+        "price" : "1500"
+      }, {
+        "alias" : "Oven_Wave",
+        "caption" : "",
+        "coords" : {
+          "x" : 101,
+          "y" : 277
+        },
+        "description" : "Microwave and oven set",
+        "fileName" : "layer_dec78cf7_7ff9_05ae_0a5a_f07943fd912f.png",
+        "imagePath" : "Micro_Ovens/Micro_Oven_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_dec78cf7_7ff9_05ae_0a5a_f07943fd912f.png?alt=media&token=1b8fb7c2-40dc-4dcd-a4b0-ca61b11596a2",
+        "manufacturing" : {
+          "id" : "73PA0",
+          "name" : "Oven_Wave",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Micro_Oven_2",
+        "price" : "1800"
+      } ],
+      "layer_pack_453d6350_a58f_ea83_9e46_a2643d63c791" : [ {
+        "alias" : "Dark Brown",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 481
+        },
+        "description" : "Dark brown tiling",
+        "designer" : true,
+        "fileName" : "layer_768e756d_2813_00ae_40fa_02382092953f.png",
+        "imagePath" : "Floors/Floor_1_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_768e756d_2813_00ae_40fa_02382092953f.png?alt=media&token=04c31e18-375d-4e5e-9678-6f51472306d5",
+        "manufacturing" : {
+          "id" : "50JF8",
+          "name" : "Dark Brown",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_1_1",
+        "price" : "1500",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/682fdaf6_1b71_0740_673b_6f57e28ed544?alt=media&token=030a0a90-b9cf-4ebe-8e27-5111a1e645c2"
+      }, {
+        "alias" : "Blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 481
+        },
+        "description" : "Blue tiling",
+        "fileName" : "layer_483051c3_fdee_ba12_756d_c9e9d30a28c3.png",
+        "imagePath" : "Floors/Floor_1_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_483051c3_fdee_ba12_756d_c9e9d30a28c3.png?alt=media&token=3f05266f-d3c1-43d3-b1c3-369bb0c4cd01",
+        "manufacturing" : {
+          "id" : "63MQ0",
+          "name" : "Blue",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_1_2",
+        "price" : "1800",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/db4d5b15_29df_5036_a542_aeea97064b3f?alt=media&token=c6f8cc07-247f-4677-a438-8743aaadd0c8"
+      }, {
+        "alias" : "Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 481
+        },
+        "description" : "Grey tiling",
+        "designer" : true,
+        "fileName" : "layer_6913631d_eff3_157b_f726_9fe7f7fd05f1.png",
+        "imagePath" : "Floors/Floor_1_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_6913631d_eff3_157b_f726_9fe7f7fd05f1.png?alt=media&token=d658342a-71ac-44ad-9b9f-bcbfb711a923",
+        "manufacturing" : {
+          "id" : "40PZ8",
+          "name" : "Grey",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_1_3",
+        "price" : "1600",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/8714b177_9548_e254_1a8b_e171ac4b6002?alt=media&token=2187a72e-0d43-443f-9fe8-b7a91c39264e"
+      }, {
+        "alias" : "Dark Brown",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 477
+        },
+        "description" : "Dark brown tiling",
+        "fileName" : "layer_6943bbb2_4845_1075_260f_31918dc79a84.png",
+        "imagePath" : "Floors/Floor_2_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_6943bbb2_4845_1075_260f_31918dc79a84.png?alt=media&token=329d81e2-f136-41d6-a6f8-c3b6cdf6453b",
+        "manufacturing" : {
+          "id" : "50JF8",
+          "name" : "Dark Brown",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_2_1",
+        "price" : "1800",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/4de97121_5454_daf0_6d3d_3f4185ff649b?alt=media&token=e19b68bf-8255-428d-b486-1ad3f0348a06"
+      }, {
+        "alias" : "Blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 477
+        },
+        "description" : "Blue tiling",
+        "designer" : true,
+        "fileName" : "layer_6b2c3bd9_62d7_ee22_6cc2_350a8f3b5ce1.png",
+        "imagePath" : "Floors/Floor_2_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_6b2c3bd9_62d7_ee22_6cc2_350a8f3b5ce1.png?alt=media&token=2c52ec0d-361e-4662-850d-08e4aeb78972",
+        "manufacturing" : {
+          "id" : "63MQ0",
+          "name" : "Blue",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_2_2",
+        "price" : "1900",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c9833a80_a0df_3544_c3cf_88316b2bd1e7?alt=media&token=24c5c101-0ed3-4a86-bcfb-ee042f5ca3cc"
+      }, {
+        "alias" : "Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 477
+        },
+        "description" : "Grey tiling",
+        "designer" : true,
+        "fileName" : "layer_cc6d2c81_dd15_e101_b1c5_676d0b00f447.png",
+        "imagePath" : "Floors/Floor_2_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_cc6d2c81_dd15_e101_b1c5_676d0b00f447.png?alt=media&token=a8f3be27-4bf1-4d1a-a84d-bb0e1143b1eb",
+        "manufacturing" : {
+          "id" : "40PZ8",
+          "name" : "Grey",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_2_3",
+        "price" : "1800",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/da0727dd_79e6_f53f_ba94_df5efa93f81f?alt=media&token=715871ed-4ed9-44dd-998e-992cab27d120"
+      }, {
+        "alias" : "Dark Brown",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 494
+        },
+        "description" : "Dark brown tiling",
+        "designer" : true,
+        "fileName" : "layer_ffe36054_df69_b5f2_ebcc_468ceba2c815.png",
+        "imagePath" : "Floors/Floor_3_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_ffe36054_df69_b5f2_ebcc_468ceba2c815.png?alt=media&token=a9f0f3b5-0ef9-4a9b-9063-f5dda81dfd39",
+        "manufacturing" : {
+          "id" : "50JF8",
+          "name" : "Dark Brown",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_3_1",
+        "price" : "1750",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/a9be6b07_f57e_8263_9c5c_64904b42f612?alt=media&token=a03d439d-0b66-4e37-ab88-51bfb18cb461"
+      }, {
+        "alias" : "Blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 494
+        },
+        "description" : "Blue tiling",
+        "fileName" : "layer_43b83566_b4c6_c114_33b2_6fa40bbc30b1.png",
+        "imagePath" : "Floors/Floor_3_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_43b83566_b4c6_c114_33b2_6fa40bbc30b1.png?alt=media&token=42f6d9f3-62a1-43f1-941f-3b3400685b66",
+        "manufacturing" : {
+          "id" : "63MQ0",
+          "name" : "Blue",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_3_2",
+        "price" : "1650",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/69e89aa1_cff5_e217_3e17_f03c27536a0b?alt=media&token=5152b606-6aff-42e5-9f04-335ea1209287"
+      }, {
+        "alias" : "Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 494
+        },
+        "description" : "Grey tiling",
+        "designer" : true,
+        "fileName" : "layer_699ce645_a609_f5e9_1f24_8d07063f77a8.png",
+        "imagePath" : "Floors/Floor_3_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_699ce645_a609_f5e9_1f24_8d07063f77a8.png?alt=media&token=90039abc-edc6-4c0f-835c-6ffd51f1e835",
+        "manufacturing" : {
+          "id" : "40PZ8",
+          "name" : "Grey",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Floor_3_3",
+        "price" : "1250",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/bc2a4423_1acb_2ea8_9b70_e8b1de7eb7f2?alt=media&token=965e3682-bcd2-48af-b4ae-3bb85385a71c"
+      } ],
+      "layer_pack_7b9a614d_634b_fd8e_9932_97e1904bc4a6" : [ {
+        "alias" : "Black",
+        "caption" : "",
+        "coords" : {
+          "x" : 611,
+          "y" : 277
+        },
+        "description" : "Double door black",
+        "fileName" : "layer_98d059bf_6b22_1055_86d8_27c3bdbc97c4.png",
+        "imagePath" : "Fridges/Fridge_Black.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_98d059bf_6b22_1055_86d8_27c3bdbc97c4.png?alt=media&token=c28e6b48-2af8-4a85-93e2-74d772a07c8a",
+        "manufacturing" : {
+          "id" : "70LQ9",
+          "name" : "Black",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Fridge_Black",
+        "price" : "1800",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/bb93c535_f35f_e7aa_833e_bfe4990d7bc4?alt=media&token=879916d2-c917-496c-822c-fd64fadad3b0"
+      }, {
+        "alias" : "Silver",
+        "caption" : "",
+        "coords" : {
+          "x" : 611,
+          "y" : 278
+        },
+        "description" : "Silver colored double door.",
+        "fileName" : "layer_8f53a5a8_070b_371c_2fb0_4535c6321f0d.png",
+        "imagePath" : "Fridges/Fridge_Grey.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8f53a5a8_070b_371c_2fb0_4535c6321f0d.png?alt=media&token=17bf0467-a47e-4dc5-a3c4-c89cd926406e",
+        "manufacturing" : {
+          "id" : "10LP9",
+          "name" : "Silver",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Fridge_Grey",
+        "price" : "2200",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/32530050_bcc4_94a2_ff90_76635c57597e?alt=media&token=013f22d8-1965-4df3-b0d3-c0375b998dd5"
+      } ],
+      "layer_pack_a11a560e_1a9b_f7e3_5dc7_e3ccd04193f1" : [ {
+        "alias" : "Brown",
+        "caption" : "",
+        "coords" : {
+          "x" : 125,
+          "y" : 161
+        },
+        "description" : "Brown colored tiling",
+        "fileName" : "layer_290f233f_847a_9d54_f7dd_ddef58a81bc0.png",
+        "imagePath" : "Tiles/Tile_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_290f233f_847a_9d54_f7dd_ddef58a81bc0.png?alt=media&token=5f7430cb-d943-413f-94ba-585fcaf786c6",
+        "manufacturing" : {
+          "id" : "79PN0",
+          "name" : "Brown",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Tile_1",
+        "price" : "1400",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/972122b7_bf39_c54f_eedb_c8df3b2d2641?alt=media&token=b9655e7a-4765-4293-a5da-b907c1dbaca7"
+      }, {
+        "alias" : "Blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 125,
+          "y" : 161
+        },
+        "description" : "Blue c olored tiling",
+        "designer" : true,
+        "fileName" : "layer_afd32077_2f7e_59a7_47cd_4c15d262ee47.png",
+        "imagePath" : "Tiles/Tile_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_afd32077_2f7e_59a7_47cd_4c15d262ee47.png?alt=media&token=a5ae9e75-b796-441f-b93d-4ed5cd2c0d5a",
+        "manufacturing" : {
+          "id" : "79LA0",
+          "name" : "Blue",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Tile_2",
+        "price" : "1300",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/4dfe29dd_ccd6_9f59_c969_338013ba0d9e?alt=media&token=1ca33d54-9a82-471e-ad5f-b18bcde1465c"
+      }, {
+        "alias" : "White",
+        "caption" : "",
+        "coords" : {
+          "x" : 125,
+          "y" : 161
+        },
+        "description" : "White colored tiling",
+        "designer" : true,
+        "fileName" : "layer_0be4da55_e427_80f6_b28d_d5ec0d2514ee.png",
+        "imagePath" : "Tiles/Tile_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_0be4da55_e427_80f6_b28d_d5ec0d2514ee.png?alt=media&token=b94d3056-02c8-4158-9340-0a2760fb21f7",
+        "manufacturing" : {
+          "id" : "90LO9",
+          "name" : "White",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Tile_3",
+        "price" : "1200",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/129bf69b_9c7b_c0d4_a67f_772d774da2bd?alt=media&token=983210e3-d628-476a-821d-1971523ca2dd"
+      } ],
+      "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268" : [ {
+        "alias" : "Standard Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 94,
+          "y" : 182
+        },
+        "description" : "Standard wood cabinets.",
+        "designer" : true,
+        "fileName" : "layer_8f35aef7_2908_60c4_b48d_855ae0f05f33.png",
+        "imagePath" : "Cabinets/Cabinet_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8f35aef7_2908_60c4_b48d_855ae0f05f33.png?alt=media&token=33581f74-bec9-4a0c-b77e-11cbd8977ef2",
+        "isBatch" : {
+          "id" : "WAWEEC",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "85GH9",
+          "name" : "Standard Wood",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_1",
+        "price" : "1407",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/3fc76aee_8a17_4455_6a90_186445dbc16c?alt=media&token=bf741d27-c393-40ab-b239-69973cc931ad"
+      }, {
+        "alias" : "Blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 93,
+          "y" : 182
+        },
+        "description" : "Glossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinetsGlossy blue cabinets",
+        "fileName" : "layer_c08b442d_f4d1_a779_bb5a_8fc09aac46f2.png",
+        "imagePath" : "Cabinets/Cabinet_10.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_c08b442d_f4d1_a779_bb5a_8fc09aac46f2.png?alt=media&token=d8dc3a1c-4eb4-4b51-9f27-cbc4b2f994fb",
+        "isBatch" : {
+          "id" : "WAWEEC",
+          "isAdmin" : true
+        },
+        "manufacturing" : {
+          "id" : "96GH8",
+          "name" : "Blue",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_10",
+        "price" : "1550",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/8a4801e0_c474_09c8_3988_0b366e607415?alt=media&token=2a9f2de0-d395-4fab-9629-e97cbbdd3941"
+      }, {
+        "alias" : "Upgrade White",
+        "caption" : "",
+        "coords" : {
+          "x" : 94,
+          "y" : 182
+        },
+        "description" : "Upgrade white cabinets",
+        "designer" : true,
+        "fileName" : "layer_3dfaf083_4edb_512c_02f2_e0499d2f4ec5.png",
+        "imagePath" : "Cabinets/Cabinet_11.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_3dfaf083_4edb_512c_02f2_e0499d2f4ec5.png?alt=media&token=beca8487-9656-492b-9a47-265b7e0d675e",
+        "isBatch" : {
+          "id" : "WAWEEC",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "85GH8",
+          "name" : "Upgrade White",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_11",
+        "price" : "1500",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/39c3a996_c9e4_5601_58c2_cc31018af4a0?alt=media&token=bce4c220-5bbf-44eb-9ec5-43f6e16919b3"
+      }, {
+        "alias" : "Upgrade Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 94,
+          "y" : 182
+        },
+        "description" : "upfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabinetsupfrade wood cabin",
+        "fileName" : "layer_5ba47525_9d34_1707_b0c4_bef027d1c50e.png",
+        "imagePath" : "Cabinets/Cabinet_12.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_5ba47525_9d34_1707_b0c4_bef027d1c50e.png?alt=media&token=0f5934d4-e75b-4794-b9eb-a8f19067c5b3",
+        "isBatch" : {
+          "id" : "NOYFZL",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "96GH7",
+          "name" : "Upgrade Wood",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_12",
+        "price" : "1700",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/01966d5d_1758_4d18_99e2_5dea60eba740?alt=media&token=07a28ec0-fbdf-4f02-8c0e-45d0be974c53"
+      }, {
+        "alias" : "Upgrade Brown",
+        "caption" : "",
+        "coords" : {
+          "x" : 94,
+          "y" : 182
+        },
+        "description" : "Upgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinetsUpgrade brown cabinets",
+        "designer" : true,
+        "fileName" : "layer_585e311d_2670_a1d8_7ee2_3e3fd2cbf3f0.png",
+        "imagePath" : "Cabinets/Cabinet_13.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_585e311d_2670_a1d8_7ee2_3e3fd2cbf3f0.png?alt=media&token=c4cc925a-b743-4d76-a61c-ae47420eab74",
+        "isBatch" : {
+          "id" : "NOYFZL",
+          "isAdmin" : true
+        },
+        "manufacturing" : {
+          "id" : "45GD6",
+          "name" : "Upgrade Brown",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_13",
+        "price" : "1800",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/1f34aceb_b708_d6a2_17b4_d3ed85f8e7b8?alt=media&token=e9007fa4-22c6-4442-895b-da2e1ad161b9"
+      }, {
+        "alias" : "Upgrade Black",
+        "caption" : "",
+        "coords" : {
+          "x" : 94,
+          "y" : 182
+        },
+        "description" : "Upgrade black cabinetsUpgrade black cabinetsUpgrade black cabinetsUpgrade black cabinetsUpgrade black cabinetsUpgrade black cabinetsUpgrade black cabinetsUpgrade b lack cabinetsUpgrade black cabinetsUpgrade black cabinetsUpgrade black cabinetsUpgrade black cabinets  ",
+        "designer" : true,
+        "fileName" : "layer_8c6ef892_3cdb_ca4c_6ed5_4f60670cce98.png",
+        "imagePath" : "Cabinets/Cabinet_14.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8c6ef892_3cdb_ca4c_6ed5_4f60670cce98.png?alt=media&token=37e98d42-2bcc-42da-adde-769013f716cb",
+        "isBatch" : {
+          "id" : "NOYFZL",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "75EK9",
+          "name" : "Upgrade Black",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_14",
+        "price" : "1750",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/95cf9f3c_2d1c_1c09_1538_4986c8e6e5e4?alt=media&token=eec774ea-390e-47c0-9e6f-551b7ceb5508"
+      }, {
+        "alias" : "Upgrade blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 94,
+          "y" : 182
+        },
+        "description" : "Upgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue  cabinetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue ca binetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue cabinetsUpgrade Blue cabinets ",
+        "fileName" : "layer_d0f8a540_b75c_67f5_a985_cfe566ae4198.png",
+        "imagePath" : "Cabinets/Cabinet_15.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_d0f8a540_b75c_67f5_a985_cfe566ae4198.png?alt=media&token=b8454e3e-4817-407f-9e40-13a6acf41c6d",
+        "isBatch" : {
+          "id" : "JBKT7O",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "26JQ9",
+          "name" : "Upgrade Blue",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_15",
+        "price" : "1650",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/2ea5b7f2_f180_029e_c975_237a4f4c21b3?alt=media&token=b2e21870-a2af-4768-9868-7cc08e00b58a"
+      }, {
+        "alias" : "Standard Blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 95,
+          "y" : 183
+        },
+        "description" : "Standard blue cabinets",
+        "fileName" : "layer_33ca87dc_eb50_c586_15c6_6b35abe42438.png",
+        "imagePath" : "Cabinets/Cabinet_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_33ca87dc_eb50_c586_15c6_6b35abe42438.png?alt=media&token=76b9f5cc-9edf-4947-80ce-b7a50a713bc9",
+        "isBatch" : {
+          "id" : "JBKT7O",
+          "isAdmin" : true
+        },
+        "manufacturing" : {
+          "id" : "76UJ9",
+          "name" : "Standard Blue",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_2",
+        "price" : "1500",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/29919a4a_e9ea_c505_0a2d_095b90e1223b?alt=media&token=be8b0308-9422-485e-bee4-48a14d8d38c6"
+      }, {
+        "alias" : "Standard Black",
+        "caption" : "",
+        "coords" : {
+          "x" : 95,
+          "y" : 183
+        },
+        "description" : "Standard black cabinets",
+        "designer" : true,
+        "fileName" : "layer_3667ca6d_3e22_13dc_ad27_804585055898.png",
+        "imagePath" : "Cabinets/Cabinet_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_3667ca6d_3e22_13dc_ad27_804585055898.png?alt=media&token=e487e450-c8e2-48b7-b3ec-976834085db3",
+        "isBatch" : {
+          "id" : "JBKT7O",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "36GU8",
+          "name" : "Standard Black",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_3",
+        "price" : "1400",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/2c4b54da_6577_52b8_8013_e27a60795277?alt=media&token=468eb521-3760-4eb0-9547-243e3f8819f2"
+      }, {
+        "alias" : "Standard Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 95,
+          "y" : 183
+        },
+        "description" : "Standard wood cabinets",
+        "fileName" : "layer_0cce630c_6c05_8620_a8e6_c1f6905c9f4c.png",
+        "imagePath" : "Cabinets/Cabinet_4.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_0cce630c_6c05_8620_a8e6_c1f6905c9f4c.png?alt=media&token=907b0535-7a7a-47c3-9369-d01b11995803",
+        "isBatch" : {
+          "id" : "PMCCI0",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "37FP9",
+          "name" : "Standard Wood",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_4",
+        "price" : "1450",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/8c68c43e_219a_e144_7569_2627728c2194?alt=media&token=01bab036-7ffa-473c-90e2-645a5ceb445f"
+      }, {
+        "alias" : "Standard White",
+        "caption" : "",
+        "coords" : {
+          "x" : 95,
+          "y" : 183
+        },
+        "description" : "Standard white cabinets",
+        "fileName" : "layer_d851db3d_1ef5_bdb3_594f_8552b69d37fa.png",
+        "imagePath" : "Cabinets/Cabinet_5.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_d851db3d_1ef5_bdb3_594f_8552b69d37fa.png?alt=media&token=55d4c617-8e67-457a-9bcc-06e2813da2d1",
+        "isBatch" : {
+          "id" : "PMCCI0",
+          "isAdmin" : true
+        },
+        "manufacturing" : {
+          "id" : "37YN9",
+          "name" : "Standard White",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_5",
+        "price" : "1600",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/f71ae039_537a_dbb6_9170_acd769ffddd4?alt=media&token=1e394392-5174-4cb7-b279-f23523fac41a"
+      }, {
+        "alias" : "Brown",
+        "caption" : "",
+        "coords" : {
+          "x" : 93,
+          "y" : 182
+        },
+        "description" : "Brown cabinets",
+        "fileName" : "layer_375ad882_28c9_a169_8319_e2c21cc1c255.png",
+        "imagePath" : "Cabinets/Cabinet_6.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_375ad882_28c9_a169_8319_e2c21cc1c255.png?alt=media&token=e5eb554a-1437-49a9-a9e7-ce8e7da2466d",
+        "isBatch" : {
+          "id" : "PMCCI0",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "76AL8",
+          "name" : "Brown",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_6",
+        "price" : "1800",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c1283456_bdae_57a5_29be_249957925657?alt=media&token=d69cc397-39d9-4f8c-985c-99e6cff29194"
+      }, {
+        "alias" : "White",
+        "caption" : "",
+        "coords" : {
+          "x" : 93,
+          "y" : 182
+        },
+        "description" : "White cabinets",
+        "designer" : true,
+        "fileName" : "layer_6c729e99_5e1a_16c8_9dbc_670fc28b73fe.png",
+        "imagePath" : "Cabinets/Cabinet_7.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_6c729e99_5e1a_16c8_9dbc_670fc28b73fe.png?alt=media&token=29d4cb5c-6481-4fdf-aa86-08635d4d4a1c",
+        "isBatch" : {
+          "id" : "0G2UOP",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "86DP9",
+          "name" : "White",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_7",
+        "price" : "1900",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/9adbd7a9_f386_cd88_22bb_a0daef2d8f80?alt=media&token=f47b6b77-c2c8-4b29-94da-3647292b8ce8"
+      }, {
+        "alias" : "Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 93,
+          "y" : 182
+        },
+        "description" : "Wood cabinets",
+        "designer" : true,
+        "fileName" : "layer_5f13fd45_07fe_c893_b4fe_5dd4f74321c8.png",
+        "imagePath" : "Cabinets/Cabinet_8.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_5f13fd45_07fe_c893_b4fe_5dd4f74321c8.png?alt=media&token=05281a72-06d7-4e8a-bb20-fcd2d0efe2df",
+        "isBatch" : {
+          "id" : "0G2UOP",
+          "isAdmin" : true
+        },
+        "manufacturing" : {
+          "id" : "36YA0",
+          "name" : "Wood",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_8",
+        "price" : "1750",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/53e89217_fd0f_c253_0840_8145ae497515?alt=media&token=fad86a93-73c0-4c89-baf3-22b9b75d846a"
+      }, {
+        "alias" : "Black",
+        "caption" : "",
+        "coords" : {
+          "x" : 93,
+          "y" : 182
+        },
+        "description" : "Black cabinets",
+        "fileName" : "layer_686555d9_7bb7_1905_526f_acdce3fa439c.png",
+        "imagePath" : "Cabinets/Cabinet_9.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_686555d9_7bb7_1905_526f_acdce3fa439c.png?alt=media&token=d5a5573d-c388-44d8-80cd-c55f0c7cec3e",
+        "isBatch" : {
+          "id" : "0G2UOP",
+          "isAdmin" : false
+        },
+        "manufacturing" : {
+          "id" : "60WL8",
+          "name" : "Black",
+          "url" : "http://biorev.com"
+        },
+        "name" : "Cabinet_9",
+        "price" : "1500",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/377d2fc0_616d_4f0b_ce74_ff5d0e16a959?alt=media&token=42e6fcf1-b91f-427b-969d-fd10764115fd"
+      } ]
+    },
+    "KITCHEN_TEMPLATE_bb79c154_4f07_e5f0_26b4_1c33939dcc3a" : {
+      "layer_pack_1ff1d30c_20c4_590b_9724_a4593fe519d6" : [ {
+        "alias" : "White",
+        "caption" : "",
+        "coords" : {
+          "x" : 222,
+          "y" : 556
+        },
+        "description" : "",
+        "fileName" : "layer_8ceb43a2_0b0a_f91d_37b0_2c877ecf5831.png",
+        "imagePath" : "Counter_Tops/Counter_Top_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8ceb43a2_0b0a_f91d_37b0_2c877ecf5831.png?alt=media&token=f5410a37-5e57-4403-a2a7-6841e8d8c1ab",
+        "manufacturing" : {
+          "id" : "",
+          "name" : "",
+          "url" : ""
+        },
+        "name" : "Counter_Top_1",
+        "price" : "520",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/1120c264_6a08_899d_cac9_7b4973d62562?alt=media&token=133d9954-5053-4089-a0d5-ec833ac48220"
+      }, {
+        "alias" : "Marble",
+        "caption" : "",
+        "coords" : {
+          "x" : 222,
+          "y" : 556
+        },
+        "description" : "Marble stone counter-top",
+        "designer" : true,
+        "fileName" : "layer_dfc3c55f_49a7_cd1e_fe3c_e7e9cc9e6814.png",
+        "imagePath" : "Counter_Tops/Counter_Top_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_dfc3c55f_49a7_cd1e_fe3c_e7e9cc9e6814.png?alt=media&token=c3083b90-c500-4fbe-a9ad-1bfa36583b36",
+        "manufacturing" : {
+          "id" : "48FL4",
+          "name" : "Marble",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Counter_Top_2",
+        "price" : "750",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c0d190ff_9e80_36ef_b6c4_a554f2495d3f?alt=media&token=c7133cff-7373-4b0b-97c2-e275a31cf79c"
+      }, {
+        "alias" : "Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 222,
+          "y" : 556
+        },
+        "description" : "Grey colored counter-top",
+        "designer" : true,
+        "fileName" : "layer_7885216b_8bbf_3bd4_89a2_a6b43b85acf0.png",
+        "imagePath" : "Counter_Tops/Counter_Top_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_7885216b_8bbf_3bd4_89a2_a6b43b85acf0.png?alt=media&token=599d2908-32a4-4e47-b33e-7fec07bd45cc",
+        "manufacturing" : {
+          "id" : "63GS9",
+          "name" : "Grey",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Counter_Top_3",
+        "price" : "420",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/49e189ed_9481_136d_0b53_42f711d92269?alt=media&token=bdc9252a-25eb-45d5-ba6b-fc6cf0859ff3"
+      } ],
+      "layer_pack_286cd2e2_3c3a_e326_bb68_c42a883f6a23" : [ {
+        "alias" : "Black",
+        "caption" : "",
+        "coords" : {
+          "x" : 769,
+          "y" : 84
+        },
+        "description" : "Black tiling",
+        "designer" : true,
+        "fileName" : "layer_2d75059f_48d8_3a6e_b51b_5323b742bbc3.png",
+        "imagePath" : "Tiles/Tile_Black.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_2d75059f_48d8_3a6e_b51b_5323b742bbc3.png?alt=media&token=bb563910-53d6-49e8-8345-0650fd4a8053",
+        "manufacturing" : {
+          "id" : "20EG5",
+          "name" : "Black",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Tile_Black",
+        "price" : "220"
+      }, {
+        "alias" : "Blue",
+        "caption" : "",
+        "coords" : {
+          "x" : 769,
+          "y" : 84
+        },
+        "description" : "Blue tiling",
+        "fileName" : "layer_38269e60_7c5c_9055_d997_047f9f504bbc.png",
+        "imagePath" : "Tiles/Tile_Blue.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_38269e60_7c5c_9055_d997_047f9f504bbc.png?alt=media&token=af8a0e59-7427-48e8-9d2a-b8dfc57203b7",
+        "manufacturing" : {
+          "id" : "21EL7",
+          "name" : "Blue",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Tile_Blue",
+        "price" : "250"
+      }, {
+        "alias" : "Stone",
+        "caption" : "",
+        "coords" : {
+          "x" : 769,
+          "y" : 84
+        },
+        "description" : "Marble stone",
+        "designer" : true,
+        "fileName" : "layer_e022debd_12bd_6bbe_03b1_ed91e523b258.png",
+        "imagePath" : "Tiles/Tile_Stone.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_e022debd_12bd_6bbe_03b1_ed91e523b258.png?alt=media&token=ac0ad03f-d174-45b9-8501-4e1374522007",
+        "manufacturing" : {
+          "id" : "52LO9",
+          "name" : "Stone",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Tile_Stone",
+        "price" : "230"
+      } ],
+      "layer_pack_37a097d3_bc74_5b66_6c47_cda4e830a97e" : [ {
+        "alias" : "White",
+        "caption" : "",
+        "coords" : {
+          "x" : 223,
+          "y" : 593
+        },
+        "description" : "White colored cabinets",
+        "fileName" : "layer_b1c7927c_4c15_7645_16ad_bda923da84a3.png",
+        "imagePath" : "Cabinets/Cabinet_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_b1c7927c_4c15_7645_16ad_bda923da84a3.png?alt=media&token=507402c1-acfa-4d23-ae54-5e3d4c759ba9",
+        "manufacturing" : {
+          "id" : "34TG3",
+          "name" : "White",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Cabinet_1",
+        "price" : "120",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c130238a_e9b5_39e0_e457_b76a16536385?alt=media&token=24ce8f0e-b991-45f4-9461-c088472d05da"
+      }, {
+        "alias" : "Darkwood Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 223,
+          "y" : 593
+        },
+        "description" : "Darkwood grey cabinets.",
+        "designer" : true,
+        "fileName" : "layer_848ce1be_a0fd_cfee_ced2_8879151f8a83.png",
+        "imagePath" : "Cabinets/Cabinet_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_848ce1be_a0fd_cfee_ced2_8879151f8a83.png?alt=media&token=0912f484-d572-459b-bd2a-dd5f21aec655",
+        "manufacturing" : {
+          "id" : "87LD4",
+          "name" : "Darkwood Grey",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Cabinet_2",
+        "price" : "152",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/eba4d771_88c7_754b_5a00_28d881e441ef?alt=media&token=40930db3-4fd4-42df-b6ab-ab701d19ba71"
+      }, {
+        "alias" : "Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 223,
+          "y" : 593
+        },
+        "description" : "Grey colored cabinets.",
+        "fileName" : "layer_c46c5fa5_88f7_3b2c_98c2_6f1e8d93a4a3.png",
+        "imagePath" : "Cabinets/Cabinet_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_c46c5fa5_88f7_3b2c_98c2_6f1e8d93a4a3.png?alt=media&token=5b7383e9-49d3-4db9-b7bf-fff7135e43ee",
+        "manufacturing" : {
+          "id" : "29PW7",
+          "name" : "Grey",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Cabinet_3",
+        "price" : "121",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/f6c1961a_4906_9db3_6a3e_f2d7747b584a?alt=media&token=6f83c4ab-f756-4539-98b8-676a77a06582"
+      } ],
+      "layer_pack_49e5b79d_ac25_7fb2_cc35_799891286d94" : [ {
+        "alias" : "White",
+        "caption" : "",
+        "coords" : {
+          "x" : 1575,
+          "y" : 0
+        },
+        "description" : "White Blinds.",
+        "fileName" : "layer_400377bd_ede9_e45f_f9c1_0612958663b4.png",
+        "imagePath" : "Blinds/Blind_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_400377bd_ede9_e45f_f9c1_0612958663b4.png?alt=media&token=1be99078-bc37-4a77-bfb2-56f67cbfa512",
+        "manufacturing" : {
+          "id" : "68UI0",
+          "name" : "White",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Blind_1",
+        "price" : "50",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/4806d0fc_c7be_3241_5747_19129c5ca5de?alt=media&token=26343aa0-a5bd-4a63-84de-3725bcf7c522"
+      }, {
+        "alias" : "Cream",
+        "caption" : "",
+        "coords" : {
+          "x" : 1575,
+          "y" : 0
+        },
+        "description" : "Cream colored window blinds",
+        "designer" : true,
+        "fileName" : "layer_5ff89433_52bf_bc66_8358_88888e4b7693.png",
+        "imagePath" : "Blinds/Blind_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_5ff89433_52bf_bc66_8358_88888e4b7693.png?alt=media&token=0ca77fbc-4c78-4625-89a5-43ac776b377a",
+        "manufacturing" : {
+          "id" : "12OQ0",
+          "name" : "Cream",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Blind_2",
+        "price" : "80",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/ac99810a_7294_1848_7e1c_a0dd43179e3e?alt=media&token=81cf41f1-02b7-4332-90e3-48754c5b004e"
+      }, {
+        "alias" : "Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 1576,
+          "y" : 0
+        },
+        "description" : "Wood colored window blinds.",
+        "designer" : true,
+        "fileName" : "layer_fd23df8d_6778_82fc_3e0f_03353998dd96.png",
+        "imagePath" : "Blinds/Blind_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_fd23df8d_6778_82fc_3e0f_03353998dd96.png?alt=media&token=d82eb4ca-1779-4ab3-a821-eae6d553fe73",
+        "manufacturing" : {
+          "id" : "56PX0",
+          "name" : "Wood",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Blind_3",
+        "price" : "85",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/5200c368_bdc6_0660_8b04_902f22caa431?alt=media&token=0113c7ed-2082-472d-963d-75131960b866"
+      } ],
+      "layer_pack_4dde7a67_e819_00dd_37b2_c10a5757fa13" : [ {
+        "alias" : "Standard",
+        "caption" : "67",
+        "coords" : {
+          "x" : 239,
+          "y" : 0
+        },
+        "description" : "Standard Mirror",
+        "designer" : true,
+        "fileName" : "layer_84da508b_c988_10f7_ce52_1ef6dec4ec0a.png",
+        "imagePath" : "Mirrors/Mirror_Base.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_84da508b_c988_10f7_ce52_1ef6dec4ec0a.png?alt=media&token=d1b305e3-a245-42b1-af5c-8df51d5b3f47",
+        "manufacturing" : {
+          "id" : "44DD0",
+          "name" : "Standard Mirror",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Mirror_Base",
+        "price" : "67",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/b56e0d03_7a14_1637_a96f_a9444fb4033f?alt=media&token=5916f9f8-7ae2-4d5d-9bf4-a7e4c72b3e3d"
+      }, {
+        "alias" : "White Frame",
+        "caption" : "",
+        "coords" : {
+          "x" : 223,
+          "y" : 0
+        },
+        "description" : "White Frame mirror.",
+        "fileName" : "layer_18ac2629_bc42_bacd_65f8_08651cf0fa3b.png",
+        "imagePath" : "Mirrors/Mirror_white.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_18ac2629_bc42_bacd_65f8_08651cf0fa3b.png?alt=media&token=a7374898-dd93-4e87-8804-dbd8dd1a8706",
+        "manufacturing" : {
+          "id" : "10RR0",
+          "name" : "White Frame",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Mirror_white",
+        "price" : "74",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/90b307a7_d09b_0761_a4d0_4fe1bd26129f?alt=media&token=56dba1e4-e296-4d28-8c8d-8aa312c41197"
+      }, {
+        "alias" : "Wood Frame",
+        "caption" : "",
+        "coords" : {
+          "x" : 223,
+          "y" : 0
+        },
+        "description" : "Wooden frame mirror",
+        "designer" : true,
+        "fileName" : "layer_b5adc345_5cbc_2ef4_7458_5efd6860e60f.png",
+        "imagePath" : "Mirrors/Mirror_wood.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_b5adc345_5cbc_2ef4_7458_5efd6860e60f.png?alt=media&token=13370bcc-147e-43bf-9b73-5e75648fa7d8",
+        "manufacturing" : {
+          "id" : "52KD2",
+          "name" : "Wood Frame",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Mirror_wood",
+        "price" : "85",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/1857af60_ac4c_4de8_c9cd_150f6c36c0bf?alt=media&token=a332175e-54b4-476f-bb1b-e2743419c1ff"
+      } ],
+      "layer_pack_db8672bc_b5b5_0ed7_eb1a_90fdabccdf36" : [ {
+        "alias" : "Wooden",
+        "caption" : "",
+        "coords" : {
+          "x" : 186,
+          "y" : 915
+        },
+        "description" : "Wooden flooring",
+        "designer" : true,
+        "fileName" : "layer_934b5536_843c_cc69_034d_43d75f96503a.png",
+        "imagePath" : "Floors/Floor_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_934b5536_843c_cc69_034d_43d75f96503a.png?alt=media&token=24c290b1-bf5a-4972-b390-e15ef3ba7dcb",
+        "manufacturing" : {
+          "id" : "30VH3",
+          "name" : "Wood",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Floor_1",
+        "price" : "510",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/9a7c80c7_7bd0_c59b_27d9_9f28aeec1f86?alt=media&token=a0d4f039-9fe4-4d60-a8d3-4d21f1ca1e1a"
+      }, {
+        "alias" : "Marble",
+        "caption" : "",
+        "coords" : {
+          "x" : 186,
+          "y" : 915
+        },
+        "description" : "Marble tiling",
+        "fileName" : "layer_7644b6e6_d55e_6547_ad5f_324c71578385.png",
+        "imagePath" : "Floors/Floor_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_7644b6e6_d55e_6547_ad5f_324c71578385.png?alt=media&token=28089359-60e0-44dd-8051-5a5c1f7838a6",
+        "manufacturing" : {
+          "id" : "43MN9",
+          "name" : "Marble",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Floor_2",
+        "price" : "630",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/9be33d5e_d4f3_883b_9e7a_9b3fd87a7a27?alt=media&token=5bb0ab4f-ba9d-4a9b-9c3e-5e8ff0a97384"
+      }, {
+        "alias" : "Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 186,
+          "y" : 915
+        },
+        "description" : "Grey tiling",
+        "designer" : true,
+        "fileName" : "layer_8b7856fa_6d28_48fe_c2f2_ac5ca84c59fb.png",
+        "imagePath" : "Floors/Floor_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8b7856fa_6d28_48fe_c2f2_ac5ca84c59fb.png?alt=media&token=92eb766a-2e15-4722-bfd3-f295c2cd5378",
+        "manufacturing" : {
+          "id" : "30FL1",
+          "name" : "Grey",
+          "url" : "https://biorev.com"
+        },
+        "name" : "Floor_3",
+        "price" : "650",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/5a773ead_9130_0c56_40b5_17b672aa705a?alt=media&token=bfc9c5e3-b31e-4e53-abef-6bae224c35ef"
+      } ]
+    },
+    "KITCHEN_TEMPLATE_c70ddda0_dd47_646b_d5ec_2b3f2f363bd9" : {
+      "layer_pack_070aad98_f476_97fb_18e2_07779a4e322b" : [ {
+        "alias" : "Wave_Oven",
+        "caption" : "",
+        "coords" : {
+          "x" : 523,
+          "y" : 440
+        },
+        "description" : "Set 01",
+        "fileName" : "layer_095ae9c9_b109_df91_5524_4d3003e2681f.png",
+        "imagePath" : "Micro_Ovens/Micro1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_095ae9c9_b109_df91_5524_4d3003e2681f.png?alt=media&token=b33a8df0-af47-4af0-9a2c-be1955c81259",
+        "manufacturing" : {
+          "id" : "36UH5",
+          "name" : "Oven_Wave",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Micro1",
+        "price" : "200"
+      }, {
+        "alias" : "Oven_Wave",
+        "caption" : "",
+        "coords" : {
+          "x" : 524,
+          "y" : 440
+        },
+        "description" : "Set 02",
+        "designer" : true,
+        "fileName" : "layer_762fc945_c866_3926_c225_a126fc011b0d.png",
+        "imagePath" : "Micro_Ovens/Micro2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_762fc945_c866_3926_c225_a126fc011b0d.png?alt=media&token=00e06614-04f2-47c5-9510-95a1f406cfe4",
+        "manufacturing" : {
+          "id" : "36GH5",
+          "name" : "Oven_Wave",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Micro2",
+        "price" : "300"
+      }, {
+        "alias" : "Double Oven",
+        "caption" : "",
+        "coords" : {
+          "x" : 517,
+          "y" : 440
+        },
+        "description" : "Double Oven Set",
+        "designer" : true,
+        "fileName" : "layer_dd90ab0c_8023_51f6_fa46_2341a3871cb5.png",
+        "imagePath" : "Micro_Ovens/Micro3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_dd90ab0c_8023_51f6_fa46_2341a3871cb5.png?alt=media&token=2c7aaad3-559b-4f90-a071-67c077d3acab",
+        "manufacturing" : {
+          "id" : "65FD5",
+          "name" : "Double Oven",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Micro3",
+        "price" : "250"
+      } ],
+      "layer_pack_54d7b121_5604_b7b5_0899_14f282e8f4d7" : [ {
+        "coords" : {
+          "x" : 202,
+          "y" : 5
+        },
+        "fileName" : "layer_0d356322_7ff7_a7df_71e1_f0500939c508.png",
+        "imagePath" : "Hanging_Lights/L1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_0d356322_7ff7_a7df_71e1_f0500939c508.png?alt=media&token=59a82b3b-655c-4dc8-a428-3cc36479e659",
+        "name" : "L1"
+      } ],
+      "layer_pack_69960813_2bba_e236_e458_d72201c13c3f" : [ {
+        "alias" : "Double Door - Black",
+        "caption" : "",
+        "coords" : {
+          "x" : 1375,
+          "y" : 444
+        },
+        "description" : "Black color double door.",
+        "fileName" : "layer_874e27c0_0480_3dfe_48c0_ada567c08e2b.png",
+        "imagePath" : "Refrigerators/Refrigerators1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_874e27c0_0480_3dfe_48c0_ada567c08e2b.png?alt=media&token=095bd371-ff90-4359-acf0-a8802d0cb545",
+        "manufacturing" : {
+          "id" : "32GH5",
+          "name" : "Double Door - Black",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Refrigerators1",
+        "price" : "1200"
+      }, {
+        "alias" : "Double Door - Silver",
+        "caption" : "",
+        "coords" : {
+          "x" : 1373,
+          "y" : 442
+        },
+        "description" : "Silver colored double door.",
+        "designer" : true,
+        "fileName" : "layer_33108bad_c79a_13ca_7d1b_63d2c12fc956.png",
+        "imagePath" : "Refrigerators/Refrigerators2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_33108bad_c79a_13ca_7d1b_63d2c12fc956.png?alt=media&token=1f0204b2-5553-4d9a-8ece-b76bedbd0fa5",
+        "manufacturing" : {
+          "id" : "65HY8",
+          "name" : "Double Door - Silver",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Refrigerators2",
+        "price" : "1500"
+      }, {
+        "alias" : "Triple Door",
+        "caption" : "",
+        "coords" : {
+          "x" : 1372,
+          "y" : 443
+        },
+        "description" : "Triple door.",
+        "designer" : true,
+        "fileName" : "layer_8da724b8_24de_8ea9_e670_fb40be795889.png",
+        "imagePath" : "Refrigerators/Refrigerators3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8da724b8_24de_8ea9_e670_fb40be795889.png?alt=media&token=5c1487ca-b8c3-45fe-a8e5-62d7f7cad1ff",
+        "manufacturing" : {
+          "id" : "63GH5",
+          "name" : "Triple Door",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Refrigerators3",
+        "price" : "1900"
+      } ],
+      "layer_pack_6d854ba2_5fd0_3373_b0fa_f27ef8f36097" : [ {
+        "alias" : "White",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Full high gloss white color cabinets with sqaure handle. ",
+        "designer" : true,
+        "fileName" : "layer_c474277e_d6ef_baf7_8f29_59d211592491.png",
+        "imagePath" : "Cabinets/Cabinet_1_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_c474277e_d6ef_baf7_8f29_59d211592491.png?alt=media&token=7c6adcb2-51db-4a14-8d47-9822ae783f99",
+        "manufacturing" : {
+          "id" : "14AB5",
+          "name" : "White",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_1_1",
+        "price" : "350",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/305f3fdd_9959_8b22_3b4a_990be46e69d7?alt=media&token=a2597859-a96d-4bec-a9d3-5c7c1b0c6f7b"
+      }, {
+        "alias" : "Darkwood Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Full high gloss darkwood grey color cabinets with sqaure handle. Full high gloss darkwood grey color cabinets with sqaure handle. Full high gloss darkwood grey color cabinets with sqaure handle. Full high gloss darkwood grey color cabinets with sqaure handle. ",
+        "fileName" : "layer_42a11b69_66bf_f72b_643a_b0a5453bc975.png",
+        "imagePath" : "Cabinets/Cabinet_1_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_42a11b69_66bf_f72b_643a_b0a5453bc975.png?alt=media&token=30ff7a79-587d-4642-ab45-d1cdf919e50c",
+        "manufacturing" : {
+          "id" : "17RG5",
+          "name" : "Grey",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_1_2",
+        "price" : "150",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/baead616_21fe_b68d_a194_d085cf756775?alt=media&token=72c3e6ef-4e2c-4379-b900-227293660aad"
+      }, {
+        "alias" : "Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Full high gloss wood color cabinets with sqaure handle. ",
+        "fileName" : "layer_9da4c3ca_ee9c_884d_dbb8_933f40397a1a.png",
+        "imagePath" : "Cabinets/Cabinet_1_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_9da4c3ca_ee9c_884d_dbb8_933f40397a1a.png?alt=media&token=04f255ac-3690-4895-a5de-c58ae7a597b5",
+        "manufacturing" : {
+          "id" : "16ED7",
+          "name" : "Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_1_3",
+        "price" : "250",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/61e3e426_f099_3520_b2f2_9ebdb1713773?alt=media&token=d4568dce-892e-4720-acd9-829922339099"
+      }, {
+        "alias" : "Standard White",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Standard high gloss white color cabinets with sqaure handle.",
+        "fileName" : "layer_82dcbbe8_7271_ca2e_6639_9e0de1d70056.png",
+        "imagePath" : "Cabinets/Cabinet_2_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_82dcbbe8_7271_ca2e_6639_9e0de1d70056.png?alt=media&token=26f15945-de6e-44a8-8474-b71eb769112f",
+        "manufacturing" : {
+          "id" : "78JU8",
+          "name" : "Standard White",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_2_1",
+        "price" : "152",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/6d2ef983_d006_0a47_0cb9_f929d04adc81?alt=media&token=88369642-3319-4008-8bd7-1926e61d8a61"
+      }, {
+        "alias" : "Standard Darkwood Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Standard high gloss darkwood grey color cabinets with sqaure handle.",
+        "fileName" : "layer_3e90f2e3_365b_084d_0012_f2e716a908c7.png",
+        "imagePath" : "Cabinets/Cabinet_2_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_3e90f2e3_365b_084d_0012_f2e716a908c7.png?alt=media&token=15939491-74dd-41e5-a340-58114df9b3a5",
+        "manufacturing" : {
+          "id" : "95OG5",
+          "name" : "Standard Darkwood Grey",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_2_2",
+        "price" : "485",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/21894c91_904b_a2dc_650b_4bec7cf7c851?alt=media&token=9cdf11cd-adf7-419f-8010-11ac2e68693d"
+      }, {
+        "alias" : "Standard Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Standard high gloss wood color cabinets with sqaure handle.",
+        "designer" : true,
+        "fileName" : "layer_16432515_fbc0_1ec8_53c0_51c600ab1f46.png",
+        "imagePath" : "Cabinets/Cabinet_2_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_16432515_fbc0_1ec8_53c0_51c600ab1f46.png?alt=media&token=dbe05f4e-82fa-4ab9-9d12-4e2b1cdd61b1",
+        "manufacturing" : {
+          "id" : "58RG5",
+          "name" : "Standard Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_2_3",
+        "price" : "120",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c796caa0_3589_a06d_cfe8_eaa4c86fd99f?alt=media&token=32443e2d-ac0c-4f39-b81a-ed93feac9365"
+      }, {
+        "alias" : "Upgrade White",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Upgraded high gloss white color cabinets.",
+        "fileName" : "layer_21c11684_b808_bb0d_5a16_dcd48cbac572.png",
+        "imagePath" : "Cabinets/Cabinet_3_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_21c11684_b808_bb0d_5a16_dcd48cbac572.png?alt=media&token=639a5b5b-4d2a-4eb9-a623-5b180ee19ce5",
+        "manufacturing" : {
+          "id" : "32RG8",
+          "name" : "Upgrade White",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_3_1",
+        "price" : "154",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/aeeddc76_50b1_8ee1_9645_b0acd5a257a0?alt=media&token=335f9b46-f8e5-4bc0-b412-eedb5a4410d4"
+      }, {
+        "alias" : "Upgrade Darkwood Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Upgraded high gloss darkwood grey color cabinets.",
+        "fileName" : "layer_dab35c60_6305_ca8d_eab7_30abbc93049d.png",
+        "imagePath" : "Cabinets/Cabinet_3_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_dab35c60_6305_ca8d_eab7_30abbc93049d.png?alt=media&token=925cd34d-53af-4c76-928f-781bb8408e13",
+        "manufacturing" : {
+          "id" : "65TH5",
+          "name" : "Upgrade Darkwood Grey",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_3_2",
+        "price" : "740",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/9bf5a5b8_9c6a_2064_f163_93a9384a0922?alt=media&token=8b63b8f1-ddaa-4c4e-bd25-52327410a071"
+      }, {
+        "alias" : "Upgrade Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Upgraded high gloss wood color cabinets.",
+        "fileName" : "layer_d5b879fc_dc99_a0af_48a8_d6e825fd143b.png",
+        "imagePath" : "Cabinets/Cabinet_3_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_d5b879fc_dc99_a0af_48a8_d6e825fd143b.png?alt=media&token=24330ada-4990-4bef-99bd-3f8abf7043fb",
+        "manufacturing" : {
+          "id" : "85TH4",
+          "name" : "Upgrade Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_3_3",
+        "price" : "321",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/26ca8373_10a2_2089_1ce8_bab9932311a4?alt=media&token=ee715ff1-9dd7-44d2-8f72-1de005d72f46"
+      }, {
+        "alias" : "Plain White",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Full plain white color cabinets with oval handle.",
+        "fileName" : "layer_0872b613_5c94_f5f5_a695_df71b4a5a62d.png",
+        "imagePath" : "Cabinets/Cabinet_4_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_0872b613_5c94_f5f5_a695_df71b4a5a62d.png?alt=media&token=6171e866-b947-43c1-a979-89b936b9eb40",
+        "manufacturing" : {
+          "id" : "96TD5",
+          "name" : "Plain White",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_4_1",
+        "price" : "111",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/6bd5732e_b724_8da5_467b_cf3eabfd9aef?alt=media&token=3346e890-402e-47c8-b882-8a3f2b109bfa"
+      }, {
+        "alias" : "Plain Darkwood Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Full plain darkwood grey color cabinets with oval handle.",
+        "fileName" : "layer_7e150694_3403_8ed2_979f_d335e9774bdb.png",
+        "imagePath" : "Cabinets/Cabinet_4_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_7e150694_3403_8ed2_979f_d335e9774bdb.png?alt=media&token=1a461ebc-675e-48e2-9de1-e1dae15f42cf",
+        "manufacturing" : {
+          "id" : "35UJ5",
+          "name" : "Plain Darkwood Grey",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_4_2",
+        "price" : "120",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/52db584a_ecef_05f8_dbf6_129adbbb274d?alt=media&token=33723a12-0ed6-4f14-9c13-1e7ae69f5cf7"
+      }, {
+        "alias" : "Plain Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Full plain wood color cabinets with oval handle.",
+        "fileName" : "layer_dd99bcda_3a1f_2cb8_3718_2b5e75b464ff.png",
+        "imagePath" : "Cabinets/Cabinet_4_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_dd99bcda_3a1f_2cb8_3718_2b5e75b464ff.png?alt=media&token=7d63de12-bac5-437f-9e60-96337afae13d",
+        "manufacturing" : {
+          "id" : "94SD5",
+          "name" : "Plain Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_4_3",
+        "price" : "410",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/4823701a_11b7_e290_f7ee_30c52b20f422?alt=media&token=1a284ce9-d06e-4f0a-b6c9-7c2ef8f5657d"
+      }, {
+        "alias" : "Standard Plain White",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Standard plain white cabinets.",
+        "designer" : true,
+        "fileName" : "layer_a56a611d_3236_52c0_249f_2f7326beafc7.png",
+        "imagePath" : "Cabinets/Cabinet_5_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_a56a611d_3236_52c0_249f_2f7326beafc7.png?alt=media&token=7235572d-3b19-40f6-b061-359aee79a569",
+        "manufacturing" : {
+          "id" : "53FG5",
+          "name" : "Standard Plain White",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_5_1",
+        "price" : "120",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/e47040bf_9b58_5bb1_ef22_3d093fa9220c?alt=media&token=d8a243b2-290d-4c28-82aa-aeee9d1b6756"
+      }, {
+        "alias" : "Standard Plain Darkwood Grey",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Standard plain darkwood grey cabinets.",
+        "fileName" : "layer_99935895_f3b1_39f6_6728_52a20326d6a1.png",
+        "imagePath" : "Cabinets/Cabinet_5_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_99935895_f3b1_39f6_6728_52a20326d6a1.png?alt=media&token=de7ff082-e421-499a-9f81-4e39470065d4",
+        "manufacturing" : {
+          "id" : "89UJ8",
+          "name" : "Standard Plain Darkwood Grey",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_5_2",
+        "price" : "201",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/d8d535fe_8578_6a26_e024_c7cef4b32b68?alt=media&token=10957408-e1ba-4570-b61d-df47e0f97932"
+      }, {
+        "alias" : "Standard Plain Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 519,
+          "y" : 263
+        },
+        "description" : "Standard plain wood cabinets.",
+        "fileName" : "layer_cad309d4_8adc_1616_385c_73e5e70c86fe.png",
+        "imagePath" : "Cabinets/Cabinet_5_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_cad309d4_8adc_1616_385c_73e5e70c86fe.png?alt=media&token=59671cb0-f537-4d80-a5fd-bfc2fcea0096",
+        "manufacturing" : {
+          "id" : "58YU6",
+          "name" : "Standard Plain Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Cabinet_5_3",
+        "price" : "223",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/d13f0590_ec88_058b_ef96_132110e6376b?alt=media&token=ba59461c-addc-4411-8da9-eabb0c3c1e64"
+      } ],
+      "layer_pack_764e39e1_eb39_8d4c_e3c7_49f9db16aadc" : [ {
+        "coords" : {
+          "x" : 6,
+          "y" : 751
+        },
+        "fileName" : "layer_982a6f62_ca6f_26e9_3728_d13c7e6dda7d.png",
+        "imagePath" : "Charis/Chair1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_982a6f62_ca6f_26e9_3728_d13c7e6dda7d.png?alt=media&token=b991c217-b5ac-41e1-85b3-b50e409100b7",
+        "name" : "Chair1"
+      } ],
+      "layer_pack_945f66cb_abb8_91ab_879c_a8c20d2909b5" : [ {
+        "alias" : "Standard Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 870
+        },
+        "description" : "Standard wood flooring",
+        "designer" : true,
+        "fileName" : "layer_fd3257c9_497e_8e5b_3439_68a32f2e8512.png",
+        "imagePath" : "Floors/Floor_1_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_fd3257c9_497e_8e5b_3439_68a32f2e8512.png?alt=media&token=f1ae8229-784f-418d-a0c9-5fd675bedf5d",
+        "manufacturing" : {
+          "id" : "89GY8",
+          "name" : "Standard Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_1_1",
+        "price" : "230",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/a6cd716d_024b_6af3_45ce_ac871a2e0687?alt=media&token=c3486fb8-d95a-4016-b403-9ef144bbe689"
+      }, {
+        "alias" : "Cross Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 870
+        },
+        "description" : "Cross wood flooring",
+        "fileName" : "layer_cebd8c80_6050_91bd_6086_c35cc8cd6754.png",
+        "imagePath" : "Floors/Floor_1_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_cebd8c80_6050_91bd_6086_c35cc8cd6754.png?alt=media&token=53ad1833-dc3c-47a5-9401-b02dbad5854a",
+        "manufacturing" : {
+          "id" : "52TY6",
+          "name" : "Cross Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_1_2",
+        "price" : "123",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/9f6cddd7_ce1f_f5af_4e67_1b42b7b00651?alt=media&token=d200c2a6-06d6-4157-88bc-38baf5e08b01"
+      }, {
+        "alias" : "Dark Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 870
+        },
+        "description" : "Dark wood flooring",
+        "designer" : true,
+        "fileName" : "layer_242d19aa_dbe7_04b4_345e_e7eeb3142bba.png",
+        "imagePath" : "Floors/Floor_1_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_242d19aa_dbe7_04b4_345e_e7eeb3142bba.png?alt=media&token=4c019da2-1f8f-44a5-a5a6-2bb6802fedc0",
+        "manufacturing" : {
+          "id" : "12GH5",
+          "name" : "Dark Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_1_3",
+        "price" : "322",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/d8e0be98_fc9f_15af_07a0_f018675b5e13?alt=media&token=4ff90c4a-c915-47c9-b329-0014af6a094a"
+      }, {
+        "alias" : "Standard Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 855
+        },
+        "description" : "Standard wood flooring",
+        "designer" : true,
+        "fileName" : "layer_99e5c88a_2378_3610_d6c8_e932e69c1865.png",
+        "imagePath" : "Floors/Floor_2_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_99e5c88a_2378_3610_d6c8_e932e69c1865.png?alt=media&token=d40cf991-58d3-47b2-a7ae-fc0176220a4b",
+        "manufacturing" : {
+          "id" : "89GY8",
+          "name" : "Standard Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_2_1",
+        "price" : "433",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/acff5b19_3edb_0cc6_617a_91c13a4b8c4a?alt=media&token=23d84fe6-9270-4f32-a42a-e013ae34bffe"
+      }, {
+        "alias" : "Cross Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 855
+        },
+        "description" : "Cross wood flooring",
+        "fileName" : "layer_258f1122_56e9_7844_cc44_9d9beb71e97a.png",
+        "imagePath" : "Floors/Floor_2_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_258f1122_56e9_7844_cc44_9d9beb71e97a.png?alt=media&token=dd19116b-84fe-419f-a2d0-cee267400ec0",
+        "manufacturing" : {
+          "id" : "52TY6",
+          "name" : "Cross Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_2_2",
+        "price" : "543",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/0242e848_3fc4_93a6_6203_da688f49da58?alt=media&token=94479a59-2205-477f-acab-5fd9bc18cfee"
+      }, {
+        "alias" : "Dark Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 855
+        },
+        "description" : "Dark wood flooring",
+        "fileName" : "layer_3e35c624_0b31_0f1f_0aa8_96ef911b6728.png",
+        "imagePath" : "Floors/Floor_2_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_3e35c624_0b31_0f1f_0aa8_96ef911b6728.png?alt=media&token=4edf221b-204f-42c3-bdd1-71db5c98b030",
+        "manufacturing" : {
+          "id" : "12GH5",
+          "name" : "Dark Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_2_3",
+        "price" : "211",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/2b6acc06_4288_fdcb_352a_be94617bb284?alt=media&token=ac09f1e6-6c9e-437b-9d1b-2292ee307992"
+      }, {
+        "alias" : "Standard Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 878
+        },
+        "description" : "Standard Wood Flooring",
+        "designer" : true,
+        "fileName" : "layer_6b566193_08af_9913_5d6d_caced2473207.png",
+        "imagePath" : "Floors/Floor_3_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_6b566193_08af_9913_5d6d_caced2473207.png?alt=media&token=e4797ec5-8d16-46ba-b565-5d33917b12c9",
+        "manufacturing" : {
+          "id" : "89GY8",
+          "name" : "Standard Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_3_1",
+        "price" : "542",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/12f02419_4a4e_24d8_27f4_a22b4d25616d?alt=media&token=95795d87-f11f-454c-afaa-efd88221c172"
+      }, {
+        "alias" : "Cross Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 878
+        },
+        "description" : "Cross wood flooring",
+        "fileName" : "layer_4c158151_77cc_3983_117d_7ecc6a95c548.png",
+        "imagePath" : "Floors/Floor_3_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_4c158151_77cc_3983_117d_7ecc6a95c548.png?alt=media&token=f50902f2-1e08-433c-a537-ff10764675d1",
+        "manufacturing" : {
+          "id" : "52TY6",
+          "name" : "Cross Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_3_2",
+        "price" : "122",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/3c52ef4a_252c_10d6_1f0f_f7e9a07caa7a?alt=media&token=9be1e70a-0012-429e-8350-d67c7171fca5"
+      }, {
+        "alias" : "Dark Wood",
+        "caption" : "",
+        "coords" : {
+          "x" : 0,
+          "y" : 878
+        },
+        "description" : "Dark wood flooring",
+        "fileName" : "layer_76f4e14d_0d01_c2a4_b372_6b2e22103184.png",
+        "imagePath" : "Floors/Floor_3_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_76f4e14d_0d01_c2a4_b372_6b2e22103184.png?alt=media&token=b3250e19-1b11-4e0d-b936-4a49961473db",
+        "manufacturing" : {
+          "id" : "12GH5",
+          "name" : "Cross Wood",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Floor_3_3",
+        "price" : "344",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c0a134c7_b7b6_eb77_6604_9febff8d9643?alt=media&token=afba472c-0afa-4265-a960-ad546e9da0f9"
+      } ],
+      "layer_pack_cbe350fd_2915_69c4_39e7_511ad899f99d" : [ {
+        "alias" : "Standard",
+        "caption" : "",
+        "coords" : {
+          "x" : 67,
+          "y" : 611
+        },
+        "description" : "Standard Island",
+        "fileName" : "layer_e752660f_864d_fbc3_b815_bcac17faaf8f.png",
+        "imagePath" : "Islands/Island_1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_e752660f_864d_fbc3_b815_bcac17faaf8f.png?alt=media&token=e3c4c2ed-c908-4b6e-81fd-8d657ab39ad6",
+        "manufacturing" : {
+          "id" : "85PO6",
+          "name" : "Standard Island",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Island_1",
+        "price" : "530",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/af5caabe_26a9_cde2_1fe9_409425e26e33?alt=media&token=19c41673-dbd7-45cd-b266-e5ea4b6cd2fd"
+      }, {
+        "alias" : "Modern",
+        "caption" : "",
+        "coords" : {
+          "x" : 42,
+          "y" : 597
+        },
+        "description" : "Modern Island",
+        "designer" : true,
+        "fileName" : "layer_55a2549a_492f_4e93_c209_b26bbf991230.png",
+        "imagePath" : "Islands/Island_2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_55a2549a_492f_4e93_c209_b26bbf991230.png?alt=media&token=0e1ee87c-1c7e-442c-ba3d-6106c5f9545b",
+        "manufacturing" : {
+          "id" : "85PF6",
+          "name" : "Modern Island",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Island_2",
+        "price" : "710",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/17d4038a_b2d6_8585_9f65_6f54e2766689?alt=media&token=24ddc5d9-e2bf-4b6a-91a2-8d9ebf14ffb4"
+      }, {
+        "alias" : "Upgrade",
+        "caption" : "",
+        "coords" : {
+          "x" : 42,
+          "y" : 598
+        },
+        "description" : "Upgrade Island",
+        "designer" : true,
+        "fileName" : "layer_f27b5515_6e48_ff7f_8e63_a7e2d11ab878.png",
+        "imagePath" : "Islands/Island_3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_f27b5515_6e48_ff7f_8e63_a7e2d11ab878.png?alt=media&token=be05f587-0873-4c5e-b1ae-f0db6a8c2ff1",
+        "manufacturing" : {
+          "id" : "56YH5",
+          "name" : "Upgrade Island",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Island_3",
+        "price" : "600",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/88e0dcba_027e_516e_bedc_7472c3e66c06?alt=media&token=e88d8f14-730c-4462-982a-34908085a5f2"
+      } ],
+      "layer_pack_d60e93e9_8cb1_27af_823d_432f601e33dd" : [ {
+        "alias" : "Mosaic",
+        "caption" : "",
+        "coords" : {
+          "x" : 632,
+          "y" : 121
+        },
+        "description" : "Mosaic tiling",
+        "fileName" : "layer_729d2f65_996f_e65a_9f1e_8f36b568feec.png",
+        "imagePath" : "Tiling/Tiling1.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_729d2f65_996f_e65a_9f1e_8f36b568feec.png?alt=media&token=c1b05294-62c2-4bd4-81b6-35c3cfdc4fae",
+        "manufacturing" : {
+          "id" : "85JH3",
+          "name" : "Mosaic",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Tiling1",
+        "price" : "300",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/d7c0a2d2_2a6b_bf27_b41b_dea140b49bd8?alt=media&token=e8f9b20d-29cf-42ae-8368-ef00df6f0c63"
+      }, {
+        "alias" : "Black",
+        "caption" : "",
+        "coords" : {
+          "x" : 632,
+          "y" : 121
+        },
+        "description" : "Black tiling",
+        "designer" : true,
+        "fileName" : "layer_06850378_c378_4bfa_9702_ce1dd23a6911.png",
+        "imagePath" : "Tiling/Tiling2.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_06850378_c378_4bfa_9702_ce1dd23a6911.png?alt=media&token=9c5d868a-99ef-478b-a2b7-2ad77a2110b0",
+        "manufacturing" : {
+          "id" : "96HG9",
+          "name" : "Black",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Tiling2",
+        "price" : "320",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/7357ae73_cc37_ea99_ae12_bfb6b60de9dc?alt=media&token=4d4624c5-3336-4d5f-95ce-423a27530258"
+      }, {
+        "alias" : "Dark Stackbond",
+        "caption" : "",
+        "coords" : {
+          "x" : 632,
+          "y" : 121
+        },
+        "description" : "Dark stackbond tiling",
+        "designer" : true,
+        "fileName" : "layer_e61a56e2_fd5e_64b4_b54c_b130173599a4.png",
+        "imagePath" : "Tiling/Tiling3.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_e61a56e2_fd5e_64b4_b54c_b130173599a4.png?alt=media&token=7f5614c1-c76a-496b-8445-9d4e74465de1",
+        "manufacturing" : {
+          "id" : "96GH8",
+          "name" : "Dark Stackbond",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Tiling3",
+        "price" : "340",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/be19fcff_960c_7a61_2c90_a65b9d313a5c?alt=media&token=1bd9eaed-1a11-4656-a177-ad3ea02d5f9d"
+      }, {
+        "alias" : "Light Stackbond",
+        "caption" : "",
+        "coords" : {
+          "x" : 632,
+          "y" : 121
+        },
+        "description" : "Light stackbond tiling.",
+        "fileName" : "layer_43e20054_d13e_062d_48a0_a62ec13100e0.png",
+        "imagePath" : "Tiling/Tiling4.png",
+        "imageURL" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_43e20054_d13e_062d_48a0_a62ec13100e0.png?alt=media&token=86a6c9e6-b802-46cc-b30e-e5a47a248838",
+        "manufacturing" : {
+          "id" : "96GH8",
+          "name" : "Light Stackbond",
+          "url" : "http://www.biorev.com"
+        },
+        "name" : "Tiling4",
+        "price" : "410",
+        "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/39daffc3_1ba0_baab_ff7f_ff5ed894766a?alt=media&token=22cf4201-920a-4dab-8121-71ac1d9cde8a"
+      } ]
+    }
+  },
+  "lots" : {
+    "FLOORX_TEMPLATE_19f765aa_7670_f3a4_bbd4_a5cfd6a253cb" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/33c4e766_9bbd_ab29_00ca_da77dffbb079.png?alt=media&token=e9899a88-7fc7-45b3-8202-366bb35b84ee",
+      "modules" : [ {
+        "currentLayer" : "Bench",
+        "dataSF" : 100,
+        "drawX" : 535,
+        "drawY" : 379,
+        "id" : "module_774b88c6_b8e7_6756_5d7c_624bc7b85d72",
+        "label" : "First Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_ee01ef1d_2e61_137c_2371_eedc3f4fa70b.png?alt=media&token=f535d528-a659-47b2-957b-92a776263eac",
+        "layerPackID" : "layer_pack_a871556b_aa3d_71da_eddb_4c58831082db"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_541a284a_6406_38c8_0973_a404cd91306d" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/66696300_33bc_6f76_8c07_ad7903c949f2.png?alt=media&token=ebb6d210-5fce-4631-ae1f-bb7c4be814e7",
+      "modules" : [ {
+        "currentLayer" : "3 Car Garage",
+        "dataSF" : 100,
+        "drawX" : 70,
+        "drawY" : 384,
+        "id" : "module_3025be0c_e4ac_833f_f472_0259d8b44eb6",
+        "label" : "First Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_69e647c8_51d7_4d58_ec45_3fa588c49808.png?alt=media&token=5c7c239a-531e-43ec-b31b-15950e84c9cf",
+        "layerPackID" : "layer_pack_f7d1c7e2_f0a9_e48d_36c2_ab9241795850"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_5ccf56f4_c8c5_27ad_fc94_8f1d016405dd" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c3908a2d_3f72_693e_2d11_cb3e31fefada.png?alt=media&token=c10f968c-bdfa-4572-ad1f-7c9bbbd00e1e",
+      "modules" : [ {
+        "currentLayer" : "uaStone_Base_Front_Garage",
+        "dataSF" : 100,
+        "drawX" : 165,
+        "drawY" : 779,
+        "id" : "module_9e323835_b8d2_a02d_d27d_3e635c743743",
+        "label" : "FCB_Elevation",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_00d9050f_1ef8_21fa_01b9_65513d98b77e.png?alt=media&token=ccf662f9-3395-451b-872a-8f0ac0fefcfa",
+        "layerPackID" : "layer_pack_bbe3367b_1095_02f9_60d0_0196d1790d8c"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_6ba46a47_8b13_685e_a93d_17ca093ee910" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/4dea631f_7ca6_16c2_1b42_1825607e9f14.png?alt=media&token=5e244683-be86-4ce6-b454-595bb2535bbc",
+      "modules" : [ {
+        "currentLayer" : "Tray_Ceiling",
+        "dataSF" : 100,
+        "drawX" : 744,
+        "drawY" : 124,
+        "id" : "module_2381c36b_77b4_28fa_1603_3d9b26996ccc",
+        "label" : "Second_Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_fa2d6eeb_b2b8_51a0_0deb_d4503cd26ac3.png?alt=media&token=685f4161-b905-4bd1-a6b3-e86fbb78f8cb",
+        "layerPackID" : "layer_pack_ead2c48f_50ce_3744_03b4_efdd2330d104"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_bc6d9165_abdf_5b1b_ce9a_6e8046f9c8f6" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/74bc2409_ab9e_976a_92bc_b4992cb354cf.png?alt=media&token=9b4cdd8b-6073-4bb1-bae0-2fc0747f0344",
+      "modules" : [ {
+        "currentLayer" : "Trey_celling",
+        "dataSF" : 100,
+        "drawX" : 235,
+        "drawY" : 190,
+        "id" : "module_a2e02a71_0d93_7a07_814d_c9e8910fed5f",
+        "label" : "First_Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_34cab24e_0f29_5d36_fa0d_744c55e3b95b.png?alt=media&token=de0260f3-4ee5-445f-8642-6522b438a1a8",
+        "layerPackID" : "layer_pack_f6a220ac_42de_0d30_14da_9fb347ca3a57"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_c40a2e24_0e3f_fe99_ff93_20002abca64a" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/2a9ccd4c_cccf_1c86_825f_ebd62423186a.png?alt=media&token=f3fb2cf8-2f4f-4e0b-87ce-a7e57e5d05fb",
+      "modules" : [ {
+        "currentLayer" : "bay_window",
+        "dataSF" : 100,
+        "drawX" : 1034,
+        "drawY" : 370,
+        "id" : "module_f4cbaced_7330_b68c_0345_b26af3a1e614",
+        "label" : "First Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_26319fdf_938f_c76e_9850_a9e6d1bb3054.png?alt=media&token=9ed5d969-7f54-4687-8ae2-4d5dd8ca247f",
+        "layerPackID" : "layer_pack_319dec15_bcdb_3fa9_deaa_d9d94e4696fd"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_c6044d5f_29b6_fac1_0a25_927f1d0716f0" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/ae7e3e8a_b146_5ea8_98a2_b36e79e7c0a8.png?alt=media&token=cf91e191-1cd0-4c22-91a8-7477e3de8954",
+      "modules" : [ {
+        "currentLayer" : "3_car_garage",
+        "dataSF" : 100,
+        "drawX" : 24,
+        "drawY" : 633,
+        "id" : "module_fa6a6868_23c1_90ec_01ed_15a78746c301",
+        "label" : "First",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_bd53a420_6170_74c5_877a_3ff5a50f6e43.png?alt=media&token=9244923d-6f7b-4e22-9f58-32b76df82d23",
+        "layerPackID" : "layer_pack_eb6f5126_d917_c75d_162d_d4831343faa0"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_f6c340cc_1219_fa83_210f_0c8d58c3948b" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/b828f33f_8c7a_5ad4_7165_a603855230a5.png?alt=media&token=63f615b9-7bcb-4b91-b9f1-3e79efa0cf67",
+      "modules" : [ {
+        "currentLayer" : "Door",
+        "dataSF" : 100,
+        "drawX" : 742,
+        "drawY" : 523,
+        "id" : "module_396ae018_0f6e_14f9_71bd_cbbf6e55e45f",
+        "label" : "First_Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_bd31bab8_75a9_803c_5ae7_c7e69455b44f.png?alt=media&token=20b0be87-4b6d-40c7-95da-cc5257b92f4b",
+        "layerPackID" : "layer_pack_6db8575b_22f1_80db_c22a_212535c459be"
+      } ],
+      "title" : "Untitled"
+    },
+    "FLOORX_TEMPLATE_fc251a91_1999_2a59_525b_adfe603da14c" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/abd611cb_8f4c_da51_7c51_9881816ebece.png?alt=media&token=2836fd59-2fbe-40f8-99c7-15cf19dd81e0",
+      "modules" : [ {
+        "currentLayer" : "Door",
+        "dataSF" : 100,
+        "drawX" : 733,
+        "drawY" : 507,
+        "id" : "module_b9277903_e896_d5f0_4762_c76dcf3abfb3",
+        "label" : "First_Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_aa6834bb_a451_273b_1f0b_a4a7dac3cbea.png?alt=media&token=34cb402a-bba0-43ba-b444-8f7df5f7f576",
+        "layerPackID" : "layer_pack_e58b47fd_888b_cb64_b73e_1340d58d565f"
+      } ],
+      "title" : "Untitled"
+    },
+    "KITCHEN_TEMPLATE_1bf2fb71_887a_bce4_8ffb_8042aa25f168" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/834c5f18_4a89_83bc_ee0a_81fad87200e1.png?alt=media&token=745ebdf9-67e2-4a71-9b25-3cbd5d6b639f",
+      "cover" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/0b2c41c6_cee8_0d14_ef01_d07d372930d9?alt=media&token=6705a731-f833-4840-96c9-4eddfb893e89",
+      "modules" : [ {
+        "alias" : "Cabinets",
+        "currentLayer" : "Cabinet_1",
+        "dataSF" : 100,
+        "drawX" : 94,
+        "drawY" : 182,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/ef0780af_bedb_8cc7_6fa9_abfa23c021ef?alt=media&token=bcab65c4-f06d-49f2-b8f4-f9362c2c878d",
+        "id" : "module_56d4cabb_a24e_a334_fe26_08d41dda251e",
+        "label" : "Cabinets",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8f35aef7_2908_60c4_b48d_855ae0f05f33.png?alt=media&token=33581f74-bec9-4a0c-b77e-11cbd8977ef2",
+        "layerPackID" : "layer_pack_a7699da7_b9b8_3bf8_c7ef_4dbbfa8bb268"
+      }, {
+        "alias" : "Floor",
+        "currentLayer" : "Floor_1_1",
+        "dataSF" : 100,
+        "drawX" : 0,
+        "drawY" : 481,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/b937c1f5_9796_5b9e_7482_578333b68796?alt=media&token=74d2a7db-f6d0-4c76-9d9a-799b706f17a8",
+        "id" : "module_8ba5dc36_dff7_aee8_3e43_0027a8880c0d",
+        "label" : "Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_768e756d_2813_00ae_40fa_02382092953f.png?alt=media&token=04c31e18-375d-4e5e-9678-6f51472306d5",
+        "layerPackID" : "layer_pack_453d6350_a58f_ea83_9e46_a2643d63c791"
+      }, {
+        "alias" : "Appliance",
+        "currentLayer" : "Fridge_Black",
+        "dataSF" : 100,
+        "drawX" : 611,
+        "drawY" : 277,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/bc3831f2_60fc_cafe_d4ee_423bc2ad5909?alt=media&token=439fecc6-17eb-4a19-8753-70a36c7e95cf",
+        "id" : "module_c47c67cd_5623_e10d_c881_d2c3dba27507",
+        "label" : "Refrigerator",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_98d059bf_6b22_1055_86d8_27c3bdbc97c4.png?alt=media&token=c28e6b48-2af8-4a85-93e2-74d772a07c8a",
+        "layerPackID" : "layer_pack_7b9a614d_634b_fd8e_9932_97e1904bc4a6"
+      }, {
+        "alias" : "Islands",
+        "currentLayer" : "Island_1",
+        "dataSF" : 100,
+        "drawX" : 158,
+        "drawY" : 369,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/3c842bf3_5369_343b_a972_8f29ff2d52ab?alt=media&token=92314ce0-02cd-4d41-b280-b884e56e397b",
+        "id" : "module_0b361bf9_865b_0435_1c25_d958931539cc",
+        "label" : "Islands",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_a3cbd6be_f1f3_0f4f_12a9_7dbc3305481d.png?alt=media&token=31d3e003-c1e0-4fdc-b888-6516717c3ab1",
+        "layerPackID" : "layer_pack_2b2f70bf_4589_3acc_d318_b896f96f59a7"
+      }, {
+        "alias" : "Micro/Ovens",
+        "currentLayer" : "Micro_Oven_1",
+        "dataSF" : 100,
+        "drawX" : 101,
+        "drawY" : 277,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/64d2a568_9567_5e38_6d6d_cbb1e52f32ca?alt=media&token=68accaae-54aa-4a35-9c38-ea1088830e70",
+        "id" : "module_44d8b5ac_de35_43fb_c3b1_35df3e6915f4",
+        "label" : "Microwave",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_0e25378b_b8ae_d187_d3b0_18d384e3574a.png?alt=media&token=ad97e06d-4b7a-42c2-b438-a901d3d9bf27",
+        "layerPackID" : "layer_pack_383fe1b5_4646_4c62_872f_9320db391717"
+      }, {
+        "alias" : "Backsplash",
+        "currentLayer" : "Tile_1",
+        "dataSF" : 100,
+        "drawX" : 125,
+        "drawY" : 161,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/784c9858_cca6_068e_9ccc_351660f35439?alt=media&token=279ce4d0-6037-47ea-9ec7-70c090bebc1c",
+        "id" : "module_03624f98_cb85_410d_3a99_5b7151758f3e",
+        "label" : "Backsplash Tiles",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_290f233f_847a_9d54_f7dd_ddef58a81bc0.png?alt=media&token=5f7430cb-d943-413f-94ba-585fcaf786c6",
+        "layerPackID" : "layer_pack_a11a560e_1a9b_f7e3_5dc7_e3ccd04193f1"
+      } ],
+      "title" : "Standard Kitchen"
+    },
+    "KITCHEN_TEMPLATE_bb79c154_4f07_e5f0_26b4_1c33939dcc3a" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/ac85fd00_f4b0_2337_841a_cffea1cfc22d.png?alt=media&token=c1bb6184-b6e8-4cd9-b47d-d4a4ac9f07c2",
+      "cover" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/ac85fd00_f4b0_2337_841a_cffea1cfc22d.png?alt=media&token=c1bb6184-b6e8-4cd9-b47d-d4a4ac9f07c2",
+      "modules" : [ {
+        "alias" : "Window Blinds",
+        "currentLayer" : "Blind_1",
+        "dataSF" : 100,
+        "drawX" : 1575,
+        "drawY" : 0,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/3a80c08d_76b6_1ab3_637e_1e85607245aa?alt=media&token=e086944c-796e-49ed-a19f-1a87318e415b",
+        "id" : "module_698a8954_fcc3_b8ef_04b8_0b57e01b6eac",
+        "label" : "Window Blinds",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_400377bd_ede9_e45f_f9c1_0612958663b4.png?alt=media&token=1be99078-bc37-4a77-bfb2-56f67cbfa512",
+        "layerPackID" : "layer_pack_49e5b79d_ac25_7fb2_cc35_799891286d94"
+      }, {
+        "alias" : "Cabinets",
+        "currentLayer" : "Cabinet_1",
+        "dataSF" : 100,
+        "drawX" : 223,
+        "drawY" : 593,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/853e099b_32b5_45ea_db0b_5a7d0dc48c12?alt=media&token=f4a47827-0836-49e7-a30a-bee1fd0656b8",
+        "id" : "module_a8aaed97_7f56_c264_31ac_3d483ce9525d",
+        "label" : "Cabinets",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_b1c7927c_4c15_7645_16ad_bda923da84a3.png?alt=media&token=507402c1-acfa-4d23-ae54-5e3d4c759ba9",
+        "layerPackID" : "layer_pack_37a097d3_bc74_5b66_6c47_cda4e830a97e"
+      }, {
+        "alias" : "Counter Top",
+        "currentLayer" : "Counter_Top_1",
+        "dataSF" : 100,
+        "drawX" : 222,
+        "drawY" : 556,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/39cd9976_031e_0862_46a7_d32d1e2ac925?alt=media&token=90cc381d-2692-405b-be97-0b9ac14600d9",
+        "id" : "module_ceee1184_da06_d77a_a715_00dcb5a219f8",
+        "label" : "Counter Top",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_8ceb43a2_0b0a_f91d_37b0_2c877ecf5831.png?alt=media&token=f5410a37-5e57-4403-a2a7-6841e8d8c1ab",
+        "layerPackID" : "layer_pack_1ff1d30c_20c4_590b_9724_a4593fe519d6"
+      }, {
+        "alias" : "Floor",
+        "currentLayer" : "Floor_1",
+        "dataSF" : 100,
+        "drawX" : 186,
+        "drawY" : 915,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/52d286d6_1c7e_1433_d654_e1b81bb3740a?alt=media&token=9c93cec0-5f1f-4746-9c61-a48f556dcf3d",
+        "id" : "module_b6e1c298_34ea_6c56_4d76_7fdf13dceabf",
+        "label" : "Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_934b5536_843c_cc69_034d_43d75f96503a.png?alt=media&token=24c290b1-bf5a-4972-b390-e15ef3ba7dcb",
+        "layerPackID" : "layer_pack_db8672bc_b5b5_0ed7_eb1a_90fdabccdf36"
+      }, {
+        "alias" : "Mirrors",
+        "currentLayer" : "Mirror_Base",
+        "dataSF" : 100,
+        "drawX" : 239,
+        "drawY" : 0,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/b8bd8d6d_41ce_76dc_f7e2_6a820bb3c253?alt=media&token=c3122967-5de6-4203-996e-16042e4b8704",
+        "id" : "module_b5431100_868b_80e9_f38a_3a63312d913f",
+        "label" : "Mirror",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_84da508b_c988_10f7_ce52_1ef6dec4ec0a.png?alt=media&token=d1b305e3-a245-42b1-af5c-8df51d5b3f47",
+        "layerPackID" : "layer_pack_4dde7a67_e819_00dd_37b2_c10a5757fa13"
+      }, {
+        "alias" : "Wall Tiles",
+        "currentLayer" : "Tile_Black",
+        "dataSF" : 100,
+        "drawX" : 769,
+        "drawY" : 84,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/a87a37c1_2aa3_0b0c_06fa_ac870f6049e0?alt=media&token=a9ee01c9-a341-4be7-b162-9564fdc1d2ae",
+        "id" : "module_416b6406_c31c_f689_3827_7fd97cf6bf6c",
+        "label" : "Wall Tiles",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_2d75059f_48d8_3a6e_b51b_5323b742bbc3.png?alt=media&token=bb563910-53d6-49e8-8345-0650fd4a8053",
+        "layerPackID" : "layer_pack_286cd2e2_3c3a_e326_bb68_c42a883f6a23"
+      } ],
+      "title" : "Standard Bathroom"
+    },
+    "KITCHEN_TEMPLATE_c70ddda0_dd47_646b_d5ec_2b3f2f363bd9" : {
+      "base" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/d755462e_e24e_15c1_29ae_edfc9a36b385.png?alt=media&token=74afe144-8d32-4e96-b02b-056c8cd06ed7",
+      "cover" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/a13a98de_a29f_76ad_3824_cf5ed927f69b?alt=media&token=cc677180-67db-4a68-8a9d-fc308b45fdaa",
+      "modules" : [ {
+        "alias" : "Cabinet",
+        "currentLayer" : "Cabinet_1_1",
+        "dataSF" : 100,
+        "drawX" : 519,
+        "drawY" : 263,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/c7553122_5036_b5f7_1e48_d248fd757ed2?alt=media&token=c8a5c45f-1027-4e55-bdc8-71323fc123ed",
+        "id" : "module_d04fbd99_b96b_5ea0_58b3_368593da2e71",
+        "label" : "Cabinets",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_c474277e_d6ef_baf7_8f29_59d211592491.png?alt=media&token=7c6adcb2-51db-4a14-8d47-9822ae783f99",
+        "layerPackID" : "layer_pack_6d854ba2_5fd0_3373_b0fa_f27ef8f36097"
+      }, {
+        "alias" : "Chairs",
+        "currentLayer" : "Chair1",
+        "dataSF" : 100,
+        "drawX" : 6,
+        "drawY" : 751,
+        "id" : "module_b0a636f1_2076_bdb9_b5d2_d53639be6945",
+        "label" : "Charis",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_982a6f62_ca6f_26e9_3728_d13c7e6dda7d.png?alt=media&token=b991c217-b5ac-41e1-85b3-b50e409100b7",
+        "layerPackID" : "layer_pack_764e39e1_eb39_8d4c_e3c7_49f9db16aadc"
+      }, {
+        "alias" : "Floor",
+        "currentLayer" : "Floor_1_1",
+        "dataSF" : 100,
+        "drawX" : 0,
+        "drawY" : 870,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/ea5642cc_4816_5c10_cf54_2de9b6a9956e?alt=media&token=94b426f0-6648-45e9-a423-44362978a0a2",
+        "id" : "module_c439a975_02e5_1c8b_c6ef_bcbc7889ca3f",
+        "label" : "Floor",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_fd3257c9_497e_8e5b_3439_68a32f2e8512.png?alt=media&token=f1ae8229-784f-418d-a0c9-5fd675bedf5d",
+        "layerPackID" : "layer_pack_945f66cb_abb8_91ab_879c_a8c20d2909b5"
+      }, {
+        "alias" : "Hanging_Lights",
+        "currentLayer" : "L1",
+        "dataSF" : 100,
+        "drawX" : 202,
+        "drawY" : 5,
+        "id" : "module_5a0a0a61_e0f7_fe64_633c_4713f758e5aa",
+        "label" : "Hanging_Lights",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_0d356322_7ff7_a7df_71e1_f0500939c508.png?alt=media&token=59a82b3b-655c-4dc8-a428-3cc36479e659",
+        "layerPackID" : "layer_pack_54d7b121_5604_b7b5_0899_14f282e8f4d7"
+      }, {
+        "alias" : "Islands",
+        "currentLayer" : "Island_1",
+        "dataSF" : 100,
+        "drawX" : 67,
+        "drawY" : 611,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/31eb064d_3e5a_bf11_2346_04ac0115af37?alt=media&token=3d8facc0-33ed-407a-be69-00230dd33e78",
+        "id" : "module_b41334ed_5cdc_340d_7df5_70872e4aaa18",
+        "label" : "Islands",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_e752660f_864d_fbc3_b815_bcac17faaf8f.png?alt=media&token=e3c4c2ed-c908-4b6e-81fd-8d657ab39ad6",
+        "layerPackID" : "layer_pack_cbe350fd_2915_69c4_39e7_511ad899f99d"
+      }, {
+        "alias" : "Micro/Oven",
+        "currentLayer" : "Micro1",
+        "dataSF" : 100,
+        "drawX" : 523,
+        "drawY" : 440,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/17534421_f469_0f5d_d2b8_454e33f2dd2b?alt=media&token=3e239fed-c764-4b54-b1c7-7a1e50081c79",
+        "id" : "module_e9e44968_566b_8b1e_a1d3_0159b1956a8f",
+        "label" : "Micro_Ovens",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_095ae9c9_b109_df91_5524_4d3003e2681f.png?alt=media&token=b33a8df0-af47-4af0-9a2c-be1955c81259",
+        "layerPackID" : "layer_pack_070aad98_f476_97fb_18e2_07779a4e322b"
+      }, {
+        "alias" : "Appliance",
+        "currentLayer" : "Refrigerators1",
+        "dataSF" : 100,
+        "drawX" : 1375,
+        "drawY" : 444,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/6301ccf3_330d_62e1_2a58_98252ae2042d?alt=media&token=c205f50c-982f-4486-a6aa-2de7ac440084",
+        "id" : "module_8f8da1c6_54ea_ab32_6325_4b22e4a9d4b0",
+        "label" : "Refrigerators",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_874e27c0_0480_3dfe_48c0_ada567c08e2b.png?alt=media&token=095bd371-ff90-4359-acf0-a8802d0cb545",
+        "layerPackID" : "layer_pack_69960813_2bba_e236_e458_d72201c13c3f"
+      }, {
+        "alias" : "Backsplash",
+        "currentLayer" : "Tiling1",
+        "dataSF" : 100,
+        "drawX" : 632,
+        "drawY" : 121,
+        "icon" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/fa356623_1050_78f8_6fba_abd014de3090?alt=media&token=fb339979-cf74-4b9b-a495-2f0ea4f61713",
+        "id" : "module_0a63055d_bbdc_065e_68ad_d10384e81506",
+        "label" : "Tiling",
+        "layerImgUrl" : "https://firebasestorage.googleapis.com/v0/b/kitchenx-4bf92.appspot.com/o/layer_729d2f65_996f_e65a_9f1e_8f36b568feec.png?alt=media&token=c1b05294-62c2-4bd4-81b6-35c3cfdc4fae",
+        "layerPackID" : "layer_pack_d60e93e9_8cb1_27af_823d_432f601e33dd"
+      } ],
+      "title" : "Upgrade Kitchen"
+    }
+  }
+};
+
+
+
+/*=====  End of DATABASE  ======*/</script> </head> <body ng-app="floorxApp"> <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <div class="container-fluid"> <div class="row"> <div class="col-sm-12" id="header"> <div class="brand-image text-center pull-left"> <a href="http://xfloor360.com"><img src="images/assets/images/floorX.png" class="img-responsive"></a> </div> <div class="brand-login text-center pull-right"> <a ng-if="!authed" href data-toggle="modal" data-target="#Loginmodal" class="loginbtn btn btn-success"> <i class="fa fa-user"></i><span class="hidden-text"> Login </span> </a> <a ng-if="authed" href="/#!/profile" class="userafterlogin"> <img src="{{user.photoURL}}" class="img-circle img-user"> <span class="user-info"> <span class="UserName"> {{user.displayName}} </span> <span class="UserPostion"> Admin </span> </span> </a> </div> <!-- <div id="sidebar" class="pull-right" onclick="window.open('http://dashboard.biorev.com');">
+                    <div class="sb-toggler "> 
+                
+                
+                    <img src="images/assets/images/a4.png" alt="">
+                
+                    </div>
+                
+                  </div> --> </div> </div> </div> <div ng-view=""></div> <!-- MODALS --> <div id="Loginmodal" class="modal fade" role="dialog"> <div class="modal-dialog"> <!-- Modal content--> <div class="modal-content"> <div class="modal-form"> <button type="button" class="close" data-dismiss="modal">&times;</button> <div class="col-sm-12"> <ul class="nav md-pills nav-justified pills-secondary"> <li class="nav-item active"> <a class="nav-link" data-toggle="tab" href="#panel4" role="tab" onclick="return false">Sign In</a> </li> <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#panel11" role="tab" onclick="return false">Sign Up</a> </li> <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#panel12" role="tab" onclick="return false">Forget Password</a> </li> </ul> <!-- Tab panels --> <div class="tab-content"> <!--Panel 1--> <div class="tab-pane fade in active" id="panel4" role="tabpanel"> <form ng-submit="signin()" id="signup-form"> <input type="email" ng-model="si_email" name="email" placeholder="Enter Your Email"> <input type="password" ng-model="si_password" name="password" placeholder="Your Password"> <input type="submit" value="Login"> <hr> <div class="row social-wrap a"> <div class="col-sm-6"> <button type="button" ng-click="fblogin()" id="facebook">Sign in with Facebook</button> </div> <!-- <hr/> --> <div class="col-sm-6"> <button type="button" ng-click="googlelogin()" id="googleplus">Sign in with Google</button> </div> </div> </form> </div> <!--/.Panel 1--> <!--Panel 2--> <div class="tab-pane fade" id="panel11" role="tabpanel"> <form id="sign-up-form" ng-submit="signup()" name="sign_up_form"> <input type="text" ng-model="su_name" name="name" placeholder="Enter Your Full Name" required> <input type="email" ng-model="su_email" name="email" placeholder="Enter Your Email" required> <input type="password" ng-model="su_password" name="password" placeholder="Your Password" required> <input type="submit" value="Sign Up"> <hr> <div class="row social-wrap a"> <div class="col-sm-6"> <a type="button" ng-click="fblogin()" id="facebook">Signup with Facebook</a> </div> <!-- <hr/> --> <div class="col-sm-6"> <a ng-click="googlelogin()" type="button" id="googleplus">Signup with Google</a> </div> </div> </form> <br> </div> <!--/.Panel 2--> <!--Panel 3--> <div class="tab-pane fade" id="panel12" role="tabpanel"> <form ng-submit="resetpassword();" id="forgot-form"> <br> <small>We will send you a reset password email, kindly check your email and follow the given instruction.</small> <input ng-model="email" type="email" name="email" placeholder="Enter Your Email" required> <input type="submit" value="Proceed"> </form> <br> </div> <!--/.Panel 3--> </div> </div> <div class="col-sm-6 hide hidden" style="display: none"> asfafsf </div> </div> </div> </div> </div> <!-- ./MODALS --> <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script> <script>/*================================
+    =            FIREBASE            = */
+    
+       // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCxhqejHoHIzQJwqLuLTaiEyWhEq3jh30k",
+          authDomain: "kitchenx-4bf92.firebaseapp.com",
+          databaseURL: "https://kitchenx-4bf92.firebaseio.com",
+          projectId: "kitchenx-4bf92",
+          storageBucket: "kitchenx-4bf92.appspot.com",
+          messagingSenderId: "220931303011"
+        };
+        firebase.initializeApp(config);
+        var storageRef = firebase.storage().ref();
+        //dbModel = dbModel(firebase);
+    
+    
+    /*=====  End of FIREBASE  ======*/</script> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');</script> <script src="https://code.createjs.com/createjs-2014.12.12.min.js"></script> <script src="scripts/vendor.4a42c624.js"></script> <!-- CUSTOM  --> <script src="scripts/floorx.js"></script> <script src="scripts/script.js"></script> <script src="scripts/scripts.385bc9b0.js"></script> <script src="scripts/controllers/profile.js"></script> <script src="scripts/controllers/user.js"></script> <script src="scripts/controllers/forgot.js"></script> <script src="scripts/controllers/favorites.js"></script> <script src="scripts/controllers/final.js"></script> </body> </html>

@@ -1,0 +1,26 @@
+<p ng-click="fblogin()">
+	Facebook Login
+</p>
+
+<p ng-click="googlelogin()">
+	Google Login
+</p>
+
+
+<form ng-submit="emaillogin()">
+	<p>
+		<input type="email" ng-model="email" placeholder="Enter Email" required=""/>
+	</p>
+
+	<p>
+		<input type="password" ng-model="password" placeholder="Enter Password" required="" />
+	</p>
+
+	<p>
+		<input type="submit" value="{{form_submitting ? 'Please wait...' : 'Login'}}" class="btn btn-success btn-sm" ng-disabled="form_submitting" /> <a class="btn btn-sm btn-danger" ng-href="/#!/forgot">Forgot Password </a>
+	</p>
+
+	<p>
+		<small class="text-danger" ng-if="error">{{error}}</small>
+	</p>
+</form>
